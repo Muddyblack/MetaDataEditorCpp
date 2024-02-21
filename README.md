@@ -21,9 +21,9 @@ Schritt-für-Schritt-Anleitung, die Ihnen zeigt, wie Sie eine Entwicklungsumgebu
 3. Navigieren Sie in das Projektverzeichnis.
 4. Editiere die Pfade für QT in der [CMakeLists.txt](./CMakeLists.txt)
 ```sh
-set(CMAKE_PREFIX_PATH "pfad/zu/6.6.2/mingw_64")
-set(CMAKE_CXX_COMPILER "pfad/zu/Tools/mingw1120_64/bin/c++.exe")
-set(CMAKE_C_COMPILER "pfad/zu/Tools/mingw1120_64/bin/gcc.exe")
+set(CMAKE_PREFIX_PATH "pfad/zu/QT/6.6.2/mingw_64")
+set(CMAKE_CXX_COMPILER "pfad/zu/QT/Tools/mingw1120_64/bin/c++.exe")
+set(CMAKE_C_COMPILER "pfad/zu/QT/Tools/mingw1120_64/bin/gcc.exe")
 ```
 4. Wenn sie ``make`` besitzen: `make start` aus um das Projekt zu bauen.
 
