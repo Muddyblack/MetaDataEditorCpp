@@ -1,43 +1,41 @@
-# <img src="./src/app/app.png" alt="Projekt Icon" width="30px" height="auto" style="vertical-align: -12%;"> Meta-Daten-Editor
-Kurze Beschreibung Ihres Projekts.
+# <img src="./src/app/app.png" alt="Project Icon" width="30px" height="auto" style="vertical-align: -12%;"> Meta-Data Editor
+[![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md)
+[![es](https://img.shields.io/badge/lang-de-black.svg)](./README.de.md)
 
-## Erste Schritte
+## Getting Started
 
-Um das Projekt lokal einzurichten, folgen Sie diesen Schritten:
+To set up the project locally, follow these steps:
 
+### Prerequisites
 
-### Voraussetzungen
-
-Was sie installieren müssen und wie sie es installieren.
+What you need to install and how to install it.
 
 ### Installation
 
-Schritt-für-Schritt-Anleitung, die Ihnen zeigt, wie Sie eine Entwicklungsumgebung einrichten.
+Step-by-step guide showing you how to set up a development environment.
 
-## DEV erste Schritte
+## DEV Getting Started
 
-1. Installiere ``QT 6.6.2``: https://www.qt.io/blog/qt-6.6.2-released
-2. Klonen Sie das Repository.
-3. Navigieren Sie in das Projektverzeichnis.
-4. Editiere die Pfade für QT in der [CMakeLists.txt](./CMakeLists.txt)
+1. Install ``QT 6.6.2``: https://www.qt.io/blog/qt-6.6.2-released
+2. Clone the repository.
+3. Navigate to the project directory.
+4. Edit the paths for QT in the [CMakeLists.txt](./CMakeLists.txt)
 ```sh
-set(CMAKE_PREFIX_PATH "pfad/zu/QT/6.6.2/mingw_64")
-set(CMAKE_CXX_COMPILER "pfad/zu/QT/Tools/mingw1120_64/bin/c++.exe")
-set(CMAKE_C_COMPILER "pfad/zu/QT/Tools/mingw1120_64/bin/gcc.exe")
+set(CMAKE_PREFIX_PATH "path/to/QT/6.6.2/mingw_64")
+set(CMAKE_CXX_COMPILER "path/to/QT/Tools/mingw1120_64/bin/c++.exe")
+set(CMAKE_C_COMPILER "path/to/QT/Tools/mingw1120_64/bin/gcc.exe")
 ```
-4. Wenn sie ``make`` besitzen: `make start` aus um das Projekt zu bauen.
+5. If you have ``make``: run ``make start`` to build the project.
 
-   -> Alternativ: `mkdir build && cd build && cmake .. && cmake .`
+-> Alternatively: ``mkdir build && cd build && cmake .. && cmake .``
 
-## Erstellt mit
+## Build With
 
-* [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - Das CSS-Thema, das für die Dokumentation verwendet wurde
--> Erstellen mit: `make gendoc`
+* [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - The CSS theme used for documentation -> Generate with: ``make gendoc``
 
-## Autoren
+## Authors
 
 * [Muddyblack](https://github.com/Muddyblack)
 
-## Lizenz
-
-Dieses Projekt ist unter der MIT-Lizenz lizenziert - siehe die Datei [LICENSE](LICENSE) für Details
+## License
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
