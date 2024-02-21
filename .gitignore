@@ -1,22 +1,32 @@
-# Ignore all build folders
-/build/
-/Debug/
-/Release/
+# Prerequisites
+*.d
 
-.vscode/
-
-# Ignore all .o and .a files
+# Compiled Object files
+*.slo
+*.lo
 *.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
 *.a
+*.lib
 
-# Ignore all files that end in ~
-*~
-
-# Ignore OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Executables
+*.exe
+*.out
+*.app
