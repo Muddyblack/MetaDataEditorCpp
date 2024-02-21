@@ -9,10 +9,14 @@ class TagTextEdit : public QTextEdit {
 public:
     TagTextEdit(QWidget *Parent = nullptr);
 
+protected:
 signals:
     void TabPressed();
+    void ShiftTabPressed();
 
 protected:
+    bool focusNextPrevChild(bool next) override;
+
     void keyPressEvent(QKeyEvent *Event) override;
     void focusInEvent(QFocusEvent *Event) override;
 };

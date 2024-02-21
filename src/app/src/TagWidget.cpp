@@ -28,8 +28,11 @@ TagWidget::TagWidget(QString TagName, QString TagValue, int TextFieldHeight, QWi
 
     connect(RemoveButton, &QPushButton::clicked, this, &TagWidget::RemoveSelf);
     setTabOrder(TagNameEdit, TagValueEdit);
+
     connect(TagNameEdit, &TagTextEdit::TabPressed, this, &TagWidget::FocusNext);
     connect(TagValueEdit, &TagTextEdit::TabPressed, this, &TagWidget::FocusNext);
+    connect(TagNameEdit, &TagTextEdit::ShiftTabPressed, this, &TagWidget::FocusPrevious);
+    connect(TagValueEdit, &TagTextEdit::ShiftTabPressed, this, &TagWidget::FocusPrevious);
 }
 
 std::pair<QString, QString> TagWidget::getValues() const {
@@ -42,6 +45,12 @@ void TagWidget::FocusNext() {
     // This slot will be called when the TabPressed signal is emitted
     // Here you can implement the logic to switch focus to the next widget
     QWidget::focusNextChild();
+}
+
+void TagWidget::FocusPrevious() {
+    // This slot will be called when the ShiftTabPressed signal is emitted
+    // Here you can implement the logic to switch focus to the previous widget
+    QWidget::focusPreviousChild();
 }
 
 void TagWidget::RemoveSelf() {

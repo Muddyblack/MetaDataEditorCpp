@@ -9,12 +9,13 @@ class TagWidget : public QWidget {
     Q_OBJECT
 
 public:
-    TagWidget(QString TagName = "", QString TagValue = "", int TextFieldHeight = 50, QWidget *Parent = nullptr);
+    explicit TagWidget(QString TagName = "", QString TagValue = "", int TextFieldHeight = 50, QWidget *Parent = nullptr);
     std::pair<QString, QString> getValues() const;
     
 public slots:
     void RemoveSelf();
     void FocusNext();
+    void FocusPrevious(); 
 
 private:
     TagTextEdit *TagNameEdit;

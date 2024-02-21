@@ -29,7 +29,7 @@ extern QString ICON_PATH;
 extern QString DARKMODE_STYLE_PATH;
 extern QString LIGHTMODE_STYLE_PATH;
 
-QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tiff)";
+QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tif)";
 QString VIDEO_FORMATS = "Videos (*.mp4 *.avi *.mov *.wmv *.flv)";
 QString COMPANY = "Muddyblack";
 QString APP_NAME = "MetaDataEditor";
@@ -155,7 +155,7 @@ void ImageEditorGUI::LoadFile() {
     try {
         QFileDialog fileDialog(this);
         fileDialog.setFileMode(QFileDialog::ExistingFile);
-        //fileDialog.setNameFilter(QString("%1;;%2").arg(IMAGE_FORMATS, VIDEO_FORMATS));
+        fileDialog.setNameFilter(QString("%1;;%2;;%3").arg("All (*)", IMAGE_FORMATS, VIDEO_FORMATS));
 
         // Load the last directory from QSettings
         QString lastDir = GetLastDir();
@@ -166,6 +166,7 @@ void ImageEditorGUI::LoadFile() {
             qDebug() << "Selected files: " << selectedFiles;
             if (!selectedFiles.isEmpty()) {
                 QString ImagePath = selectedFiles[0];
+                ImageLabel->clear();
                 DisplayFile(ImagePath);
 
                 // Save the directory to QSettings
@@ -219,27 +220,34 @@ void ImageEditorGUI::saveFile() {
                 break;
             }
 
-            if (fileDialog.exec()) {
-                QString savePath = fileDialog.selectedFiles()[0];
+            QString savePath = fileDialog.selectedFiles()[0];
 
-                QMap<QString, QString> metadata;
-                for (auto &widget : TagWidgets) {
-                    try {
-                        TagWidget *tagWidget = qobject_cast<TagWidget*>(widget);
-                        if (tagWidget) {
-                            QString tagName, tagValue;
-                            std::tie(tagName, tagValue) = tagWidget->getValues();
-                            metadata[tagName] = tagValue;
-                        }
-                    } catch (const std::exception &error) {
-                        qWarning() << error.what();
-                    }
-                }
-
-                MetaDataHandler metadataHandler;
-                metadataHandler.writeMetadata(savePath, metadata);
-                break;
+            // Check if the filename has an extension
+            QFileInfo fileInfo(savePath);
+            if (fileInfo.suffix().isEmpty()) {
+                // If not, add the default extension
+                savePath += "." + fileExtension;
             }
+
+             
+            QMap<QString, QString> metadata;
+            for (auto &widget : TagWidgets) {
+                try {
+                    TagWidget *tagWidget = qobject_cast<TagWidget*>(widget);
+                    if (tagWidget) {
+                        QString tagName, tagValue;
+                        std::tie(tagName, tagValue) = tagWidget->getValues();
+                        metadata[tagName] = tagValue;
+                    }
+                } catch (const std::exception &error) {
+                    qWarning() << error.what();
+                }
+            }
+            QImage originalImage(*imageLabel);
+            MetaDataHandler metadataHandler;
+            metadataHandler.writeMetadata(savePath, metadata, originalImage);
+            break;
+            
         } catch (const std::exception &error) {
             QMessageBox msgBox;
             msgBox.setIcon(QMessageBox::Critical);
@@ -256,25 +264,37 @@ void ImageEditorGUI::saveFile() {
 }
 
 void ImageEditorGUI::DisplayFile(const QString &imagePath) {
-    qDebug() << "Displaying file: " << imagePath;
-    if (imagePath.toLower().endsWith(".gif")) {
-        Movie = new QMovie(imagePath);
-        Movie->setScaledSize(ScrollArea->size());
-        ImageLabel->setMovie(Movie);
-        Movie->start();
-    } else {
-        QString thumbnailPath = imagePath;
-        QString fileExtension = QFileInfo(imagePath).suffix().toLower();
-        if (VIDEO_FORMATS.toLower().contains(fileExtension)) {
-            qDebug() << "video";
-            // Video processing code goes here
-            // For example, using a library like FFmpeg to extract a frame and save it as an image
-            // thumbnailPath = TEMP_Thumbnail_PATH;
-        }
+    try {
+        qDebug() << "Displaying file: " << imagePath;
+        if (imagePath.toLower().endsWith(".gif")) {
+            Movie = new QMovie(imagePath);
+            Movie->setScaledSize(ScrollArea->size());
+            ImageLabel->setMovie(Movie);
+            Movie->start();
+        } else {
+            QString thumbnailPath = imagePath;
+            QString fileExtension = QFileInfo(imagePath).suffix().toLower();
+            if (VIDEO_FORMATS.toLower().contains(fileExtension)) {
+                qDebug() << "video";
+                // Video processing code goes here
+                // For example, using a library like FFmpeg to extract a frame and save it as an image
+                // thumbnailPath = TEMP_Thumbnail_PATH;
+            }
 
-        QPixmap pixmap(thumbnailPath);
-        pixmap = pixmap.scaled(ImageLabel->width(), height(), Qt::KeepAspectRatio);
-        ImageLabel->setPixmap(pixmap);
+            QImage image(thumbnailPath);
+            if (image.isNull()) {
+                qDebug() << "Failed to load image: " << thumbnailPath;
+                return;
+            }
+
+            QPixmap pixmap = QPixmap::fromImage(image);
+            pixmap = pixmap.scaled(ImageLabel->width(), height(), Qt::KeepAspectRatio);
+            ImageLabel->setPixmap(pixmap);
+        }
+    } catch (const std::exception &e) {
+        qDebug() << "Caught exception: " << e.what();
+    } catch (...) {
+        qDebug() << "Caught unknown exception";
     }
 }
 

@@ -3,6 +3,7 @@
 
 #include <QMap>
 #include <QString>
+#include <QImage>
 
 class MetaDataHandler {
 public:
@@ -14,7 +15,7 @@ public:
 
     // Writes metadata to the image file at the given path
     // The metadata to write is given as a map where the keys are the metadata keys and the values are the metadata values
-    void writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata);
+void writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata, const QImage &image);
 };
 
 #endif // MetaDataHandler_H

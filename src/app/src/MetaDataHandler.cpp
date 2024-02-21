@@ -3,6 +3,7 @@
 #include <QImageWriter>
 #include <iostream>
 #include <QFile>
+#include <QImage>
 
 MetaDataHandler::MetaDataHandler() {
     // Constructor
@@ -19,8 +20,7 @@ QMap<QString, QString> MetaDataHandler::readMetadata(const QString &filePath) {
     return metadata;
 }
 
-void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata) {
-    QImage image(filePath);
+void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata, const QImage &image) {
     std::cout << "Writing metadata to file: " << filePath.toStdString() << std::endl;
 
     QFile file(filePath);
