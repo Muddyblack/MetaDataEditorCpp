@@ -1,25 +1,43 @@
-# Hello World# MetaDataEditor
+# <img src="./src/app/app.png" alt="Projekt Icon" width="30px" height="auto" style="vertical-align: -12%;"> Meta-Daten-Editor
+Kurze Beschreibung Ihres Projekts.
 
-## Description
+## Erste Schritte
 
-MetaDataEditor is a Qt application for editing image metadata.
+Um das Projekt lokal einzurichten, folgen Sie diesen Schritten:
 
-## Building
 
-To build this project, follow these steps:
+### Voraussetzungen
 
-1. Create a build directory: `mkdir build && cd build`
-2. Run CMake to generate the build files: `cmake ..`
-3. Build the project: `cmake --build .`
+Was sie installieren müssen und wie sie es installieren.
 
-## Usage
+### Installation
 
-After building the project, you can run the `MetaDataEditor.exe` executable in the `build` directory.
+Schritt-für-Schritt-Anleitung, die Ihnen zeigt, wie Sie eine Entwicklungsumgebung einrichten.
 
-## Contributing
+## DEV erste Schritte
 
-If you want to contribute to this project, please ...
+1. Installiere ``QT 6.6.2``: https://www.qt.io/blog/qt-6.6.2-released
+2. Klonen Sie das Repository.
+3. Navigieren Sie in das Projektverzeichnis.
+4. Editiere die Pfade für QT in der [CMakeLists.txt](./CMakeLists.txt)
+```sh
+set(CMAKE_PREFIX_PATH "pfad/zu/6.6.2/mingw_64")
+set(CMAKE_CXX_COMPILER "pfad/zu/Tools/mingw1120_64/bin/c++.exe")
+set(CMAKE_C_COMPILER "pfad/zu/Tools/mingw1120_64/bin/gcc.exe")
+```
+4. Wenn sie ``make`` besitzen: `make start` aus um das Projekt zu bauen.
 
-## License
+   -> Alternativ: `mkdir build && cd build && cmake .. && cmake .`
 
-This project is licensed under the ...
+## Erstellt mit
+
+* [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - Das CSS-Thema, das für die Dokumentation verwendet wurde
+-> Erstellen mit: `make gendoc`
+
+## Autoren
+
+* [Muddyblack](https://github.com/Muddyblack)
+
+## Lizenz
+
+Dieses Projekt ist unter der MIT-Lizenz lizenziert - siehe die Datei [LICENSE](LICENSE) für Details
