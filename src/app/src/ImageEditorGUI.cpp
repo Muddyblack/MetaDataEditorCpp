@@ -1,0 +1,301 @@
+#include <QIcon>
+#include <QFileInfo>
+#include <QHBoxLayout>
+#include <QDate>
+
+#include <QSettings>
+#include <QFileDialog>
+#include <QStringList>
+#include <QMap>
+#include <QDebug>
+#include <QFileInfo>
+#include <QMovie>
+#include <QPixmap>
+#include <QMessageBox>
+#include <iostream>
+
+
+#include <QLoggingCategory>
+
+Q_LOGGING_CATEGORY(imageEditor, "image.editor")
+
+#include <Styles.h>
+#include <ImageEditorGUI.h>
+#include <TagTextEdit.h>
+#include <TagWidget.h>
+#include <MetaDataHandler.h>
+
+extern QString ICON_PATH;
+extern QString DARKMODE_STYLE_PATH;
+extern QString LIGHTMODE_STYLE_PATH;
+
+QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tiff)";
+QString VIDEO_FORMATS = "Videos (*.mp4 *.avi *.mov *.wmv *.flv)";
+QString COMPANY = "Muddyblack";
+QString APP_NAME = "MetaDataEditor";
+
+
+ImageEditorGUI::ImageEditorGUI()
+{
+    setWindowIcon(QIcon(ICON_PATH));
+    InitUi();
+}
+
+void ImageEditorGUI::InitUi() {
+     // Create a label for the image
+        ImageLabel = new QLabel(this);
+        ImageLabel->setAlignment(Qt::AlignTop);
+
+        // Create Buttons
+        ModeSwitch = new QPushButton("Switch to Light Mode", this);
+        connect(ModeSwitch, &QPushButton::clicked, this, &ImageEditorGUI::SwitchMode);
+        AddButton = new QPushButton("Add Tag", this);
+        connect(AddButton, &QPushButton::clicked, this, &ImageEditorGUI::addTag);
+        addStandardButton = new QPushButton("Add Standard", this);
+        connect(addStandardButton, &QPushButton::clicked, this, &ImageEditorGUI::addStandardTag);
+        LoadButton = new QPushButton("Load File", this);
+        connect(LoadButton, &QPushButton::clicked, this, &ImageEditorGUI::LoadFile);
+        SaveButton = new QPushButton("Save File", this);
+        connect(SaveButton, &QPushButton::clicked, this, &ImageEditorGUI::saveFile);
+
+        // Add Buttons to the bottom of the layout
+        QHBoxLayout *ButtonLayout = new QHBoxLayout();
+        ButtonLayout->addWidget(ModeSwitch);
+        ButtonLayout->addWidget(AddButton);
+        ButtonLayout->addWidget(addStandardButton);
+        ButtonLayout->addWidget(LoadButton);
+        ButtonLayout->addWidget(SaveButton);
+        ButtonLayout->setSpacing(15);
+
+        // Create a ScrollArea
+        ScrollArea = new QScrollArea(this);
+        ScrollArea->setWidgetResizable(true);
+        ScrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+        // Create a widget for the ScrollArea
+        ScrollWidget = new QWidget();
+        ScrollArea->setWidget(ScrollWidget);
+
+        // Create a layout for the ScrollArea widget
+        ScrollLayout = new QVBoxLayout(ScrollWidget);
+        ScrollLayout->addWidget(ImageLabel);
+
+        // Add all to Mainlayout
+        QVBoxLayout *layout = new QVBoxLayout();
+        layout->addLayout(ButtonLayout);
+        layout->addWidget(ScrollArea);
+
+        // Start GUI
+        setLayout(layout);
+}
+
+
+void ImageEditorGUI::SwitchMode() {
+    if (ModeSwitch->text() == "Switch to Dark Mode") {
+        loadStyles(*qApp, DARKMODE_STYLE_PATH);
+        ModeSwitch->setText("Switch to Light Mode");
+    } else {
+        loadStyles(*qApp, LIGHTMODE_STYLE_PATH);
+        ModeSwitch->setText("Switch to Dark Mode");
+    }
+}
+
+void ImageEditorGUI::UpdateWindowTitle() {
+    if (imageLabel != nullptr) {
+        QFileInfo fileInfo(*imageLabel);
+        QString filename = fileInfo.fileName();
+        setWindowTitle(QString("MetaData Editor (%1)").arg(filename));
+    } else {
+        setWindowTitle("MetaData Editor");
+    }
+}
+
+void ImageEditorGUI::addTag() {
+    TagWidget *TagWidgetItem = new TagWidget();
+    TagWidgets.append(TagWidgetItem);
+    ScrollLayout->insertWidget(1, TagWidgetItem);
+}
+
+void ImageEditorGUI::addStandardTag() {
+    // Get the current date
+    QDate currentDate = QDate::currentDate();
+
+    // Create TagWidgets with standard values
+    TagWidget *tagWidget1 = new TagWidget("START", currentDate.toString("yyyy-MM-dd"));
+    QDate endDate = currentDate.addDays(7);
+    TagWidget *tagWidget2 = new TagWidget("ENDDATE", endDate.toString("yyyy-MM-dd"));
+    TagWidget *tagWidget3 = new TagWidget("DisplayTime", "10");
+
+    
+
+    // Append the new TagWidgets to the list
+    TagWidgets.append(tagWidget1);
+    TagWidgets.append(tagWidget2);
+    TagWidgets.append(tagWidget3);
+
+    // Insert the new TagWidgets at the beginning of the ScrollLayout
+    ScrollLayout->insertWidget(1, tagWidget1);
+    ScrollLayout->insertWidget(2, tagWidget2);
+    ScrollLayout->insertWidget(3, tagWidget3);
+}
+
+QString ImageEditorGUI::GetLastDir() {
+    // Get the last used directory from QSettings
+    QSettings settings("Company", "AppName");
+    return settings.value("LastDir", "").toString();
+}
+
+void ImageEditorGUI::SetLastDir(const QString &path) {
+    // Set the last used directory in QSettings
+    QSettings settings("Company", "AppName");
+    settings.setValue("LastDir", QFileInfo(path).path());
+}
+
+void ImageEditorGUI::LoadFile() {
+    try {
+        QFileDialog fileDialog(this);
+        fileDialog.setFileMode(QFileDialog::ExistingFile);
+        //fileDialog.setNameFilter(QString("%1;;%2").arg(IMAGE_FORMATS, VIDEO_FORMATS));
+
+        // Load the last directory from QSettings
+        QString lastDir = GetLastDir();
+        fileDialog.setDirectory(lastDir);
+
+        if (fileDialog.exec()) {
+            QStringList selectedFiles = fileDialog.selectedFiles();
+            qDebug() << "Selected files: " << selectedFiles;
+            if (!selectedFiles.isEmpty()) {
+                QString ImagePath = selectedFiles[0];
+                DisplayFile(ImagePath);
+
+                // Save the directory to QSettings
+                SetLastDir(ImagePath);
+                if (imageLabel == nullptr) {
+                    imageLabel = new QString();
+                }
+                *imageLabel = ImagePath;
+
+                for (auto &tagWidget : TagWidgets) {
+                    ScrollLayout->removeWidget(tagWidget);
+                    delete tagWidget;
+                }
+                TagWidgets.clear();
+
+                UpdateWindowTitle();
+
+                // adding tags
+                MetaDataHandler metadataHandler;
+                QMap<QString, QString> metaDatas = metadataHandler.readMetadata(ImagePath);
+                for (auto it = metaDatas.begin(); it != metaDatas.end(); ++it) {
+                    TagWidget *tagWidget = new TagWidget(it.key(), it.value());
+                    TagWidgets.append(tagWidget);
+
+                    ScrollLayout->addWidget(tagWidget);
+                }
+            }
+        }
+    } catch (const std::exception &error) {
+        qWarning() << error.what();
+    }
+}
+
+void ImageEditorGUI::saveFile() {
+    while (true) {
+        try {
+            if (imageLabel == nullptr || imageLabel->isEmpty()) {
+                break;
+            }
+
+            QString fileExtension = QFileInfo(*imageLabel).suffix().toLower();
+            QString fileFormat = VIDEO_FORMATS.contains(fileExtension) ? VIDEO_FORMATS : IMAGE_FORMATS;
+
+            QFileDialog fileDialog(this);
+            fileDialog.setAcceptMode(QFileDialog::AcceptSave);
+            fileDialog.setNameFilter(fileFormat);
+            fileDialog.setDefaultSuffix(fileExtension);
+            fileDialog.setDirectory(*imageLabel);
+
+            if (!fileDialog.exec()) {
+                break;
+            }
+
+            if (fileDialog.exec()) {
+                QString savePath = fileDialog.selectedFiles()[0];
+
+                QMap<QString, QString> metadata;
+                for (auto &widget : TagWidgets) {
+                    try {
+                        TagWidget *tagWidget = qobject_cast<TagWidget*>(widget);
+                        if (tagWidget) {
+                            QString tagName, tagValue;
+                            std::tie(tagName, tagValue) = tagWidget->getValues();
+                            metadata[tagName] = tagValue;
+                        }
+                    } catch (const std::exception &error) {
+                        qWarning() << error.what();
+                    }
+                }
+
+                MetaDataHandler metadataHandler;
+                metadataHandler.writeMetadata(savePath, metadata);
+                break;
+            }
+        } catch (const std::exception &error) {
+            QMessageBox msgBox;
+            msgBox.setIcon(QMessageBox::Critical);
+            msgBox.setText("Error");
+            msgBox.setInformativeText(QString("An error occurred: %1. Do you want to retry?").arg(error.what()));
+            msgBox.setWindowTitle("Error");
+            msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
+            int ret = msgBox.exec();
+            if (ret == QMessageBox::Cancel) {
+                break;
+            }
+        }
+    }
+}
+
+void ImageEditorGUI::DisplayFile(const QString &imagePath) {
+    qDebug() << "Displaying file: " << imagePath;
+    if (imagePath.toLower().endsWith(".gif")) {
+        Movie = new QMovie(imagePath);
+        Movie->setScaledSize(ScrollArea->size());
+        ImageLabel->setMovie(Movie);
+        Movie->start();
+    } else {
+        QString thumbnailPath = imagePath;
+        QString fileExtension = QFileInfo(imagePath).suffix().toLower();
+        if (VIDEO_FORMATS.toLower().contains(fileExtension)) {
+            qDebug() << "video";
+            // Video processing code goes here
+            // For example, using a library like FFmpeg to extract a frame and save it as an image
+            // thumbnailPath = TEMP_Thumbnail_PATH;
+        }
+
+        QPixmap pixmap(thumbnailPath);
+        pixmap = pixmap.scaled(ImageLabel->width(), height(), Qt::KeepAspectRatio);
+        ImageLabel->setPixmap(pixmap);
+    }
+}
+
+
+void ImageEditorGUI::resizeEvent(QResizeEvent *event) {
+    static QSize lastSize;  // Stores the size of the window the last time the image was resized
+
+    // Only resize the image if the size of the window has changed significantly
+    if (abs(lastSize.width() - width()) > 10 || abs(lastSize.height() - height()) > 10) {
+        lastSize = size();
+
+        if (imageLabel != nullptr && !imageLabel->isEmpty()) {
+            if (imageLabel->toLower().endsWith(".gif")) {
+                Movie->setScaledSize(ScrollArea->size());
+            } else {
+                QPixmap pixmap(*imageLabel);
+                pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
+                ImageLabel->setPixmap(pixmap);
+            }
+        }
+    }
+
+    QWidget::resizeEvent(event);
+}
