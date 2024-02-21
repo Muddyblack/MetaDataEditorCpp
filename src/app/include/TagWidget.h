@@ -14,6 +14,7 @@ public:
     
 public slots:
     void RemoveSelf();
+    void FocusNext();
 
 private:
     TagTextEdit *TagNameEdit;
