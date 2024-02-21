@@ -1,3 +1,25 @@
+# Ignore all build folders
+/build/
+/Debug/
+/Release/
+
+.vscode/
+
+# Ignore all .o and .a files
+*.o
+*.a
+
+# Ignore all files that end in ~
+*~
+
+# Ignore OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 # Prerequisites
 *.d
 
