@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>app.ico</file>
+        <file>styles/darkmode_style.qss</file>
+        <file>styles/lightmode_style.qss</file>
+    </qresource>
+</RCC>
