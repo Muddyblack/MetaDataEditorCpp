@@ -1,7 +1,22 @@
 <RCC>
     <qresource prefix="/">
-        <file>app.ico</file>
         <file>styles/darkmode_style.qss</file>
         <file>styles/lightmode_style.qss</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>resources/avi.png</file>
+        <file>resources/blend.png</file>
+        <file>resources/bmp.png</file>
+        <file>resources/flv.png</file>
+        <file>resources/gif.png</file>
+        <file>resources/jpeg.png</file>
+        <file>resources/jpg.png</file>
+        <file>resources/mov.png</file>
+        <file>resources/mp4.png</file>
+        <file>resources/png.png</file>
+        <file>resources/tif.png</file>
+        <file>resources/tiff.png</file>
+        <file>resources/wmv.png</file>
+        <file>app.ico</file>
     </qresource>
 </RCC>

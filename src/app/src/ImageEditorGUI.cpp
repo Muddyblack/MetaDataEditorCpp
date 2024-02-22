@@ -14,6 +14,8 @@
 #include <QMessageBox>
 #include <iostream>
 
+#include <QMediaPlayer>
+#include <QVideoWidget>
 
 #include <QLoggingCategory>
 
@@ -29,8 +31,9 @@ extern QString ICON_PATH;
 extern QString DARKMODE_STYLE_PATH;
 extern QString LIGHTMODE_STYLE_PATH;
 
-QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tif)";
+QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tif *.tiff *.blend)";
 QString VIDEO_FORMATS = "Videos (*.mp4 *.avi *.mov *.wmv *.flv)";
+QString AUDIO_FORMATS = "Audio (*.mp3)";
 QString COMPANY = "Muddyblack";
 QString APP_NAME = "MetaDataEditor";
 
@@ -114,6 +117,7 @@ void ImageEditorGUI::addTag() {
     TagWidget *TagWidgetItem = new TagWidget();
     TagWidgets.append(TagWidgetItem);
     ScrollLayout->insertWidget(1, TagWidgetItem);
+    connect(TagWidgetItem, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
 }
 
 void ImageEditorGUI::addStandardTag() {
@@ -126,7 +130,10 @@ void ImageEditorGUI::addStandardTag() {
     TagWidget *tagWidget2 = new TagWidget("ENDDATE", endDate.toString("yyyy-MM-dd"));
     TagWidget *tagWidget3 = new TagWidget("DisplayTime", "10");
 
-    
+    connect(tagWidget1, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
+    connect(tagWidget2, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
+    connect(tagWidget3, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
+
 
     // Append the new TagWidgets to the list
     TagWidgets.append(tagWidget1);
@@ -139,6 +146,13 @@ void ImageEditorGUI::addStandardTag() {
     ScrollLayout->insertWidget(3, tagWidget3);
 }
 
+
+void ImageEditorGUI::removeTagWidget() {
+    TagWidget *tagWidget = qobject_cast<TagWidget*>(sender());
+    if (tagWidget) {
+        TagWidgets.removeOne(tagWidget);
+    }
+}
 QString ImageEditorGUI::GetLastDir() {
     // Get the last used directory from QSettings
     QSettings settings("Company", "AppName");
@@ -189,6 +203,7 @@ void ImageEditorGUI::LoadFile() {
                 QMap<QString, QString> metaDatas = metadataHandler.readMetadata(ImagePath);
                 for (auto it = metaDatas.begin(); it != metaDatas.end(); ++it) {
                     TagWidget *tagWidget = new TagWidget(it.key(), it.value());
+                    connect(tagWidget, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
                     TagWidgets.append(tagWidget);
 
                     ScrollLayout->addWidget(tagWidget);
@@ -229,18 +244,14 @@ void ImageEditorGUI::saveFile() {
                 savePath += "." + fileExtension;
             }
 
-             
             QMap<QString, QString> metadata;
             for (auto &widget : TagWidgets) {
-                try {
-                    TagWidget *tagWidget = qobject_cast<TagWidget*>(widget);
-                    if (tagWidget) {
-                        QString tagName, tagValue;
-                        std::tie(tagName, tagValue) = tagWidget->getValues();
-                        metadata[tagName] = tagValue;
-                    }
-                } catch (const std::exception &error) {
-                    qWarning() << error.what();
+                std::cout << "widget: " << widget << std::endl;
+                TagWidget *tagWidget = qobject_cast<TagWidget*>(widget);
+                if (tagWidget) {
+                    QString tagName, tagValue;
+                    std::tie(tagName, tagValue) = tagWidget->getValues();
+                    metadata[tagName] = tagValue;
                 }
             }
             QImage originalImage(*imageLabel);
@@ -262,43 +273,58 @@ void ImageEditorGUI::saveFile() {
         }
     }
 }
+void ImageEditorGUI::DisplayFile(const QString &FilePath) {
+    QFileInfo fileInfo(FilePath);
+    QString fileExtension = fileInfo.suffix().toLower();
+    
+    try
+    {
+        if (VIDEO_FORMATS.contains(fileExtension)) {
+            // If the file is a video, use QMediaPlayer and QVideoWidget to display it
+            QMediaPlayer* player = new QMediaPlayer;
+            QVideoWidget* videoWidget = new QVideoWidget;
 
-void ImageEditorGUI::DisplayFile(const QString &imagePath) {
-    try {
-        qDebug() << "Displaying file: " << imagePath;
-        if (imagePath.toLower().endsWith(".gif")) {
-            Movie = new QMovie(imagePath);
-            Movie->setScaledSize(ScrollArea->size());
-            ImageLabel->setMovie(Movie);
-            Movie->start();
-        } else {
-            QString thumbnailPath = imagePath;
-            QString fileExtension = QFileInfo(imagePath).suffix().toLower();
-            if (VIDEO_FORMATS.toLower().contains(fileExtension)) {
-                qDebug() << "video";
-                // Video processing code goes here
-                // For example, using a library like FFmpeg to extract a frame and save it as an image
-                // thumbnailPath = TEMP_Thumbnail_PATH;
-            }
 
-            QImage image(thumbnailPath);
-            if (image.isNull()) {
-                qDebug() << "Failed to load image: " << thumbnailPath;
-                return;
-            }
+            player->setSource(QUrl(FilePath));
+            player->setVideoOutput(videoWidget);
 
-            QPixmap pixmap = QPixmap::fromImage(image);
-            pixmap = pixmap.scaled(ImageLabel->width(), height(), Qt::KeepAspectRatio);
-            ImageLabel->setPixmap(pixmap);
+            ScrollLayout->addWidget(videoWidget);
+            player->play();
+
+
         }
-    } catch (const std::exception &e) {
-        qDebug() << "Caught exception: " << e.what();
-    } catch (...) {
-        qDebug() << "Caught unknown exception";
+
+            
+        else {
+            QPixmap pixmap(FilePath);
+            if (!pixmap.isNull()) {
+                pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
+                ImageLabel->setPixmap(pixmap);
+            } else {
+                QString resourceImagePath = ":/resources/" + fileExtension + ".png";
+                if (QFile::exists(resourceImagePath)) {
+                    QPixmap pixmap(resourceImagePath);
+                    pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
+                    ImageLabel->setPixmap(pixmap);
+                } else {
+                    qDebug() << "Resource Image Path: " << resourceImagePath;
+                    if (QFile::exists(resourceImagePath)) {
+                        QPixmap resourcePixmap(resourceImagePath);
+                        resourcePixmap = resourcePixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
+                        ImageLabel->setPixmap(resourcePixmap);
+                    } else {
+                        // If no image is found in the resource folder, display "Cant Display anything for this file type."
+                        ImageLabel->setText("Cant Display anything for this file type.");
+                    }
+                }
+            }
+        }
+    }
+    catch(const std::exception& e)
+    {
+        std::cout << "error: " << e.what() << '\n';
     }
 }
-
-
 void ImageEditorGUI::resizeEvent(QResizeEvent *event) {
     static QSize lastSize;  // Stores the size of the window the last time the image was resized
 

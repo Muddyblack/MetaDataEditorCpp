@@ -4,6 +4,7 @@
 #include <QIcon>
 #include <QRect>
 
+
 #include <iostream>
 
 QString ICON_PATH = ":/app.ico";

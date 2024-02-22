@@ -22,6 +22,9 @@ private:
     TagTextEdit *TagValueEdit;
     QPushButton *RemoveButton;
     int TextFieldHeight;
+    
+signals:
+    void removeRequested();
 };
 
 #endif // TAGWIDGET_H

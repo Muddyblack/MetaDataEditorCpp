@@ -22,6 +22,7 @@ TagWidget::TagWidget(QString TagName, QString TagValue, int TextFieldHeight, QWi
     Layout->addWidget(TagNameEdit);
     Layout->addWidget(TagValueEdit);
     Layout->addWidget(RemoveButton);
+    RemoveButton->setObjectName("removeButton");
     Layout->setSpacing(10);
 
     setLayout(Layout);
@@ -55,5 +56,6 @@ void TagWidget::FocusPrevious() {
 
 void TagWidget::RemoveSelf() {
     qDebug() << "RemoveSelf called";
-    delete this;
+    emit removeRequested();
+    deleteLater();
 }

@@ -8,6 +8,8 @@
 #include <QScrollArea>
 #include <QVBoxLayout>
 
+#include <QVideoWidget>
+
 #include <TagTextEdit.h>
 #include <MetaDataHandler.h>
 
@@ -37,12 +39,12 @@ private:
     QScrollArea *ScrollArea;
     QWidget *ScrollWidget;
     QVBoxLayout *ScrollLayout;
+    QVBoxLayout *VideoLayout;
 
     void InitUi();
     void UpdateWindowTitle();
     QString extractThumbnail(const QString &videoPath);
-
-    
+    void removeTagWidget();    
 
 private slots:
     void SwitchMode();
@@ -52,7 +54,7 @@ private slots:
     void saveFile();
     QString GetLastDir();
     void SetLastDir(const QString& path);
-    void DisplayFile(const QString &imagePath);
+    void DisplayFile(const QString &FilePath);
 };
 
 
