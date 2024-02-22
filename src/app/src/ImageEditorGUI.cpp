@@ -36,6 +36,8 @@ extern QString LIGHTMODE_STYLE_PATH;
 QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tif *.tiff *.blend)";
 QString VIDEO_FORMATS = "Videos (*.mp4 *.avi *.mov *.wmv *.flv *.mkv *webm)";
 QString AUDIO_FORMATS = "Audio (*.mp3 *.wav *.flac *.ogg *.aac *.m4a)";
+QString DOCUMENT_FORMATS = "Documents (*.pdf *.doc *.docx *.odt *.txt *.rtf *.md)";
+
 QString ALL_FORMATS = QString("%1;;%2;;%3;;%4").arg(
     "All (*)",
     IMAGE_FORMATS,

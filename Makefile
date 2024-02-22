@@ -6,6 +6,9 @@ gendoc:
 	@cd documentation && doxygen Doxyfile
 	@make opendoc
 
+ressgen:
+	@cd resources && python run_ress_gen.py
+
 opendoc:
 ifeq ($(OS),Windows_NT)
 	@cd documentation && ".\doc_website\html\index.html"
