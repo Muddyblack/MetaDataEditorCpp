@@ -1,4 +1,4 @@
-# <img src="../../../src/app/app.png" alt="Project Icon" width="30px" height="auto" style="vertical-align: -12%;"> Meta-Data Editor
+# <img src="./src/app/app.png" alt="Project Icon" width="30px" height="auto" style="vertical-align: -12%;"> Meta-Data Editor
 
 <a href="./README.md"><img src="https://img.shields.io/badge/lang-en-red.svg" alt="English"></a>
 <a href="./README.de.md"><img src="https://img.shields.io/badge/lang-de-black.svg" alt="German"></a>
@@ -20,7 +20,7 @@ Step-by-step guide showing you how to set up a development environment.
 1. Install ``QT 6.6.2``: https://www.qt.io/blog/qt-6.6.2-released
 2. Clone the repository.
 3. Navigate to the project directory.
-4. Edit the paths for QT in the [CMakeLists.txt](../../../CMakeLists.txt)
+4. Edit the paths for QT in the [CMakeLists.txt](./CMakeLists.txt)
 ```sh
 set(CMAKE_PREFIX_PATH "path/to/QT/6.6.2/mingw_64")
 set(CMAKE_CXX_COMPILER "path/to/QT/Tools/mingw1120_64/bin/c++.exe")
@@ -40,4 +40,4 @@ set(CMAKE_C_COMPILER "path/to/QT/Tools/mingw1120_64/bin/gcc.exe")
 * [Muddyblack](https://github.com/Muddyblack)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](../../../LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
