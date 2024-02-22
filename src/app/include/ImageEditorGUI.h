@@ -1,17 +1,17 @@
 #ifndef IMAGE_EDITOR_GUI_H
 #define IMAGE_EDITOR_GUI_H
 
-#include <QWidget>
 #include <QLabel>
-#include <QString>
+#include <QMediaPlayer>
 #include <QPushButton>
 #include <QScrollArea>
+#include <QString>
 #include <QVBoxLayout>
-
 #include <QVideoWidget>
-#include <QMediaPlayer>
-#include <TagTextEdit.h>
+#include <QWidget>
+
 #include <MetaDataHandler.h>
+#include <TagTextEdit.h>
 
 
 #include <QTemporaryFile>

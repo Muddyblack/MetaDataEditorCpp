@@ -3,6 +3,10 @@
 
 #include <QString>
 
+/**
+ * @namespace AppConstants
+ * @brief A namespace for holding application-wide constants.
+ */
 namespace AppConstants {
     extern const QString ICON_PATH;
     extern const QString DARKMODE_STYLE_PATH;

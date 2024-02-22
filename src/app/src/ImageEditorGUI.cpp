@@ -1,33 +1,27 @@
-#include <QIcon>
-#include <QHBoxLayout>
+#include <QAudioOutput>
 #include <QDate>
-
-#include <QSettings>
-#include <QFileDialog>
-#include <QStringList>
-#include <QMap>
 #include <QDebug>
-#include <QFileInfo>
+#include <QFileDialog>
+#include <QHBoxLayout>
+#include <QIcon>
+#include <QImage>
+#include <QLoggingCategory>
+#include <QMap>
+#include <QMediaPlayer>
+#include <QMessageBox>
 #include <QMovie>
 #include <QPixmap>
-#include <QMessageBox>
-
-#include <QMediaPlayer>
-#include <QVideoWidget>
-#include <QAudioOutput>
-
-#include <QLoggingCategory>
+#include <QSettings>
 #include <QStandardPaths>
-#include <QImage>
-#include <QFile>
+#include <QStringList>
+#include <QVideoWidget>
 
-
-#include <Styles.h>
+#include <AppConstants.h>
 #include <ImageEditorGUI.h>
+#include <MetaDataHandler.h>
+#include <Styles.h>
 #include <TagTextEdit.h>
 #include <TagWidget.h>
-#include <MetaDataHandler.h>
-#include <AppConstants.h>
 
 
 QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg )"; //*.bmp *.gif *.tif *.tiff *.blend
@@ -358,7 +352,7 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
                     } else {
                         // If no image is found in the resource folder, display "Cant Display anything for this file type."
                         ImageLabel->setStyleSheet("QLabel { color : red; }");
-                        ImageLabel->setText("Currently can't display anything for this file type.");
+                        ImageLabel->setText("This file type is currently not supported.");
                     }
                 }
             }
