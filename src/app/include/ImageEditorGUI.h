@@ -23,7 +23,6 @@ public:
 
 
 protected:
-    void resizeEvent(QResizeEvent *event);
 
 private:
     QString *imageLabel;
@@ -37,9 +36,9 @@ private:
     QPushButton *LoadButton;
     QPushButton *SaveButton;
     QScrollArea *ScrollArea;
+    QVideoWidget *videoWidget;
     QWidget *ScrollWidget;
     QVBoxLayout *ScrollLayout;
-    QVBoxLayout *VideoLayout;
 
     void InitUi();
     void UpdateWindowTitle();

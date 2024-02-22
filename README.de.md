@@ -30,7 +30,7 @@ set(CMAKE_C_COMPILER "pfad/zu/QT/Tools/mingw1120_64/bin/gcc.exe")
 
    -> Alternativ: `mkdir build && cd build && cmake .. && cmake .`
 
-## Erstellt mit
+## Doku erstellt mit
 
 * [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - Das CSS-Thema, das für die Dokumentation verwendet wurde
 -> Erstellen mit: `make gendoc`

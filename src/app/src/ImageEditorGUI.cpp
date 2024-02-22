@@ -48,7 +48,13 @@ ImageEditorGUI::ImageEditorGUI()
 void ImageEditorGUI::InitUi() {
      // Create a label for the image
         ImageLabel = new QLabel(this);
-        ImageLabel->setAlignment(Qt::AlignTop);
+        ImageLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        ImageLabel->hide();
+
+        videoWidget = new QVideoWidget(this);
+        videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        videoWidget->hide();
+
 
         // Create Buttons
         ModeSwitch = new QPushButton("Switch to Light Mode", this);
@@ -82,6 +88,7 @@ void ImageEditorGUI::InitUi() {
 
         // Create a layout for the ScrollArea widget
         ScrollLayout = new QVBoxLayout(ScrollWidget);
+        ScrollLayout->addWidget(videoWidget);
         ScrollLayout->addWidget(ImageLabel);
 
         // Add all to Mainlayout
@@ -117,7 +124,7 @@ void ImageEditorGUI::UpdateWindowTitle() {
 void ImageEditorGUI::addTag() {
     TagWidget *TagWidgetItem = new TagWidget();
     TagWidgets.append(TagWidgetItem);
-    ScrollLayout->insertWidget(1, TagWidgetItem);
+    ScrollLayout->insertWidget(2, TagWidgetItem);
     connect(TagWidgetItem, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
 }
 
@@ -142,9 +149,9 @@ void ImageEditorGUI::addStandardTag() {
     TagWidgets.append(tagWidget3);
 
     // Insert the new TagWidgets at the beginning of the ScrollLayout
-    ScrollLayout->insertWidget(1, tagWidget1);
-    ScrollLayout->insertWidget(2, tagWidget2);
-    ScrollLayout->insertWidget(3, tagWidget3);
+    ScrollLayout->insertWidget(2, tagWidget1);
+    ScrollLayout->insertWidget(3, tagWidget2);
+    ScrollLayout->insertWidget(4, tagWidget3);
 }
 
 
@@ -276,26 +283,24 @@ void ImageEditorGUI::saveFile() {
 void ImageEditorGUI::DisplayFile(const QString &FilePath) {
     QFileInfo fileInfo(FilePath);
     QString fileExtension = fileInfo.suffix().toLower();
-    
+    ImageLabel->clear();
     try
     {
         if (VIDEO_FORMATS.contains(fileExtension)) {
             // If the file is a video, use QMediaPlayer and QVideoWidget to display it
             QMediaPlayer* player = new QMediaPlayer;
-            QVideoWidget* videoWidget = new QVideoWidget;
-
+            
+            ImageLabel->hide();
 
             player->setSource(QUrl(FilePath));
             player->setVideoOutput(videoWidget);
-
-            ScrollLayout->addWidget(videoWidget);
+            videoWidget->show();
             player->play();
-
-
         }
 
             
         else {
+            ImageLabel->show();
             QPixmap pixmap(FilePath);
             if (!pixmap.isNull()) {
                 pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
@@ -324,24 +329,4 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
     {
         std::cout << "error: " << e.what() << '\n';
     }
-}
-void ImageEditorGUI::resizeEvent(QResizeEvent *event) {
-    static QSize lastSize;  // Stores the size of the window the last time the image was resized
-
-    // Only resize the image if the size of the window has changed significantly
-    if (abs(lastSize.width() - width()) > 10 || abs(lastSize.height() - height()) > 10) {
-        lastSize = size();
-
-        if (imageLabel != nullptr && !imageLabel->isEmpty()) {
-            if (imageLabel->toLower().endsWith(".gif")) {
-                Movie->setScaledSize(ScrollArea->size());
-            } else {
-                QPixmap pixmap(*imageLabel);
-                pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
-                ImageLabel->setPixmap(pixmap);
-            }
-        }
-    }
-
-    QWidget::resizeEvent(event);
 }

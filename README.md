@@ -30,7 +30,7 @@ set(CMAKE_C_COMPILER "path/to/QT/Tools/mingw1120_64/bin/gcc.exe")
 
 -> Alternatively: ``mkdir build && cd build && cmake .. && cmake .``
 
-## Build With
+## Documentation build with
 
 * [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - The CSS theme used for documentation 
     * Generate with: ``make gendoc`` Requires python for updating readme paths

@@ -14,8 +14,8 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-find_package(QT NAMES Qt6 Qt5 COMPONENTS Widgets Multimedia MultimediaWidgets REQUIRED)  # Add MultimediaWidgets here
-find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Multimedia MultimediaWidgets REQUIRED)  # Add MultimediaWidgets here
+find_package(QT NAMES Qt6 COMPONENTS Widgets Multimedia MultimediaWidgets REQUIRED) 
+find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Multimedia MultimediaWidgets REQUIRED) 
 
 
 set(PROJECT_SOURCES
