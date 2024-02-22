@@ -19,6 +19,8 @@ start:
 
 	@cmake --build $(BIN_DIR) --config Release --target all -j 6 --
 
+	@$(BIN_DIR)/MetaDataEditor
+
 gendoc:
 	@cd documentation && python update_readme.py
 	@cd documentation && doxygen Doxyfile

@@ -25,6 +25,7 @@ set(PROJECT_SOURCES
         src/app/src/TagWidget.cpp
         src/app/src/TagTexEdit.cpp
         src/app/src/MetaDataHandler.cpp
+        src/app/src/AppConstants.cpp
 )
 
 set(PROJECT_HEADERS
@@ -33,6 +34,7 @@ set(PROJECT_HEADERS
         src/app/include/TagWidget.h
         src/app/include/TagTextEdit.h
         src/app/include/MetaDataHandler.h
+        src/app/include/AppConstants.h
 )
 
 set(PROJECT_RESOURCES

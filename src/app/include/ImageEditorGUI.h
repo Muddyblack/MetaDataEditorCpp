@@ -14,6 +14,8 @@
 #include <MetaDataHandler.h>
 
 
+#include <QTemporaryFile>
+
 class ImageEditorGUI : public QWidget
 {
     Q_OBJECT
@@ -25,10 +27,10 @@ public:
 protected:
 
 private:
-    QString *imageLabel;
+    QString *FileLabel;
     QList<QWidget*> TagWidgets;
     QMovie *Movie;
-
+    
     QLabel *ImageLabel;
     QPushButton *ModeSwitch;
     QPushButton *AddButton;
