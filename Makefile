@@ -4,6 +4,9 @@ start:
 gendoc:
 	@cd documentation && python update_readme.py
 	@cd documentation && doxygen Doxyfile
+	@make opendoc
+
+opendoc:
 ifeq ($(OS),Windows_NT)
 	@cd documentation && ".\doc_website\html\index.html"
 else
@@ -12,6 +15,6 @@ else
 		@cd documentation && xdg-open ./doc_website/html/index.html
 	endif
 	ifeq ($(UNAME_S),Darwin)
-	@cd documentation && open ./doc_website/html/index.html
+		@cd documentation && open ./doc_website/html/index.html
 	endif
 endif
