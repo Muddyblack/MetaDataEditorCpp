@@ -1,7 +1,6 @@
 #include <MetaDataHandler.h>
 #include <QImageReader>
 #include <QImageWriter>
-#include <iostream>
 #include <QFile>
 #include <QImage>
 
@@ -21,7 +20,7 @@ QMap<QString, QString> MetaDataHandler::readMetadata(const QString &filePath) {
 }
 
 void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata, const QImage &image) {
-    std::cout << "Writing metadata to file: " << filePath.toStdString() << std::endl;
+     qDebug() << "Writing metadata to file: " << filePath;
 
     QFile file(filePath);
     if (!file.exists()) {
@@ -38,7 +37,6 @@ void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString,
     }
 
     if (!writer.write(image)) {
-        std::cerr << "Error writing metadata to file" << std::endl;
-        // Handle error
+        qCritical() << "Error writing metadata to file";
     }
 }

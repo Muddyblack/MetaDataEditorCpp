@@ -12,7 +12,6 @@
 #include <QMovie>
 #include <QPixmap>
 #include <QMessageBox>
-#include <iostream>
 
 #include <QMediaPlayer>
 #include <QVideoWidget>
@@ -20,7 +19,6 @@
 
 #include <QLoggingCategory>
 
-Q_LOGGING_CATEGORY(imageEditor, "image.editor")
 
 #include <Styles.h>
 #include <ImageEditorGUI.h>
@@ -264,7 +262,7 @@ void ImageEditorGUI::saveFile() {
 
             QMap<QString, QString> metadata;
             for (auto &widget : TagWidgets) {
-                std::cout << "widget: " << widget << std::endl;
+                qDebug() << "widget: " << widget;
                 TagWidget *tagWidget = qobject_cast<TagWidget*>(widget);
                 if (tagWidget) {
                     QString tagName, tagValue;
@@ -343,6 +341,6 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
     }
     catch(const std::exception& e)
     {
-        std::cout << "error: " << e.what() << '\n';
+        qCritical() << "error: " << e.what();
     }
 }

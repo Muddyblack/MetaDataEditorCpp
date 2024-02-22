@@ -1,5 +1,23 @@
+# Compiler executables
+CC := gcc
+CXX := g++
+
+# Directories
+SRC_DIR := $(CURDIR)
+BIN_DIR := $(SRC_DIR)/build
+
+# Build targets and commands
 start:
-	@cmake -E make_directory build && cd build && cmake .. && cmake --build . --config Release && MetaDataEditor
+	@cmake --no-warn-unused-cli \
+	       -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
+	       -DCMAKE_BUILD_TYPE:STRING=Release \
+	       -DCMAKE_C_COMPILER:FILEPATH=$(CC) \
+	       -DCMAKE_CXX_COMPILER:FILEPATH=$(CXX) \
+	       -S$(SRC_DIR) \
+	       -B$(BIN_DIR) \
+	       -G "MinGW Makefiles"
+
+	@cmake --build $(BIN_DIR) --config Release --target all -j 6 --
 
 gendoc:
 	@cd documentation && python update_readme.py

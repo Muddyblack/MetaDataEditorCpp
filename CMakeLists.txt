@@ -82,9 +82,6 @@ if(${QT_VERSION} VERSION_LESS 6.1.0)
   set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.MetaDataEditor)
 endif()
 
-if(WIN32)
-    target_sources(MetaDataEditor PRIVATE app.rc)
-endif()
 set_target_properties(MetaDataEditor PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
