@@ -25,14 +25,22 @@
 var NAVTREE =
 [
   [ "MetaDataEditor", "index.html", [
-    [ "Hello World# MetaDataEditor", "index.html", "index" ],
+    [ "<img src=\"../../../src/app/app.png\" alt=\"Project Icon\" width=\"30px\" height=\"auto\" style=\"vertical-align: -12%;\"> Meta-Data Editor", "index.html", "index" ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ]
+      ] ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [

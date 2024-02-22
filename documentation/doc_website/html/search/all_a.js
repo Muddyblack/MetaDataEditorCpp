@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['readmetadata_1',['readMetadata',['../class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a',1,'MetaDataHandler']]],
-  ['removeself_2',['RemoveSelf',['../class_tag_widget.html#a9da08f5e5c402c0eb8808176a2f1203c',1,'TagWidget']]],
-  ['resizeevent_3',['resizeEvent',['../class_image_editor_g_u_i.html#a590d7935e6c9feb6222daab50a049c8b',1,'ImageEditorGUI']]]
+  ['lightmode_5fstyle_5fpath_0',['LIGHTMODE_STYLE_PATH',['../main_8cpp.html#a9228062a9ea4b2f4d35ba7a71e0d9c1a',1,'LIGHTMODE_STYLE_PATH:&#160;main.cpp'],['../_image_editor_g_u_i_8cpp.html#a9228062a9ea4b2f4d35ba7a71e0d9c1a',1,'LIGHTMODE_STYLE_PATH:&#160;main.cpp']]],
+  ['loadstyles_1',['loadStyles',['../_styles_8h.html#af792801f7db80364be5a016d633a1c22',1,'loadStyles(QApplication &amp;App, const QString &amp;StylePath):&#160;Styles.cpp'],['../_styles_8cpp.html#af792801f7db80364be5a016d633a1c22',1,'loadStyles(QApplication &amp;App, const QString &amp;StylePath):&#160;Styles.cpp']]]
 ];

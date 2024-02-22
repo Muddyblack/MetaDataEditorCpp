@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_0',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['metadatahandler_1',['MetaDataHandler',['../class_meta_data_handler.html#ae2bb5cc530429dd9d79d358dd92dc136',1,'MetaDataHandler']]]
+  ['loadstyles_0',['loadStyles',['../_styles_8h.html#af792801f7db80364be5a016d633a1c22',1,'loadStyles(QApplication &amp;App, const QString &amp;StylePath):&#160;Styles.cpp'],['../_styles_8cpp.html#af792801f7db80364be5a016d633a1c22',1,'loadStyles(QApplication &amp;App, const QString &amp;StylePath):&#160;Styles.cpp']]]
 ];

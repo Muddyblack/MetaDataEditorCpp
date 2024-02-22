@@ -1,8 +1,11 @@
 var index =
 [
-    [ "Description", "index.html#autotoc_md1", null ],
-    [ "Building", "index.html#autotoc_md2", null ],
-    [ "Usage", "index.html#autotoc_md3", null ],
-    [ "Contributing", "index.html#autotoc_md4", null ],
-    [ "License", "index.html#autotoc_md5", null ]
+    [ "Getting Started", "index.html#autotoc_md1", [
+      [ "Prerequisites", "index.html#autotoc_md2", null ],
+      [ "Installation", "index.html#autotoc_md3", null ]
+    ] ],
+    [ "DEV Getting Started", "index.html#autotoc_md4", null ],
+    [ "Build With", "index.html#autotoc_md5", null ],
+    [ "Authors", "index.html#autotoc_md6", null ],
+    [ "License", "index.html#autotoc_md7", null ]
 ];

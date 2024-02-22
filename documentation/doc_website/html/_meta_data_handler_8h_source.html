@@ -44,7 +44,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr>
-  <td id="projectlogo"><a href="https://github.com/Muddyblack/GenTxtSrcCode"><img alt="Logo" src="favicon.ico"/></a></td>
+  <td id="projectlogo"><a href="https://github.com/Muddyblack/MetaDataEditorCpp"><img alt="Logo" src="favicon.ico"/></a></td>
  </tr>
  </tbody>
 </table>
@@ -114,25 +114,26 @@ $(document).ready(function(){initNavTree('_meta_data_handler_8h_source.html','')
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QMap&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_meta_data_handler.html">    7</a></span><span class="keyword">class </span><a class="code hl_class" href="class_meta_data_handler.html">MetaDataHandler</a> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <a class="code hl_function" href="class_meta_data_handler.html#ae2bb5cc530429dd9d79d358dd92dc136">MetaDataHandler</a>();</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="comment">// Reads metadata from the image file at the given path</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// Returns a map where the keys are the metadata keys and the values are the metadata values</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    QMap&lt;QString, QString&gt; <a class="code hl_function" href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a">readMetadata</a>(<span class="keyword">const</span> QString &amp;filePath);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="comment">// Writes metadata to the image file at the given path</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// The metadata to write is given as a map where the keys are the metadata keys and the values are the metadata values</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_meta_data_handler.html#ab83e9b0d8069c1019e5a21b8dafaa2bf">writeMetadata</a>(<span class="keyword">const</span> QString &amp;filePath, <span class="keyword">const</span> QMap&lt;QString, QString&gt; &amp;metadata);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif </span><span class="comment">// MetaDataHandler_H</span></div>
-<div class="ttc" id="aclass_meta_data_handler_html"><div class="ttname"><a href="class_meta_data_handler.html">MetaDataHandler</a></div><div class="ttdef"><b>Definition</b> MetaDataHandler.h:7</div></div>
-<div class="ttc" id="aclass_meta_data_handler_html_a0f0c872ecd4e6b41bfcd746032152d2a"><div class="ttname"><a href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a">MetaDataHandler::readMetadata</a></div><div class="ttdeci">QMap&lt; QString, QString &gt; readMetadata(const QString &amp;filePath)</div><div class="ttdef"><b>Definition</b> MetaDataHandler.cpp:11</div></div>
-<div class="ttc" id="aclass_meta_data_handler_html_ab83e9b0d8069c1019e5a21b8dafaa2bf"><div class="ttname"><a href="class_meta_data_handler.html#ab83e9b0d8069c1019e5a21b8dafaa2bf">MetaDataHandler::writeMetadata</a></div><div class="ttdeci">void writeMetadata(const QString &amp;filePath, const QMap&lt; QString, QString &gt; &amp;metadata)</div><div class="ttdef"><b>Definition</b> MetaDataHandler.cpp:22</div></div>
-<div class="ttc" id="aclass_meta_data_handler_html_ae2bb5cc530429dd9d79d358dd92dc136"><div class="ttname"><a href="class_meta_data_handler.html#ae2bb5cc530429dd9d79d358dd92dc136">MetaDataHandler::MetaDataHandler</a></div><div class="ttdeci">MetaDataHandler()</div><div class="ttdef"><b>Definition</b> MetaDataHandler.cpp:7</div></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QImage&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="class_meta_data_handler.html">    8</a></span><span class="keyword">class </span><a class="code hl_class" href="class_meta_data_handler.html">MetaDataHandler</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <a class="code hl_function" href="class_meta_data_handler.html#ae2bb5cc530429dd9d79d358dd92dc136">MetaDataHandler</a>();</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// Reads metadata from the image file at the given path</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">// Returns a map where the keys are the metadata keys and the values are the metadata values</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    QMap&lt;QString, QString&gt; <a class="code hl_function" href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a">readMetadata</a>(<span class="keyword">const</span> QString &amp;filePath);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// Writes metadata to the image file at the given path</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// The metadata to write is given as a map where the keys are the metadata keys and the values are the metadata values</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">void</span> <a class="code hl_function" href="class_meta_data_handler.html#a2b7d9efa2971c1e5722b53736326f693">writeMetadata</a>(<span class="keyword">const</span> QString &amp;filePath, <span class="keyword">const</span> QMap&lt;QString, QString&gt; &amp;metadata, <span class="keyword">const</span> QImage &amp;image);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif </span><span class="comment">// MetaDataHandler_H</span></div>
+<div class="ttc" id="aclass_meta_data_handler_html"><div class="ttname"><a href="class_meta_data_handler.html">MetaDataHandler</a></div><div class="ttdef"><b>Definition</b> MetaDataHandler.h:8</div></div>
+<div class="ttc" id="aclass_meta_data_handler_html_a0f0c872ecd4e6b41bfcd746032152d2a"><div class="ttname"><a href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a">MetaDataHandler::readMetadata</a></div><div class="ttdeci">QMap&lt; QString, QString &gt; readMetadata(const QString &amp;filePath)</div><div class="ttdef"><b>Definition</b> MetaDataHandler.cpp:12</div></div>
+<div class="ttc" id="aclass_meta_data_handler_html_a2b7d9efa2971c1e5722b53736326f693"><div class="ttname"><a href="class_meta_data_handler.html#a2b7d9efa2971c1e5722b53736326f693">MetaDataHandler::writeMetadata</a></div><div class="ttdeci">void writeMetadata(const QString &amp;filePath, const QMap&lt; QString, QString &gt; &amp;metadata, const QImage &amp;image)</div><div class="ttdef"><b>Definition</b> MetaDataHandler.cpp:23</div></div>
+<div class="ttc" id="aclass_meta_data_handler_html_ae2bb5cc530429dd9d79d358dd92dc136"><div class="ttname"><a href="class_meta_data_handler.html#ae2bb5cc530429dd9d79d358dd92dc136">MetaDataHandler::MetaDataHandler</a></div><div class="ttdeci">MetaDataHandler()</div><div class="ttdef"><b>Definition</b> MetaDataHandler.cpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

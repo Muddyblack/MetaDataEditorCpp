@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>MetaDataEditor: Hello World# MetaDataEditor</title>
+<title>MetaDataEditor: &lt;img src=&quot;../../../src/app/app.png&quot; alt=&quot;Project Icon&quot; width=&quot;30px&quot; height=&quot;auto&quot; style=&quot;vertical-align: -12%;&quot;&gt; Meta-Data Editor</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <!-- <link rel="icon" type="image/svg+xml" href="logo.drawio.svg"/> -->
 <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon" />
@@ -44,7 +44,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr>
-  <td id="projectlogo"><a href="https://github.com/Muddyblack/GenTxtSrcCode"><img alt="Logo" src="favicon.ico"/></a></td>
+  <td id="projectlogo"><a href="https://github.com/Muddyblack/MetaDataEditorCpp"><img alt="Logo" src="favicon.ico"/></a></td>
  </tr>
  </tbody>
 </table>
@@ -106,30 +106,48 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">Hello World# MetaDataEditor </div></div>
+  <div class="headertitle"><div class="title"><img src="../../../src/app/app.png" alt="Project Icon" width="30px" height="auto" style="vertical-align: -12%;" class="inline"/> Meta-Data Editor </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__c_1_2_users_2_muddyblack_2_downloads_2_meta_data_editor_cpp_2_r_e_a_d_m_e"></a> </p>
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a> <a href="../../../README.md"><img src="https://img.shields.io/badge/lang-en-red.svg" alt="English" style="pointer-events: none;" class="inline"/></a> <a href="../../../README.de.md"><img src="https://img.shields.io/badge/lang-de-black.svg" alt="German" style="pointer-events: none;" class="inline"/></a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Description</h1>
-<p>MetaDataEditor is a Qt application for editing image metadata.</p>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Building</h1>
-<p>To build this project, follow these steps:</p>
-<ol type="1">
-<li>Create a build directory: <code>mkdir build &amp;&amp; cd build</code></li>
-<li>Run CMake to generate the build files: <code>cmake ..</code></li>
-<li>Build the project: <code>cmake --build .</code></li>
-</ol>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Usage</h1>
-<p>After building the project, you can run the <code>MetaDataEditor.exe</code> executable in the <code>build</code> directory.</p>
+Getting Started</h1>
+<p>To set up the project locally, follow these steps:</p>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Prerequisites</h2>
+<p>What you need to install and how to install it.</p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+Installation</h2>
+<p>Step-by-step guide showing you how to set up a development environment.</p>
 <h1><a class="anchor" id="autotoc_md4"></a>
-Contributing</h1>
-<p>If you want to contribute to this project, please ...</p>
+DEV Getting Started</h1>
+<ol type="1">
+<li>Install <code>QT 6.6.2</code>: <a href="https://www.qt.io/blog/qt-6.6.2-released">https://www.qt.io/blog/qt-6.6.2-released</a></li>
+<li>Clone the repository.</li>
+<li>Navigate to the project directory.</li>
+<li>Edit the paths for QT in the <a href="../../../CMakeLists.txt">CMakeLists.txt</a> <div class="fragment"><div class="line">set(CMAKE_PREFIX_PATH &quot;path/to/QT/6.6.2/mingw_64&quot;)</div>
+<div class="line">set(CMAKE_CXX_COMPILER &quot;path/to/QT/Tools/mingw1120_64/bin/c++.exe&quot;)</div>
+<div class="line">set(CMAKE_C_COMPILER &quot;path/to/QT/Tools/mingw1120_64/bin/gcc.exe&quot;)</div>
+</div><!-- fragment --></li>
+<li>If you have <code>make</code>: run <code>make start</code> to build the project.</li>
+</ol>
+<p>-&gt; Alternatively: <code>mkdir build &amp;&amp; cd build &amp;&amp; cmake .. &amp;&amp; cmake .</code></p>
 <h1><a class="anchor" id="autotoc_md5"></a>
+Build With</h1>
+<ul>
+<li><a href="https://jothepro.github.io/doxygen-awesome-css/">Doxygen Awesome CSS</a> - The CSS theme used for documentation<ul>
+<li>Generate with: <code>make gendoc</code> Requires python for updating readme paths</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Authors</h1>
+<ul>
+<li><a href="https://github.com/Muddyblack">Muddyblack</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md7"></a>
 License</h1>
-<p>This project is licensed under the ... </p>
+<p>This project is licensed under the MIT License - see the <a href="../../../LICENSE">LICENSE</a> file for details </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

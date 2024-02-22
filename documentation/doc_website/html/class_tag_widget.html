@@ -44,7 +44,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr>
-  <td id="projectlogo"><a href="https://github.com/Muddyblack/GenTxtSrcCode"><img alt="Logo" src="favicon.ico"/></a></td>
+  <td id="projectlogo"><a href="https://github.com/Muddyblack/MetaDataEditorCpp"><img alt="Logo" src="favicon.ico"/></a></td>
  </tr>
  </tbody>
 </table>
@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('class_tag_widget.html',''); initResiza
 <div class="header">
   <div class="summary">
 <a href="#pub-slots">Public Slots</a> &#124;
+<a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_tag_widget-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">TagWidget Class Reference</div></div>
@@ -125,6 +126,15 @@ Inheritance diagram for TagWidget:</div>
 Public Slots</h2></td></tr>
 <tr class="memitem:a9da08f5e5c402c0eb8808176a2f1203c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a9da08f5e5c402c0eb8808176a2f1203c">RemoveSelf</a> ()</td></tr>
 <tr class="separator:a9da08f5e5c402c0eb8808176a2f1203c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27331a77b6027795926ba7607936fa9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a27331a77b6027795926ba7607936fa9e">FocusNext</a> ()</td></tr>
+<tr class="separator:a27331a77b6027795926ba7607936fa9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab487fa6dd4a18067d509be64b5434685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#ab487fa6dd4a18067d509be64b5434685">FocusPrevious</a> ()</td></tr>
+<tr class="separator:ab487fa6dd4a18067d509be64b5434685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
+Signals</h2></td></tr>
+<tr class="memitem:a0dc7bd2438fdbd01d50253b11268cf47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a0dc7bd2438fdbd01d50253b11268cf47">removeRequested</a> ()</td></tr>
+<tr class="separator:a0dc7bd2438fdbd01d50253b11268cf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -139,6 +149,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">TagWidget::TagWidget </td>
@@ -170,11 +183,66 @@ Public Member Functions</h2></td></tr>
           <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a27331a77b6027795926ba7607936fa9e" name="a27331a77b6027795926ba7607936fa9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27331a77b6027795926ba7607936fa9e">&#9670;&#160;</a></span>FocusNext</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TagWidget::FocusNext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab487fa6dd4a18067d509be64b5434685" name="ab487fa6dd4a18067d509be64b5434685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab487fa6dd4a18067d509be64b5434685">&#9670;&#160;</a></span>FocusPrevious</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TagWidget::FocusPrevious </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="afe6c02bb8e709b6568cf05ea344b3ba8" name="afe6c02bb8e709b6568cf05ea344b3ba8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe6c02bb8e709b6568cf05ea344b3ba8">&#9670;&#160;</a></span>getValues()</h2>
 
@@ -188,6 +256,31 @@ Public Member Functions</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0dc7bd2438fdbd01d50253b11268cf47" name="a0dc7bd2438fdbd01d50253b11268cf47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc7bd2438fdbd01d50253b11268cf47">&#9670;&#160;</a></span>removeRequested</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TagWidget::removeRequested </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

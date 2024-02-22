@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['tagtextedit_0',['TagTextEdit',['../class_tag_text_edit.html',1,'']]],
-  ['tagwidget_1',['TagWidget',['../class_tag_widget.html',1,'']]]
+  ['qrcgenerator_0',['QrcGenerator',['../classresources__gen_1_1_qrc_generator.html',1,'resources_gen']]]
 ];
