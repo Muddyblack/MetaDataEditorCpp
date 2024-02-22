@@ -1,6 +1,7 @@
 #include <TagWidget.h>
 #include <QPushButton>
 #include <QHBoxLayout>
+#include <QApplication>
 
 TagWidget::TagWidget(QString TagName, QString TagValue, int TextFieldHeight, QWidget *Parent)
     : QWidget(Parent), TextFieldHeight(TextFieldHeight) {
@@ -32,8 +33,8 @@ TagWidget::TagWidget(QString TagName, QString TagValue, int TextFieldHeight, QWi
 
     connect(TagNameEdit, &TagTextEdit::TabPressed, this, &TagWidget::FocusNext);
     connect(TagValueEdit, &TagTextEdit::TabPressed, this, &TagWidget::FocusNext);
-    connect(TagNameEdit, &TagTextEdit::ShiftTabPressed, this, &TagWidget::FocusPrevious);
-    connect(TagValueEdit, &TagTextEdit::ShiftTabPressed, this, &TagWidget::FocusPrevious);
+    connect(TagNameEdit, &TagTextEdit::CtrlTabPressed, this, &TagWidget::FocusPrevious);
+    connect(TagValueEdit, &TagTextEdit::CtrlTabPressed, this, &TagWidget::FocusPrevious);
 }
 
 std::pair<QString, QString> TagWidget::getValues() const {
@@ -49,9 +50,12 @@ void TagWidget::FocusNext() {
 }
 
 void TagWidget::FocusPrevious() {
-    // This slot will be called when the ShiftTabPressed signal is emitted
+    // This slot will be called when the CtrlTabPressed signal is emitted
     // Here you can implement the logic to switch focus to the previous widget
-    QWidget::focusPreviousChild();
+    QWidget *currentWidget = QApplication::focusWidget();
+    if (dynamic_cast<TagTextEdit*>(currentWidget)) {
+        QWidget::focusPreviousChild();
+    }
 }
 
 void TagWidget::RemoveSelf() {
