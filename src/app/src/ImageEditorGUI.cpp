@@ -34,6 +34,7 @@ extern QString LIGHTMODE_STYLE_PATH;
 QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tif *.tiff *.blend)";
 QString VIDEO_FORMATS = "Videos (*.mp4 *.avi *.mov *.wmv *.flv)";
 QString AUDIO_FORMATS = "Audio (*.mp3)";
+QString ALL_FORMATS = QString("%1;;%2;;%3").arg(IMAGE_FORMATS, VIDEO_FORMATS, AUDIO_FORMATS);
 QString COMPANY = "Muddyblack";
 QString APP_NAME = "MetaDataEditor";
 
@@ -169,7 +170,7 @@ void ImageEditorGUI::LoadFile() {
     try {
         QFileDialog fileDialog(this);
         fileDialog.setFileMode(QFileDialog::ExistingFile);
-        fileDialog.setNameFilter(QString("%1;;%2;;%3").arg("All (*)", IMAGE_FORMATS, VIDEO_FORMATS));
+        fileDialog.setNameFilter(ALL_FORMATS);
 
         // Load the last directory from QSettings
         QString lastDir = GetLastDir();
@@ -223,11 +224,10 @@ void ImageEditorGUI::saveFile() {
             }
 
             QString fileExtension = QFileInfo(*imageLabel).suffix().toLower();
-            QString fileFormat = VIDEO_FORMATS.contains(fileExtension) ? VIDEO_FORMATS : IMAGE_FORMATS;
 
             QFileDialog fileDialog(this);
             fileDialog.setAcceptMode(QFileDialog::AcceptSave);
-            fileDialog.setNameFilter(fileFormat);
+            fileDialog.setNameFilter(ALL_FORMATS);
             fileDialog.setDefaultSuffix(fileExtension);
             fileDialog.setDirectory(*imageLabel);
 
@@ -314,7 +314,7 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
                         ImageLabel->setPixmap(resourcePixmap);
                     } else {
                         // If no image is found in the resource folder, display "Cant Display anything for this file type."
-                        ImageLabel->setText("Cant Display anything for this file type.");
+                        ImageLabel->setText("Currently can't display anything for this file type.");
                     }
                 }
             }
