@@ -115,6 +115,9 @@ $(document).ready(function(){initNavTree('class_tag_text_edit.html',''); initRes
 </div><!--header-->
 <div class="contents">
 
+<p>A custom QTextEdit that emits signals when Tab or Shift+Tab are pressed.  
+ <a href="class_tag_text_edit.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_tag_text_edit_8h_source.html">TagTextEdit.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TagTextEdit:</div>
@@ -125,25 +128,34 @@ Inheritance diagram for TagTextEdit:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a0dd4d525d5e6567d93680be57b8b8107"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_text_edit.html#a0dd4d525d5e6567d93680be57b8b8107">TabPressed</a> ()</td></tr>
+<tr class="memdesc:a0dd4d525d5e6567d93680be57b8b8107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is emitted when the Tab key is pressed.  <br /></td></tr>
 <tr class="separator:a0dd4d525d5e6567d93680be57b8b8107"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9423bcca606f83b0a701d78dc4f35152"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_text_edit.html#a9423bcca606f83b0a701d78dc4f35152">CtrlTabPressed</a> ()</td></tr>
-<tr class="separator:a9423bcca606f83b0a701d78dc4f35152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b8e3e970764ff74b14daf4c5b30215e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_text_edit.html#a0b8e3e970764ff74b14daf4c5b30215e">CtrlTabPressed</a> ()</td></tr>
+<tr class="memdesc:a0b8e3e970764ff74b14daf4c5b30215e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is emitted when Shift+Tab is pressed.  <br /></td></tr>
+<tr class="separator:a0b8e3e970764ff74b14daf4c5b30215e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1939633efb3d732cdf710f55896a73f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_text_edit.html#a1939633efb3d732cdf710f55896a73f0">TagTextEdit</a> (QWidget *Parent=nullptr)</td></tr>
+<tr class="memdesc:a1939633efb3d732cdf710f55896a73f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="class_tag_text_edit.html" title="A custom QTextEdit that emits signals when Tab or Shift+Tab are pressed.">TagTextEdit</a> object.  <br /></td></tr>
 <tr class="separator:a1939633efb3d732cdf710f55896a73f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a8e0b4edd388bf53a7871c72bdc49bc49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_text_edit.html#a8e0b4edd388bf53a7871c72bdc49bc49">focusNextPrevChild</a> (bool next) override</td></tr>
+<tr class="memdesc:a8e0b4edd388bf53a7871c72bdc49bc49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the default behavior when the focus is moved to the next or previous child widget.  <br /></td></tr>
 <tr class="separator:a8e0b4edd388bf53a7871c72bdc49bc49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa34b43f00d8668351671450bf088726e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_text_edit.html#aa34b43f00d8668351671450bf088726e">keyPressEvent</a> (QKeyEvent *Event) override</td></tr>
+<tr class="memdesc:aa34b43f00d8668351671450bf088726e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the default key press event to emit signals when Tab or Shift+Tab are pressed.  <br /></td></tr>
 <tr class="separator:aa34b43f00d8668351671450bf088726e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3dd302433f91bcd07b314337091cd89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_text_edit.html#ad3dd302433f91bcd07b314337091cd89">focusInEvent</a> (QFocusEvent *Event) override</td></tr>
+<tr class="memdesc:ad3dd302433f91bcd07b314337091cd89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Override the default focus in event to select all text when the widget gains focus.  <br /></td></tr>
 <tr class="separator:ad3dd302433f91bcd07b314337091cd89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A custom QTextEdit that emits signals when Tab or Shift+Tab are pressed. </p>
+<p>This class provides a QTextEdit that can signal when the user presses Tab or Shift+Tab. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1939633efb3d732cdf710f55896a73f0" name="a1939633efb3d732cdf710f55896a73f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1939633efb3d732cdf710f55896a73f0">&#9670;&#160;</a></span>TagTextEdit()</h2>
 
@@ -160,9 +172,44 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Construct a new <a class="el" href="class_tag_text_edit.html" title="A custom QTextEdit that emits signals when Tab or Shift+Tab are pressed.">TagTextEdit</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Parent</td><td>The parent widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a0b8e3e970764ff74b14daf4c5b30215e" name="a0b8e3e970764ff74b14daf4c5b30215e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b8e3e970764ff74b14daf4c5b30215e">&#9670;&#160;</a></span>CtrlTabPressed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TagTextEdit::CtrlTabPressed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Signal that is emitted when Shift+Tab is pressed. </p>
+
+</div>
+</div>
 <a id="ad3dd302433f91bcd07b314337091cd89" name="ad3dd302433f91bcd07b314337091cd89"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3dd302433f91bcd07b314337091cd89">&#9670;&#160;</a></span>focusInEvent()</h2>
 
@@ -186,6 +233,14 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Override the default focus in event to select all text when the widget gains focus. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Event</td><td>The focus event. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -213,6 +268,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Override the default behavior when the focus is moved to the next or previous child widget. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">next</td><td>If true, move focus to the next child; if false, do nothing. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the focus was moved; false otherwise. </dd></dl>
+
 </div>
 </div>
 <a id="aa34b43f00d8668351671450bf088726e" name="aa34b43f00d8668351671450bf088726e"></a>
@@ -239,30 +303,13 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a9423bcca606f83b0a701d78dc4f35152" name="a9423bcca606f83b0a701d78dc4f35152"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9423bcca606f83b0a701d78dc4f35152">&#9670;&#160;</a></span>CtrlTabPressed</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TagTextEdit::CtrlTabPressed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
+<p>Override the default key press event to emit signals when Tab or Shift+Tab are pressed. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Event</td><td>The key event. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -288,6 +335,8 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Signal that is emitted when the Tab key is pressed. </p>
 
 </div>
 </div>

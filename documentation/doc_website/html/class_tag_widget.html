@@ -115,6 +115,9 @@ $(document).ready(function(){initNavTree('class_tag_widget.html',''); initResiza
 </div><!--header-->
 <div class="contents">
 
+<p>A widget for displaying and editing tags.  
+ <a href="class_tag_widget.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_tag_widget_8h_source.html">TagWidget.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for TagWidget:</div>
@@ -125,25 +128,34 @@ Inheritance diagram for TagWidget:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
 <tr class="memitem:a9da08f5e5c402c0eb8808176a2f1203c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a9da08f5e5c402c0eb8808176a2f1203c">RemoveSelf</a> ()</td></tr>
+<tr class="memdesc:a9da08f5e5c402c0eb8808176a2f1203c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove this widget.  <br /></td></tr>
 <tr class="separator:a9da08f5e5c402c0eb8808176a2f1203c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27331a77b6027795926ba7607936fa9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a27331a77b6027795926ba7607936fa9e">FocusNext</a> ()</td></tr>
+<tr class="memdesc:a27331a77b6027795926ba7607936fa9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Focus the next widget using tab.  <br /></td></tr>
 <tr class="separator:a27331a77b6027795926ba7607936fa9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab487fa6dd4a18067d509be64b5434685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#ab487fa6dd4a18067d509be64b5434685">FocusPrevious</a> ()</td></tr>
+<tr class="memdesc:ab487fa6dd4a18067d509be64b5434685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Focus the previous widget using shift+tab.  <br /></td></tr>
 <tr class="separator:ab487fa6dd4a18067d509be64b5434685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a0dc7bd2438fdbd01d50253b11268cf47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a0dc7bd2438fdbd01d50253b11268cf47">removeRequested</a> ()</td></tr>
+<tr class="memdesc:a0dc7bd2438fdbd01d50253b11268cf47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signal that is emitted when the widget is requested to be removed.  <br /></td></tr>
 <tr class="separator:a0dc7bd2438fdbd01d50253b11268cf47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a16fcbf974dd6265776d55a9f60deb4c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a16fcbf974dd6265776d55a9f60deb4c6">TagWidget</a> (QString TagName=&quot;&quot;, QString TagValue=&quot;&quot;, int TextFieldHeight=50, QWidget *Parent=nullptr)</td></tr>
+<tr class="memdesc:a16fcbf974dd6265776d55a9f60deb4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Tag Widget object.  <br /></td></tr>
 <tr class="separator:a16fcbf974dd6265776d55a9f60deb4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe6c02bb8e709b6568cf05ea344b3ba8"><td class="memItemLeft" align="right" valign="top">std::pair&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#afe6c02bb8e709b6568cf05ea344b3ba8">getValues</a> () const</td></tr>
+<tr class="memdesc:afe6c02bb8e709b6568cf05ea344b3ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current tag name and value.  <br /></td></tr>
 <tr class="separator:afe6c02bb8e709b6568cf05ea344b3ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A widget for displaying and editing tags. </p>
+<p>This class provides a widget that allows users to edit tag names and their values. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a16fcbf974dd6265776d55a9f60deb4c6" name="a16fcbf974dd6265776d55a9f60deb4c6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16fcbf974dd6265776d55a9f60deb4c6">&#9670;&#160;</a></span>TagWidget()</h2>
 
@@ -190,6 +202,17 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Construct a new Tag Widget object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">TagName</td><td>The initial tag name. </td></tr>
+    <tr><td class="paramname">TagValue</td><td>The initial tag value. </td></tr>
+    <tr><td class="paramname">TextFieldHeight</td><td>The height of the text field. </td></tr>
+    <tr><td class="paramname">Parent</td><td>The parent widget. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -216,6 +239,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Focus the next widget using tab. </p>
+
 </div>
 </div>
 <a id="ab487fa6dd4a18067d509be64b5434685" name="ab487fa6dd4a18067d509be64b5434685"></a>
@@ -241,6 +266,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Focus the previous widget using shift+tab. </p>
+
 </div>
 </div>
 <a id="afe6c02bb8e709b6568cf05ea344b3ba8" name="afe6c02bb8e709b6568cf05ea344b3ba8"></a>
@@ -257,6 +284,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Get the current tag name and value. </p>
+<dl class="section return"><dt>Returns</dt><dd>A pair containing the tag name and value. </dd></dl>
 
 </div>
 </div>
@@ -283,6 +313,8 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Signal that is emitted when the widget is requested to be removed. </p>
+
 </div>
 </div>
 <a id="a9da08f5e5c402c0eb8808176a2f1203c" name="a9da08f5e5c402c0eb8808176a2f1203c"></a>
@@ -307,6 +339,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Remove this widget. </p>
 
 </div>
 </div>
