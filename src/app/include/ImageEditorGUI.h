@@ -9,7 +9,7 @@
 #include <QVBoxLayout>
 
 #include <QVideoWidget>
-
+#include <QMediaPlayer>
 #include <TagTextEdit.h>
 #include <MetaDataHandler.h>
 

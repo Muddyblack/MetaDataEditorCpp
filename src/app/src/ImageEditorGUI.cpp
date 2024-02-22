@@ -16,6 +16,7 @@
 
 #include <QMediaPlayer>
 #include <QVideoWidget>
+#include <QAudioOutput>
 
 #include <QLoggingCategory>
 
@@ -31,10 +32,17 @@ extern QString ICON_PATH;
 extern QString DARKMODE_STYLE_PATH;
 extern QString LIGHTMODE_STYLE_PATH;
 
+
 QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tif *.tiff *.blend)";
-QString VIDEO_FORMATS = "Videos (*.mp4 *.avi *.mov *.wmv *.flv)";
-QString AUDIO_FORMATS = "Audio (*.mp3)";
-QString ALL_FORMATS = QString("%1;;%2;;%3").arg(IMAGE_FORMATS, VIDEO_FORMATS, AUDIO_FORMATS);
+QString VIDEO_FORMATS = "Videos (*.mp4 *.avi *.mov *.wmv *.flv *.mkv *webm)";
+QString AUDIO_FORMATS = "Audio (*.mp3 *.wav *.flac *.ogg *.aac *.m4a)";
+QString ALL_FORMATS = QString("%1;;%2;;%3;;%4").arg(
+    "All (*)",
+    IMAGE_FORMATS,
+    VIDEO_FORMATS,
+    AUDIO_FORMATS
+);
+
 QString COMPANY = "Muddyblack";
 QString APP_NAME = "MetaDataEditor";
 
@@ -223,6 +231,7 @@ void ImageEditorGUI::LoadFile() {
     }
 }
 
+
 void ImageEditorGUI::saveFile() {
     while (true) {
         try {
@@ -286,15 +295,20 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
     ImageLabel->clear();
     try
     {
-        if (VIDEO_FORMATS.contains(fileExtension)) {
+
+        if (VIDEO_FORMATS.contains(fileExtension) || AUDIO_FORMATS.contains(fileExtension)) {
             // If the file is a video, use QMediaPlayer and QVideoWidget to display it
             QMediaPlayer* player = new QMediaPlayer;
+            QAudioOutput *audioOutput = new QAudioOutput;
             
             ImageLabel->hide();
-
-            player->setSource(QUrl(FilePath));
-            player->setVideoOutput(videoWidget);
             videoWidget->show();
+
+            player->setVideoOutput(videoWidget);
+            player->setAudioOutput(audioOutput);
+            player->setSource(QUrl(FilePath));
+
+            audioOutput->setVolume(50);
             player->play();
         }
 
