@@ -287,18 +287,22 @@ void ImageEditorGUI::saveFile() {
             }
             QImage originalImage(*FileLabel);
             MetaDataHandler metadataHandler;
-            qDebug() << "Writing metadata currently blocked for dev purpose " << savePath;
-            //metadataHandler.writeMetadata(savePath, metadata, originalImage);
+            qDebug() << "Writing metadata currently in new dev status " << savePath;
+            metadataHandler.writeMetadata(savePath, metadata, originalImage);
             break;
             
         } catch (const std::exception &error) {
             QMessageBox msgBox;
             msgBox.setIcon(QMessageBox::Critical);
             msgBox.setText("Error");
-            msgBox.setInformativeText(QString("An error occurred: %1. Do you want to retry?").arg(error.what()));
+            QString errorMessage = QString("An error occurred: %1. Do you want to retry?").arg(error.what());
+            msgBox.setInformativeText(errorMessage);
             msgBox.setWindowTitle("Error");
             msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
             int ret = msgBox.exec();
+
+            // Output the error message to the console
+            qDebug() << errorMessage;
             if (ret == QMessageBox::Cancel) {
                 break;
             }

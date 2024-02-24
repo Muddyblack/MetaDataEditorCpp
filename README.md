@@ -26,9 +26,22 @@ set(CMAKE_PREFIX_PATH "path/to/QT/6.6.2/mingw_64")
 set(CMAKE_CXX_COMPILER "path/to/QT/Tools/mingw1120_64/bin/c++.exe")
 set(CMAKE_C_COMPILER "path/to/QT/Tools/mingw1120_64/bin/gcc.exe")
 ```
-5. If you have ``make``: run ``make start`` to build the project.
+5. If you have ``make``: run ``make build`` to build the project.
 
--> Alternatively: ``mkdir build && cd build && cmake .. && cmake .``
+-> Alternatively: 
+```sh
+    # Configure
+    cmake --no-warn-unused-cli \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
+            -DCMAKE_BUILD_TYPE:STRING=Release \
+            -DCMAKE_C_COMPILER:FILEPATH=gcc \ #set path to gcc or use env variable
+            -DCMAKE_CXX_COMPILER:FILEPATH=g++ \ #set path to g++ or use env variable
+            -S$(SRC_DIR) \ #replace SRC_DIR with path of project
+            -B$(BIN_DIR) \ # replace BIN_DIR  path to build folder
+            -G "MinGW Makefiles"
+    # Build
+    cmake --build $(BIN_DIR) --config Release --target all -j 6 -- # Replace BIN_DIR like you did above
+```
 
 ## Documentation build with
 

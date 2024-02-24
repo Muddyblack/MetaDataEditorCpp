@@ -7,7 +7,7 @@ SRC_DIR := $(CURDIR)
 BIN_DIR := $(SRC_DIR)/build
 
 # Build targets and commands
-start:
+build:
 	@cmake --no-warn-unused-cli \
 	       -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
 	       -DCMAKE_BUILD_TYPE:STRING=Release \

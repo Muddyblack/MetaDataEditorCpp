@@ -26,6 +26,7 @@ set(PROJECT_SOURCES
         src/app/src/TagTexEdit.cpp
         src/app/src/MetaDataHandler.cpp
         src/app/src/AppConstants.cpp
+        src/helper/logging/Logger.cpp
 )
 
 set(PROJECT_HEADERS
@@ -35,6 +36,7 @@ set(PROJECT_HEADERS
         src/app/include/TagTextEdit.h
         src/app/include/MetaDataHandler.h
         src/app/include/AppConstants.h
+        src/helper/logging/Logger.h
 )
 
 set(PROJECT_RESOURCES
@@ -73,6 +75,7 @@ endif()
 
 target_include_directories(MetaDataEditor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_include_directories(MetaDataEditor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/app/include)
+target_include_directories(MetaDataEditor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/helper/logging)
 
 
 target_link_libraries(MetaDataEditor PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Multimedia Qt${QT_VERSION_MAJOR}::MultimediaWidgets)  

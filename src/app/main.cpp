@@ -3,13 +3,15 @@
 #include <QApplication>
 #include <QIcon>
 #include <QRect>
-
+#include <filesystem>
 #include <AppConstants.h>
-
-
+#include <iostream>
+#include <string>
+#include <Logger.h>
 
 int main(int argc, char *argv[])
 {
+    logInfo() << "MetaData Editor starting...";
     QApplication app(argc, argv);
     app.setWindowIcon(QIcon(AppConstants::ICON_PATH));
 
