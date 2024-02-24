@@ -1,3 +1,7 @@
+/**
+ * @file main.cpp
+ * @brief Entry point for the MetaData Editor application.
+ */
 #include <ImageEditorGUI.h>
 #include <Styles.h>
 #include <QApplication>

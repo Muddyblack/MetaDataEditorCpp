@@ -1,3 +1,7 @@
+/**
+ * @file TagTextEdit.h
+ * @brief Defines the TagTextEdit class, a custom QTextEdit that emits signals when Tab or Shift+Tab are pressed.
+ */
 #ifndef TAGTEXTEDIT_H
 #define TAGTEXTEDIT_H
 

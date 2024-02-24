@@ -1,3 +1,7 @@
+/**
+ * @file AppConstants.h
+ * @brief Defines constants used throughout the application.
+ */
 #ifndef APP_CONSTANTS_H
 #define APP_CONSTANTS_H
 

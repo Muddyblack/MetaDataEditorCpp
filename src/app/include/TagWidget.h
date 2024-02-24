@@ -1,3 +1,7 @@
+/**
+ * @file TagWidget.h
+ * @brief Defines the TagWidget class, a widget for displaying and editing tags.
+ */
 #ifndef TAGWIDGET_H
 #define TAGWIDGET_H
 
