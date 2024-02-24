@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['script_5fdir_0',['script_dir',['../classrun__ress__gen_1_1_resource_generator.html#a9d1986ca841dd228529b1bc27c531874',1,'run_ress_gen.ResourceGenerator.script_dir'],['../namespacerun__ress__gen.html#a56cd5143bd4c6dd8a7f39922232dd518',1,'run_ress_gen.script_dir']]],
-  ['script_5fpath_1',['script_path',['../classrun__ress__gen_1_1_resource_generator.html#a01dcc3f9c93797f9a74115c6b5ef60d9',1,'run_ress_gen::ResourceGenerator']]]
+  ['parser_0',['parser',['../namespaceresources__gen.html#a76503df14e0501c01930e9d1d35a78b7',1,'resources_gen']]],
+  ['prefix_1',['prefix',['../classresources__gen_1_1_qrc_generator.html#ae5d84951753508aa20e93643304d9430',1,'resources_gen::QrcGenerator']]]
 ];

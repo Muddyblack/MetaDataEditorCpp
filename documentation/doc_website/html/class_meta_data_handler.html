@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('class_meta_data_handler.html',''); ini
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="class_meta_data_handler-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">MetaDataHandler Class Reference</div></div>
@@ -115,12 +116,23 @@ $(document).ready(function(){initNavTree('class_meta_data_handler.html',''); ini
 
 <p><code>#include &lt;<a class="el" href="_meta_data_handler_8h_source.html">MetaDataHandler.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_meta_data_handler_1_1_p_n_g_chunk.html">PNGChunk</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_meta_data_handler_1_1_p_n_g_header.html">PNGHeader</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae2bb5cc530429dd9d79d358dd92dc136"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#ae2bb5cc530429dd9d79d358dd92dc136">MetaDataHandler</a> ()</td></tr>
 <tr class="separator:ae2bb5cc530429dd9d79d358dd92dc136"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a20795298bd6966d20cf6f7880cbdd8"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8">readPNGHeader</a> (const std::string &amp;filename)</td></tr>
+<tr class="separator:a1a20795298bd6966d20cf6f7880cbdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f0c872ecd4e6b41bfcd746032152d2a"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a">readMetadata</a> (const QString &amp;filePath)</td></tr>
 <tr class="separator:a0f0c872ecd4e6b41bfcd746032152d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e50a5677b75156c986b84f55e1bcdbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#a3e50a5677b75156c986b84f55e1bcdbc">writePNGHeader</a> (const std::string &amp;filename, const std::map&lt; std::string, std::string &gt; &amp;properties)</td></tr>
+<tr class="separator:a3e50a5677b75156c986b84f55e1bcdbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b7d9efa2971c1e5722b53736326f693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#a2b7d9efa2971c1e5722b53736326f693">writeMetadata</a> (const QString &amp;filePath, const QMap&lt; QString, QString &gt; &amp;metadata, const QImage &amp;image)</td></tr>
 <tr class="separator:a2b7d9efa2971c1e5722b53736326f693"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -161,6 +173,24 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a1a20795298bd6966d20cf6f7880cbdd8" name="a1a20795298bd6966d20cf6f7880cbdd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a20795298bd6966d20cf6f7880cbdd8">&#9670;&#160;</a></span>readPNGHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; std::string, std::string &gt; MetaDataHandler::readPNGHeader </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2b7d9efa2971c1e5722b53736326f693" name="a2b7d9efa2971c1e5722b53736326f693"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b7d9efa2971c1e5722b53736326f693">&#9670;&#160;</a></span>writeMetadata()</h2>
 
@@ -184,6 +214,34 @@ Public Member Functions</h2></td></tr>
           <td></td>
           <td class="paramtype">const QImage &amp;&#160;</td>
           <td class="paramname"><em>image</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3e50a5677b75156c986b84f55e1bcdbc" name="a3e50a5677b75156c986b84f55e1bcdbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e50a5677b75156c986b84f55e1bcdbc">&#9670;&#160;</a></span>writePNGHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MetaDataHandler::writePNGHeader </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::map&lt; std::string, std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>properties</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

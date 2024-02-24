@@ -9,5 +9,7 @@ digraph "C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src"
     graph [ bgcolor="#daedff", pencolor="grey25", label="", fontname=Helvetica,fontsize=10 style="filled,bold", URL="dir_68267d1309a1af8e8297ef4c3efbcdba.html",tooltip=""]
     dir_68267d1309a1af8e8297ef4c3efbcdba [shape=plaintext, label="src"];
   dir_5194e5fea318fda12687127c23f8aba1 [label="app", fillcolor="#4ea9ff", color="grey25", style="filled", URL="dir_5194e5fea318fda12687127c23f8aba1.html",tooltip=""];
+  dir_2e47e0659bfa766bdc2119893b60e2d4 [label="helper", fillcolor="#4ea9ff", color="grey25", style="filled", URL="dir_2e47e0659bfa766bdc2119893b60e2d4.html",tooltip=""];
   }
+  dir_5194e5fea318fda12687127c23f8aba1->dir_2e47e0659bfa766bdc2119893b60e2d4 [headlabel="1", labeldistance=1.5 headhref="dir_000000_000001.html" color="steelblue1" fontcolor="steelblue1"];
 }

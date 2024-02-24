@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['resourcegenerator_0',['ResourceGenerator',['../classrun__ress__gen_1_1_resource_generator.html',1,'run_ress_gen']]]
+  ['pngchunk_0',['PNGChunk',['../struct_meta_data_handler_1_1_p_n_g_chunk.html',1,'MetaDataHandler']]],
+  ['pngheader_1',['PNGHeader',['../struct_meta_data_handler_1_1_p_n_g_header.html',1,'MetaDataHandler']]]
 ];

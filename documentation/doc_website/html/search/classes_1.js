@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['metadatahandler_0',['MetaDataHandler',['../class_meta_data_handler.html',1,'']]]
+  ['logger_0',['Logger',['../class_logger.html',1,'']]]
 ];

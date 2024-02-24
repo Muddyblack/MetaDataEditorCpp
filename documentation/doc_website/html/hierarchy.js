@@ -1,6 +1,9 @@
 var hierarchy =
 [
+    [ "Logger", "class_logger.html", null ],
     [ "MetaDataHandler", "class_meta_data_handler.html", null ],
+    [ "MetaDataHandler::PNGChunk", "struct_meta_data_handler_1_1_p_n_g_chunk.html", null ],
+    [ "MetaDataHandler::PNGHeader", "struct_meta_data_handler_1_1_p_n_g_header.html", null ],
     [ "resources_gen.QrcGenerator", "classresources__gen_1_1_qrc_generator.html", null ],
     [ "QTextEdit", null, [
       [ "TagTextEdit", "class_tag_text_edit.html", null ]

@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['writemetadata_0',['writeMetadata',['../class_meta_data_handler.html#a2b7d9efa2971c1e5722b53736326f693',1,'MetaDataHandler']]]
+  ['tabpressed_0',['TabPressed',['../class_tag_text_edit.html#a0dd4d525d5e6567d93680be57b8b8107',1,'TagTextEdit']]],
+  ['tagtextedit_1',['TagTextEdit',['../class_tag_text_edit.html#a1939633efb3d732cdf710f55896a73f0',1,'TagTextEdit']]],
+  ['tagwidget_2',['TagWidget',['../class_tag_widget.html#a16fcbf974dd6265776d55a9f60deb4c6',1,'TagWidget']]]
 ];
