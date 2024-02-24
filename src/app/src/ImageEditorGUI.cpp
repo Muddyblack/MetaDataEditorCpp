@@ -367,3 +367,29 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
         qCritical() << "error: " << e.what();
     }
 }
+
+void ImageEditorGUI::resizeEvent(QResizeEvent *event) {
+    static QSize lastSize;  // Stores the size of the window the last time the image was resized
+
+    // Only resize the image if the size of the window has changed significantly
+    if (abs(lastSize.width() - width()) > 10 || abs(lastSize.height() - height()) > 10) {
+        lastSize = size();
+
+        if (FileLabel != nullptr && !FileLabel->isEmpty()) {
+            QImageReader reader(*FileLabel);
+            if (reader.canRead()) {
+                if (FileLabel->toLower().endsWith(".gif")) {
+                    Movie->setScaledSize(ScrollArea->size());
+                } else {
+                    QPixmap pixmap(*FileLabel);
+                    if (!pixmap.isNull()) {
+                        pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
+                        ImageLabel->setPixmap(pixmap);
+                    }
+                }
+            }
+        }
+    }
+
+    QWidget::resizeEvent(event);
+}

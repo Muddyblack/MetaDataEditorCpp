@@ -24,7 +24,9 @@ public:
     ImageEditorGUI();
 
 
+
 protected:
+    void resizeEvent(QResizeEvent *event);
 
 private:
     QString *FileLabel;
