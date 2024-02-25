@@ -1,3 +1,9 @@
+/**
+ * @file Styles.cpp
+ * @brief Implements the function for loading and applying a stylesheet to a QApplication.
+ * @author Muddyblack
+ * @date 20.02.2024
+ */
 #include <Styles.h>
 #include <QFile>
 #include <QTextStream>

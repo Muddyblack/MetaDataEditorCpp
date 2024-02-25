@@ -1,3 +1,9 @@
+/**
+ * @file MetaDataHandler.cpp
+ * @brief Implements the MetaDataHandler class.
+ * @author Muddyblack
+ * @date 21.02.2024
+ */
 #include <QImageReader>
 #include <QImageWriter>
 #include <QFile>
@@ -89,6 +95,9 @@ void MetaDataHandler::writePNGHeader(const std::string& filename, const std::map
     uint32_t height = std::stoi(properties.at("Height"));
     uint8_t bitDepth = std::stoi(properties.at("Bit Depth"));
     uint8_t colorType = std::stoi(properties.at("Color Type"));
+    uint8_t compressionMethod = std::stoi(properties.at("Compression Method"));
+    uint8_t filterMethod = std::stoi(properties.at("Filter Method"));
+    uint8_t interlaceMethod = std::stoi(properties.at("Interlace Method"));
 
     uint32_t chunkLength = 13;
     file.put(chunkLength >> 24);
@@ -101,10 +110,10 @@ void MetaDataHandler::writePNGHeader(const std::string& filename, const std::map
     file.put('R');
     file.put(bitDepth);
     file.put(colorType);
-    file.put(0); // Compression method (always 0 for PNG)
-    file.put(0); // Filter method (always 0 for PNG)
-    file.put(0); // Interlace method (0 for no interlace, 1 for Adam7 interlace)
-    file.put(0); // CRC (ignored for simplicity)
+    file.put(compressionMethod); // Compression method
+    file.put(filterMethod); // Filter method
+    file.put(interlaceMethod); // Interlace method (0 for no interlace, 1 for Adam7 interlace)
+    file.put(0); // CRC (ignored)
 
     // Write width and height
     file.put(width >> 24);
@@ -116,14 +125,14 @@ void MetaDataHandler::writePNGHeader(const std::string& filename, const std::map
     file.put((height >> 8) & 0xFF);
     file.put(height & 0xFF);
 
-    // Calculate and write CRC for IHDR chunk (ignored for simplicity)
+    // TODO Calculate and write CRC for IHDR chunk
 
     file.close();
     std::cout << "PNG file with header written successfully: " << filename << std::endl;
 }
 
 
-void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata, const QImage &image) {
+void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata) {
     qDebug() << "Writing metadata to file: " << filePath;
     std::map<std::string, std::string> properties;
     QMapIterator<QString, QString> i(metadata);

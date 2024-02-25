@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Writes a PNG header to a file.">
 <polygon fill="#999999" stroke="#666666" points="866.75,-20 697.75,-20 697.75,0 866.75,0 866.75,-20"/>
 <text text-anchor="middle" x="782.25" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::writePNGHeader</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_meta_data_handler.html#a2b7d9efa2971c1e5722b53736326f693" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_meta_data_handler.html#ab83e9b0d8069c1019e5a21b8dafaa2bf" target="_top" xlink:title="Writes metadata to a file.">
 <polygon fill="white" stroke="#666666" points="661.75,-20 504,-20 504,0 661.75,0 661.75,-20"/>
 <text text-anchor="middle" x="582.88" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::writeMetadata</text>
 </a>

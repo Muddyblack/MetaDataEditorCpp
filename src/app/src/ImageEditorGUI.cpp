@@ -1,3 +1,11 @@
+/**
+ * @file ImageEditorGUI.cpp
+ * @brief Implements the ImageEditorGUI class for editing files.
+ * @author Muddyblack
+ * @date 20.02.2024
+ */
+
+// QT includes
 #include <QAudioOutput>
 #include <QDate>
 #include <QDebug>
@@ -16,6 +24,7 @@
 #include <QStringList>
 #include <QVideoWidget>
 
+// Local includes
 #include <AppConstants.h>
 #include <ImageEditorGUI.h>
 #include <MetaDataHandler.h>
@@ -174,7 +183,7 @@ void ImageEditorGUI::SetLastDir(const QString &path) {
     qDebug() << "Setting last dir: " << path;
     QSettings settings("Company", "AppName");
     settings.setValue("LastDir", QFileInfo(path).path());
-    qDebug() << "Succeded setting last dir: " << path;
+    qDebug() << "Succeded setting last dir for this file: " << path;
 }
 
 void ImageEditorGUI::LoadFile() {
@@ -285,10 +294,9 @@ void ImageEditorGUI::saveFile() {
                     metadata[tagName] = tagValue;
                 }
             }
-            QImage originalImage(*FileLabel);
             MetaDataHandler metadataHandler;
             qDebug() << "Writing metadata currently in new dev status " << savePath;
-            metadataHandler.writeMetadata(savePath, metadata, originalImage);
+            metadataHandler.writeMetadata(savePath, metadata);
             break;
             
         } catch (const std::exception &error) {

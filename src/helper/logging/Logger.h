@@ -1,6 +1,8 @@
 /**
  * @file Logger.h
  * @brief Defines the Logger class and convenience functions for logging.
+ * @author Muddyblack
+ * @date 24.02.2024
  */
 #include <string>
 #include <filesystem>

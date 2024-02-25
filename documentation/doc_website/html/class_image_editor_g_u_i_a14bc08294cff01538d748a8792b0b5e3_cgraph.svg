@@ -102,7 +102,7 @@ var sectionId = 'dynsection-11';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" target="_top" xlink:title="Reads metadata from a file.">
 <polygon fill="white" stroke="#666666" points="319.25,-196 163,-196 163,-176 319.25,-176 319.25,-196"/>
 <text text-anchor="middle" x="241.12" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::readMetadata</text>
 </a>
@@ -194,7 +194,7 @@ var sectionId = 'dynsection-11';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" target="_top" xlink:title="Reads the PNG header from a PNG file.">
 <polygon fill="white" stroke="#666666" points="522.75,-196 355.25,-196 355.25,-176 522.75,-176 522.75,-196"/>
 <text text-anchor="middle" x="439" y="-182.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::readPNGHeader</text>
 </a>

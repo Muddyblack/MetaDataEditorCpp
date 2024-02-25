@@ -1,3 +1,9 @@
+/**
+ * @file ImageEditorGUI.h
+ * @brief Defines the ImageEditorGUI class for editing files.
+ * @author Muddyblack
+ * @date 20.02.2024
+ */
 #ifndef IMAGE_EDITOR_GUI_H
 #define IMAGE_EDITOR_GUI_H
 

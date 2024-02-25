@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Reads the PNG header from a PNG file.">
 <polygon fill="#999999" stroke="#666666" points="865.25,-20 697.75,-20 697.75,0 865.25,0 865.25,-20"/>
 <text text-anchor="middle" x="781.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::readPNGHeader</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" target="_top" xlink:title="Reads metadata from a file.">
 <polygon fill="white" stroke="#666666" points="661.75,-20 505.5,-20 505.5,0 661.75,0 661.75,-20"/>
 <text text-anchor="middle" x="583.62" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::readMetadata</text>
 </a>

@@ -1,3 +1,11 @@
+/**
+ * @file AppConstants.cpp
+ * @brief Implements the constants used throughout the application.
+ * @author Muddyblack
+ * @date 22.02.2024
+ */
+
+
 #include <AppConstants.h>
 
 namespace AppConstants {

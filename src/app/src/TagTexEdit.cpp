@@ -1,3 +1,9 @@
+/**
+ * @file TagTextEdit.cpp
+ * @brief Implements the TagTextEdit class for handling key press events.
+ * @author Muddyblack
+ * @date 20.02.2024
+ */
 #include <TagTextEdit.h>
 #include <QKeyEvent>
 #include <QDebug>

@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,155,148,100,182,68,221,42,234,36,236,40,224,46,186,72,151,103,104,159"/>
 <area shape="rect" id="Node000003" href="$class_image_editor_g_u_i.html#a372deea66bedcd77d2b7c69dd6e7ae34" title="Gets the last directory used." alt="" coords="236,56,418,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="109,155,159,124,222,92,242,85,244,90,224,97,162,128,112,159"/>
-<area shape="rect" id="Node000004" href="$class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" title=" " alt="" coords="223,107,431,133"/>
+<area shape="rect" id="Node000004" href="$class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" title="Reads metadata from a file." alt="" coords="223,107,431,133"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="155,154,246,135,247,140,157,159"/>
 <area shape="rect" id="Node000006" href="$class_tag_widget.html#a0dc7bd2438fdbd01d50253b11268cf47" title="Signal that is emitted when the widget is requested to be removed." alt="" coords="230,157,424,184"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="175,168,214,168,214,173,175,173"/>
@@ -14,6 +14,6 @@
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="108,182,158,221,190,242,224,260,241,267,239,272,222,265,187,247,155,225,105,186"/>
 <area shape="rect" id="Node000009" href="$class_image_editor_g_u_i.html#a024490b48241a822bdb98f029a35d13e" title="Updates the window title." alt="" coords="223,325,431,368"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="103,183,150,245,185,280,224,311,232,316,230,320,221,316,181,284,146,248,98,186"/>
-<area shape="rect" id="Node000005" href="$class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" title=" " alt="" coords="479,107,702,133"/>
+<area shape="rect" id="Node000005" href="$class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" title="Reads the PNG header from a PNG file." alt="" coords="479,107,702,133"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="431,117,464,117,464,123,431,123"/>
 </map>

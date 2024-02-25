@@ -1,3 +1,9 @@
+/**
+ * @file TagWidget.cpp
+ * @brief Implements the TagWidget class for handling tag editing.
+ * @author Muddyblack
+ * @date 20.02.2024
+ */
 #include <TagWidget.h>
 #include <QPushButton>
 #include <QHBoxLayout>

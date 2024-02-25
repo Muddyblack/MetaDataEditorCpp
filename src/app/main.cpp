@@ -1,6 +1,8 @@
 /**
  * @file main.cpp
  * @brief Entry point for the MetaData Editor application.
+ * @author Muddyblack
+ * @date 20.02.2024
  */
 #include <ImageEditorGUI.h>
 #include <Styles.h>

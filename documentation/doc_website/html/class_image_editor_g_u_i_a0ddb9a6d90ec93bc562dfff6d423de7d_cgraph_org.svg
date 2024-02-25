@@ -219,7 +219,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" target="_top" xlink:title="Reads metadata from a file.">
 <polygon fill="white" stroke="#666666" points="501.75,-222 345.5,-222 345.5,-202 501.75,-202 501.75,-222"/>
 <text text-anchor="middle" x="423.62" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::readMetadata</text>
 </a>
@@ -274,7 +274,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" target="_top" xlink:title="Reads the PNG header from a PNG file.">
 <polygon fill="white" stroke="#666666" points="706.75,-222 539.25,-222 539.25,-202 706.75,-202 706.75,-222"/>
 <text text-anchor="middle" x="623" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::readPNGHeader</text>
 </a>
@@ -310,7 +310,7 @@
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="class_meta_data_handler.html#a2b7d9efa2971c1e5722b53736326f693" target="_top" xlink:title=" ">
+<g id="a_Node000015"><a xlink:href="class_meta_data_handler.html#ab83e9b0d8069c1019e5a21b8dafaa2bf" target="_top" xlink:title="Writes metadata to a file.">
 <polygon fill="white" stroke="#666666" points="502.5,-58 344.75,-58 344.75,-38 502.5,-38 502.5,-58"/>
 <text text-anchor="middle" x="423.62" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::writeMetadata</text>
 </a>
@@ -328,7 +328,7 @@
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_meta_data_handler.html#a3e50a5677b75156c986b84f55e1bcdbc" target="_top" xlink:title=" ">
+<g id="a_Node000016"><a xlink:href="class_meta_data_handler.html#a3e50a5677b75156c986b84f55e1bcdbc" target="_top" xlink:title="Writes a PNG header to a file.">
 <polygon fill="white" stroke="#666666" points="707.5,-58 538.5,-58 538.5,-38 707.5,-38 707.5,-58"/>
 <text text-anchor="middle" x="623" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::writePNGHeader</text>
 </a>

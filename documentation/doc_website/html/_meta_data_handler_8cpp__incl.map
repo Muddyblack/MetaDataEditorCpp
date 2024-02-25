@@ -18,7 +18,7 @@
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="540,62,645,106,643,111,538,67"/>
 <area shape="rect" id="Node000010" title=" " alt="" coords="728,112,782,139"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="564,62,714,109,713,114,562,67"/>
-<area shape="rect" id="Node000011" href="$_meta_data_handler_8h.html" title=" " alt="" coords="806,112,939,139"/>
+<area shape="rect" id="Node000011" href="$_meta_data_handler_8h.html" title="Handles reading and writing metadata." alt="" coords="806,112,939,139"/>
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="582,58,801,106,799,111,581,63"/>
 <area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="820,142,619,190,618,185,819,137"/>
 <area shape="rect" id="Node000012" title=" " alt="" coords="802,187,858,213"/>

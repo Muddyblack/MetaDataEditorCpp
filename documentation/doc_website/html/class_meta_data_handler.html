@@ -131,15 +131,20 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ae2bb5cc530429dd9d79d358dd92dc136"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#ae2bb5cc530429dd9d79d358dd92dc136">MetaDataHandler</a> ()</td></tr>
+<tr class="memdesc:ae2bb5cc530429dd9d79d358dd92dc136"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="class_meta_data_handler.html">MetaDataHandler</a> object.  <br /></td></tr>
 <tr class="separator:ae2bb5cc530429dd9d79d358dd92dc136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a20795298bd6966d20cf6f7880cbdd8"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8">readPNGHeader</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a1a20795298bd6966d20cf6f7880cbdd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the PNG header from a PNG file.  <br /></td></tr>
 <tr class="separator:a1a20795298bd6966d20cf6f7880cbdd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f0c872ecd4e6b41bfcd746032152d2a"><td class="memItemLeft" align="right" valign="top">QMap&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a">readMetadata</a> (const QString &amp;filePath)</td></tr>
+<tr class="memdesc:a0f0c872ecd4e6b41bfcd746032152d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads metadata from a file.  <br /></td></tr>
 <tr class="separator:a0f0c872ecd4e6b41bfcd746032152d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e50a5677b75156c986b84f55e1bcdbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#a3e50a5677b75156c986b84f55e1bcdbc">writePNGHeader</a> (const std::string &amp;filename, const std::map&lt; std::string, std::string &gt; &amp;properties)</td></tr>
+<tr class="memdesc:a3e50a5677b75156c986b84f55e1bcdbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a PNG header to a file.  <br /></td></tr>
 <tr class="separator:a3e50a5677b75156c986b84f55e1bcdbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b7d9efa2971c1e5722b53736326f693"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#a2b7d9efa2971c1e5722b53736326f693">writeMetadata</a> (const QString &amp;filePath, const QMap&lt; QString, QString &gt; &amp;metadata, const QImage &amp;image)</td></tr>
-<tr class="separator:a2b7d9efa2971c1e5722b53736326f693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83e9b0d8069c1019e5a21b8dafaa2bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_meta_data_handler.html#ab83e9b0d8069c1019e5a21b8dafaa2bf">writeMetadata</a> (const QString &amp;filePath, const QMap&lt; QString, QString &gt; &amp;metadata)</td></tr>
+<tr class="memdesc:ab83e9b0d8069c1019e5a21b8dafaa2bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes metadata to a file.  <br /></td></tr>
+<tr class="separator:ab83e9b0d8069c1019e5a21b8dafaa2bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ae2bb5cc530429dd9d79d358dd92dc136" name="ae2bb5cc530429dd9d79d358dd92dc136"></a>
@@ -156,6 +161,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Constructs a new <a class="el" href="class_meta_data_handler.html">MetaDataHandler</a> object. </p>
 
 </div>
 </div>
@@ -175,6 +182,15 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads metadata from a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The path of the file to read from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map of metadata keys to values. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -203,6 +219,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Reads the PNG header from a PNG file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The name of the file to read from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A map of metadata keys to values. </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -211,8 +236,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a2b7d9efa2971c1e5722b53736326f693" name="a2b7d9efa2971c1e5722b53736326f693"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2b7d9efa2971c1e5722b53736326f693">&#9670;&#160;</a></span>writeMetadata()</h2>
+<a id="ab83e9b0d8069c1019e5a21b8dafaa2bf" name="ab83e9b0d8069c1019e5a21b8dafaa2bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83e9b0d8069c1019e5a21b8dafaa2bf">&#9670;&#160;</a></span>writeMetadata()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -227,13 +252,7 @@ Here is the caller graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const QMap&lt; QString, QString &gt; &amp;&#160;</td>
-          <td class="paramname"><em>metadata</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QImage &amp;&#160;</td>
-          <td class="paramname"><em>image</em>&#160;</td>
+          <td class="paramname"><em>metadata</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -242,15 +261,24 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Writes metadata to a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filePath</td><td>The path of the file to write to. </td></tr>
+    <tr><td class="paramname">metadata</td><td>The metadata to write. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_meta_data_handler_a2b7d9efa2971c1e5722b53736326f693_cgraph.svg" width="495" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_meta_data_handler_ab83e9b0d8069c1019e5a21b8dafaa2bf_cgraph.svg" width="495" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_meta_data_handler_a2b7d9efa2971c1e5722b53736326f693_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_meta_data_handler_ab83e9b0d8069c1019e5a21b8dafaa2bf_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -280,6 +308,15 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Writes a PNG header to a file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The name of the file to write to. </td></tr>
+    <tr><td class="paramname">properties</td><td>The metadata to write. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

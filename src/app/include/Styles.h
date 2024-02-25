@@ -1,6 +1,8 @@
 /**
  * @file Styles.h
- * @brief Defines a function for loading and applying a stylesheet to a QApplication.
+ * @brief Defines the function for loading and applying a stylesheet to a QApplication.
+ * @author Muddyblack
+ * @date 20.02.2024
  */
 #ifndef STYLES_H
 #define STYLES_H

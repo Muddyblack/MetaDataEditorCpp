@@ -22,19 +22,19 @@
 <area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="382,170,483,150,484,155,383,175"/>
 <area shape="rect" id="Node000008" href="$class_image_editor_g_u_i.html#a372deea66bedcd77d2b7c69dd6e7ae34" title="Gets the last directory used." alt="" coords="479,173,661,200"/>
 <area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="395,184,464,184,464,189,395,189"/>
-<area shape="rect" id="Node000009" href="$class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" title=" " alt="" coords="466,224,674,251"/>
+<area shape="rect" id="Node000009" href="$class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a" title="Reads metadata from a file." alt="" coords="466,224,674,251"/>
 <area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="383,198,484,218,483,223,382,203"/>
 <area shape="rect" id="Node000011" href="$class_image_editor_g_u_i.html#ac88e196169998c20ddf171733dfc5fda" title="Sets the last opened directory." alt="" coords="480,275,661,301"/>
 <area shape="poly" id="edge14_Node000006_Node000011" title=" " alt="" coords="336,198,394,229,466,260,488,267,487,273,464,265,392,234,334,203"/>
 <area shape="rect" id="Node000012" href="$class_image_editor_g_u_i.html#a024490b48241a822bdb98f029a35d13e" title="Updates the window title." alt="" coords="467,325,674,368"/>
 <area shape="poly" id="edge15_Node000006_Node000012" title=" " alt="" coords="326,199,384,253,423,284,466,311,477,316,475,321,464,316,420,288,380,257,322,202"/>
-<area shape="rect" id="Node000010" href="$class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" title=" " alt="" coords="724,224,948,251"/>
+<area shape="rect" id="Node000010" href="$class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" title="Reads the PNG header from a PNG file." alt="" coords="724,224,948,251"/>
 <area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="675,235,709,235,709,240,675,240"/>
 <area shape="rect" id="Node000014" href="$class_tag_widget.html#afe6c02bb8e709b6568cf05ea344b3ba8" title="Get the current tag name and value." alt="" coords="496,392,645,419"/>
 <area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="394,403,480,403,480,408,394,408"/>
-<area shape="rect" id="Node000015" href="$class_meta_data_handler.html#a2b7d9efa2971c1e5722b53736326f693" title=" " alt="" coords="465,443,675,469"/>
+<area shape="rect" id="Node000015" href="$class_meta_data_handler.html#ab83e9b0d8069c1019e5a21b8dafaa2bf" title="Writes metadata to a file." alt="" coords="465,443,675,469"/>
 <area shape="poly" id="edge18_Node000013_Node000015" title=" " alt="" coords="383,417,484,437,483,442,382,422"/>
-<area shape="rect" id="Node000016" href="$class_meta_data_handler.html#a3e50a5677b75156c986b84f55e1bcdbc" title=" " alt="" coords="723,443,949,469"/>
+<area shape="rect" id="Node000016" href="$class_meta_data_handler.html#a3e50a5677b75156c986b84f55e1bcdbc" title="Writes a PNG header to a file." alt="" coords="723,443,949,469"/>
 <area shape="poly" id="edge19_Node000015_Node000016" title=" " alt="" coords="676,453,708,453,708,459,676,459"/>
 <area shape="rect" id="Node000018" href="$_styles_8cpp.html#af792801f7db80364be5a016d633a1c22" title="Loads a stylesheet from a file and applies it to the application." alt="" coords="529,493,611,520"/>
 <area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="406,488,514,499,513,504,406,493"/>

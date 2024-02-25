@@ -16,7 +16,7 @@
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="602,62,658,101,655,105,599,67"/>
 <area shape="rect" id="Node000009" title=" " alt="" coords="764,112,837,139"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="638,62,753,104,751,109,637,67"/>
-<area shape="rect" id="Node000010" href="$_meta_data_handler_8h.html" title=" " alt="" coords="861,112,993,139"/>
+<area shape="rect" id="Node000010" href="$_meta_data_handler_8h.html" title="Handles reading and writing metadata." alt="" coords="861,112,993,139"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="670,60,860,105,859,110,668,65"/>
 <area shape="rect" id="Node000013" href="$_tag_text_edit_8h.html" title="Defines the TagTextEdit class, a custom QTextEdit that emits signals when Tab or Shift+Tab are presse..." alt="" coords="1018,112,1119,139"/>
 <area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="670,51,1003,109,1002,114,669,57"/>
