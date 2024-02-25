@@ -1,0 +1,7 @@
+<map id="ImageEditorGUI::addStandardTag" name="ImageEditorGUI::addStandardTag">
+<area shape="rect" id="Node000001" title="Adds standard tags to the GUI." alt="" coords="5,35,220,61"/>
+<area shape="rect" id="Node000002" href="$class_tag_widget.html#a0dc7bd2438fdbd01d50253b11268cf47" title="Signal that is emitted when the widget is requested to be removed." alt="" coords="268,5,462,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="220,33,252,29,253,34,220,38"/>
+<area shape="rect" id="Node000003" href="$class_image_editor_g_u_i.html#a39aa96af2498fa25a031afa86aa8eb76" title="Removes a tag widget from the GUI." alt="" coords="274,56,456,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,58,258,62,258,68,220,63"/>
+</map>

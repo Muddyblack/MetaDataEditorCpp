@@ -1,0 +1,15 @@
+<map id="ImageEditorGUI::removeTagWidget" name="ImageEditorGUI::removeTagWidget">
+<area shape="rect" id="Node000001" title="Removes a tag widget from the GUI." alt="" coords="724,48,907,91"/>
+<area shape="rect" id="Node000002" href="$class_image_editor_g_u_i.html#ac672718c127179c9c6a541c5deff2b29" title="Adds standard tags to the GUI." alt="" coords="462,5,676,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="708,50,637,35,638,30,709,45"/>
+<area shape="rect" id="Node000005" href="$class_image_editor_g_u_i.html#a5a7f03147f232cdeea9d276019ccd034" title="Adds a tag widget to the GUI." alt="" coords="488,56,650,83"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="709,72,651,72,651,67,709,67"/>
+<area shape="rect" id="Node000006" href="$class_image_editor_g_u_i.html#a14bc08294cff01538d748a8792b0b5e3" title="Loads a file into the GUI." alt="" coords="485,107,654,133"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="709,94,638,109,637,103,708,89"/>
+<area shape="rect" id="Node000003" href="$class_image_editor_g_u_i.html#a0ddb9a6d90ec93bc562dfff6d423de7d" title="Initializes the UI." alt="" coords="265,56,414,83"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="491,39,404,58,403,53,490,33"/>
+<area shape="rect" id="Node000004" href="$class_image_editor_g_u_i.html#ad4c8f6832f0cd5aa6a0b3ddcfa44889b" title="Constructor for ImageEditorGUI." alt="" coords="5,56,217,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="249,72,217,72,217,67,249,67"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="473,72,414,72,414,67,473,67"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="490,105,403,86,404,81,491,100"/>
+</map>

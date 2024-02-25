@@ -110,6 +110,7 @@ $(document).ready(function(){initNavTree('class_tag_widget.html',''); initResiza
 <a href="#pub-slots">Public Slots</a> &#124;
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_tag_widget-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">TagWidget Class Reference</div></div>
 </div><!--header-->
@@ -122,8 +123,13 @@ $(document).ready(function(){initNavTree('class_tag_widget.html',''); initResiza
 <div class="dynheader">
 Inheritance diagram for TagWidget:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_tag_widget__inherit__graph.svg" width="95" height="112"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_tag_widget__inherit__graph.svg" width="127" height="347"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Collaboration diagram for TagWidget:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_tag_widget__coll__graph.svg" width="503" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
@@ -145,12 +151,27 @@ Signals</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a16fcbf974dd6265776d55a9f60deb4c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a16fcbf974dd6265776d55a9f60deb4c6">TagWidget</a> (QString TagName=&quot;&quot;, QString TagValue=&quot;&quot;, int TextFieldHeight=50, QWidget *Parent=nullptr)</td></tr>
+<tr class="memitem:a16fcbf974dd6265776d55a9f60deb4c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#a16fcbf974dd6265776d55a9f60deb4c6">TagWidget</a> (QString TagName=&quot;&quot;, QString TagValue=&quot;&quot;, int <a class="el" href="class_tag_widget.html#ab6a50b117d3ffe3d92ab083c37f9d430">TextFieldHeight</a>=50, <a class="el" href="class_q_widget.html">QWidget</a> *Parent=nullptr)</td></tr>
 <tr class="memdesc:a16fcbf974dd6265776d55a9f60deb4c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Tag Widget object.  <br /></td></tr>
 <tr class="separator:a16fcbf974dd6265776d55a9f60deb4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe6c02bb8e709b6568cf05ea344b3ba8"><td class="memItemLeft" align="right" valign="top">std::pair&lt; QString, QString &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#afe6c02bb8e709b6568cf05ea344b3ba8">getValues</a> () const</td></tr>
 <tr class="memdesc:afe6c02bb8e709b6568cf05ea344b3ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current tag name and value.  <br /></td></tr>
 <tr class="separator:afe6c02bb8e709b6568cf05ea344b3ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aaab8f1ecba7e796c12f1554ea725617e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tag_text_edit.html">TagTextEdit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#aaab8f1ecba7e796c12f1554ea725617e">TagNameEdit</a></td></tr>
+<tr class="memdesc:aaab8f1ecba7e796c12f1554ea725617e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Textfield for the tag name.  <br /></td></tr>
+<tr class="separator:aaab8f1ecba7e796c12f1554ea725617e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f62476d2f1bff8e53724abca263069"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_tag_text_edit.html">TagTextEdit</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#ae7f62476d2f1bff8e53724abca263069">TagValueEdit</a></td></tr>
+<tr class="memdesc:ae7f62476d2f1bff8e53724abca263069"><td class="mdescLeft">&#160;</td><td class="mdescRight">Textfield for the tag value.  <br /></td></tr>
+<tr class="separator:ae7f62476d2f1bff8e53724abca263069"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addb1a1c0a4edd15b7cf6edc0f5cf3e27"><td class="memItemLeft" align="right" valign="top">QPushButton *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#addb1a1c0a4edd15b7cf6edc0f5cf3e27">RemoveButton</a></td></tr>
+<tr class="memdesc:addb1a1c0a4edd15b7cf6edc0f5cf3e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">The button for removing this widget.  <br /></td></tr>
+<tr class="separator:addb1a1c0a4edd15b7cf6edc0f5cf3e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a50b117d3ffe3d92ab083c37f9d430"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_tag_widget.html#ab6a50b117d3ffe3d92ab083c37f9d430">TextFieldHeight</a></td></tr>
+<tr class="memdesc:ab6a50b117d3ffe3d92ab083c37f9d430"><td class="mdescLeft">&#160;</td><td class="mdescRight">The height of the text fields.  <br /></td></tr>
+<tr class="separator:ab6a50b117d3ffe3d92ab083c37f9d430"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A widget for displaying and editing tags. </p>
@@ -186,7 +207,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QWidget *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_q_widget.html">QWidget</a> *&#160;</td>
           <td class="paramname"><em>Parent</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
@@ -302,6 +323,11 @@ Here is the caller graph for this function:</div>
 
 <p>Get the current tag name and value. </p>
 <dl class="section return"><dt>Returns</dt><dd>A pair containing the tag name and value. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_tag_widget_afe6c02bb8e709b6568cf05ea344b3ba8_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -332,7 +358,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_tag_widget_a0dc7bd2438fdbd01d50253b11268cf47_icgraph.svg" width="614" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_tag_widget_a0dc7bd2438fdbd01d50253b11268cf47_icgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -371,6 +397,103 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_tag_widget_a9da08f5e5c402c0eb8808176a2f1203c_icgraph.svg" width="372" height="38"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="addb1a1c0a4edd15b7cf6edc0f5cf3e27" name="addb1a1c0a4edd15b7cf6edc0f5cf3e27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addb1a1c0a4edd15b7cf6edc0f5cf3e27">&#9670;&#160;</a></span>RemoveButton</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QPushButton* TagWidget::RemoveButton</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The button for removing this widget. </p>
+
+</div>
+</div>
+<a id="aaab8f1ecba7e796c12f1554ea725617e" name="aaab8f1ecba7e796c12f1554ea725617e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaab8f1ecba7e796c12f1554ea725617e">&#9670;&#160;</a></span>TagNameEdit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_tag_text_edit.html">TagTextEdit</a>* TagWidget::TagNameEdit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Textfield for the tag name. </p>
+
+</div>
+</div>
+<a id="ae7f62476d2f1bff8e53724abca263069" name="ae7f62476d2f1bff8e53724abca263069"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f62476d2f1bff8e53724abca263069">&#9670;&#160;</a></span>TagValueEdit</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_tag_text_edit.html">TagTextEdit</a>* TagWidget::TagValueEdit</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Textfield for the tag value. </p>
+
+</div>
+</div>
+<a id="ab6a50b117d3ffe3d92ab083c37f9d430" name="ab6a50b117d3ffe3d92ab083c37f9d430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6a50b117d3ffe3d92ab083c37f9d430">&#9670;&#160;</a></span>TextFieldHeight</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int TagWidget::TextFieldHeight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The height of the text fields. </p>
 
 </div>
 </div>

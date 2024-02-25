@@ -109,76 +109,109 @@ $(document).ready(function(){initNavTree('_image_editor_g_u_i_8h_source.html',''
   <div class="headertitle"><div class="title">ImageEditorGUI.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="_image_editor_g_u_i_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef IMAGE_EDITOR_GUI_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define IMAGE_EDITOR_GUI_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;QMediaPlayer&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;QScrollArea&gt;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QVideoWidget&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<a href="_image_editor_g_u_i_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef IMAGE_EDITOR_GUI_H</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define IMAGE_EDITOR_GUI_H</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="_meta_data_handler_8h.html">MetaDataHandler.h</a>&gt;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="_tag_text_edit_8h.html">TagTextEdit.h</a>&gt;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QTemporaryFile&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html">   19</a></span><span class="keyword">class </span><a class="code hl_class" href="class_image_editor_g_u_i.html">ImageEditorGUI</a> : <span class="keyword">public</span> QWidget</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    Q_OBJECT</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_image_editor_g_u_i.html#ad4c8f6832f0cd5aa6a0b3ddcfa44889b">ImageEditorGUI</a>();</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;QLabel&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;QMediaPlayer&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;QScrollArea&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;QVideoWidget&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;QWidget&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="_meta_data_handler_8h.html">MetaDataHandler.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="_tag_text_edit_8h.html">TagTextEdit.h</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;QTemporaryFile&gt;</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_image_editor_g_u_i.html#a590d7935e6c9feb6222daab50a049c8b">resizeEvent</a>(QResizeEvent *event);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    QString *FileLabel;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    QList&lt;QWidget*&gt; TagWidgets;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    QMovie *Movie;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    QLabel *ImageLabel;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    QPushButton *ModeSwitch;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    QPushButton *AddButton;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    QPushButton *addStandardButton;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    QPushButton *LoadButton;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    QPushButton *SaveButton;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    QScrollArea *ScrollArea;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    QVideoWidget *videoWidget;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    QWidget *ScrollWidget;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    QVBoxLayout *ScrollLayout;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> InitUi();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> UpdateWindowTitle();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    QString extractThumbnail(<span class="keyword">const</span> QString &amp;videoPath);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> removeTagWidget();    </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> SwitchMode();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> addTag();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> addStandardTag();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> LoadFile();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> saveFile();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    QString GetLastDir();</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> SetLastDir(<span class="keyword">const</span> QString&amp; path);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> DisplayFile(<span class="keyword">const</span> QString &amp;FilePath);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="class_image_editor_g_u_i.html">ImageEditorGUI</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_q_widget.html">QWidget</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    Q_OBJECT</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="class_image_editor_g_u_i.html#ad4c8f6832f0cd5aa6a0b3ddcfa44889b">ImageEditorGUI</a>();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_image_editor_g_u_i.html#a590d7935e6c9feb6222daab50a049c8b">resizeEvent</a>(QResizeEvent *event);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a6853e3a6dc0aca51671a57e95b902244">   50</a></span>    QString *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a6853e3a6dc0aca51671a57e95b902244">FileLabel</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a4f2581f1a28f6ce259358c90637ba37d">   51</a></span>    QList&lt;QWidget*&gt; <a class="code hl_variable" href="class_image_editor_g_u_i.html#a4f2581f1a28f6ce259358c90637ba37d">TagWidgets</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a6899fe9a3bf38a8a471910456ca5d429">   52</a></span>    QMovie *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a6899fe9a3bf38a8a471910456ca5d429">Movie</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a9eae6361133905a11aec84dc4097b1b0">   54</a></span>    QLabel *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a9eae6361133905a11aec84dc4097b1b0">ImageLabel</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#af0e3204fd4e8bebb506cb9710bb6d5f0">   55</a></span>    QPushButton *<a class="code hl_variable" href="class_image_editor_g_u_i.html#af0e3204fd4e8bebb506cb9710bb6d5f0">ModeSwitch</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a37011f71e3255e506ca7c04fe3f7c5ce">   56</a></span>    QPushButton *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a37011f71e3255e506ca7c04fe3f7c5ce">AddButton</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#ac01223355087f43359fcfe62e1d5357f">   57</a></span>    QPushButton *<a class="code hl_variable" href="class_image_editor_g_u_i.html#ac01223355087f43359fcfe62e1d5357f">addStandardButton</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a3e12e18816ba30c2a5f882da88aef877">   58</a></span>    QPushButton *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a3e12e18816ba30c2a5f882da88aef877">LoadButton</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a1c244686d7643101b22ab5b15ef377f0">   59</a></span>    QPushButton *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a1c244686d7643101b22ab5b15ef377f0">SaveButton</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#ab2c5122d7912a2e50afb46d3ada8ce16">   60</a></span>    QScrollArea *<a class="code hl_variable" href="class_image_editor_g_u_i.html#ab2c5122d7912a2e50afb46d3ada8ce16">ScrollArea</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a5579b959664dea6bc24decc101e6cc0a">   61</a></span>    QVideoWidget *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a5579b959664dea6bc24decc101e6cc0a">videoWidget</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a847a5737976721108c27f762c03500ad">   62</a></span>    <a class="code hl_class" href="class_q_widget.html">QWidget</a> *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a847a5737976721108c27f762c03500ad">ScrollWidget</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_image_editor_g_u_i.html#a9224433e5b2a0496b87a3a05106dcb79">   63</a></span>    QVBoxLayout *<a class="code hl_variable" href="class_image_editor_g_u_i.html#a9224433e5b2a0496b87a3a05106dcb79">ScrollLayout</a>;</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif </span><span class="comment">// IMAGE_EDITOR_GUI_H</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_image_editor_g_u_i.html#a0ddb9a6d90ec93bc562dfff6d423de7d">InitUi</a>();</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_image_editor_g_u_i.html#a024490b48241a822bdb98f029a35d13e">UpdateWindowTitle</a>();</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_image_editor_g_u_i.html#a39aa96af2498fa25a031afa86aa8eb76">removeTagWidget</a>();    </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_image_editor_g_u_i.html#acd905527c38151be31a672f2ac6ec03e">SwitchMode</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_image_editor_g_u_i.html#a5a7f03147f232cdeea9d276019ccd034">addTag</a>();</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_image_editor_g_u_i.html#ac672718c127179c9c6a541c5deff2b29">addStandardTag</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_image_editor_g_u_i.html#a14bc08294cff01538d748a8792b0b5e3">LoadFile</a>();</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_image_editor_g_u_i.html#a135b12da2af6c427200b40dfc45aae0c">saveFile</a>();</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    QString <a class="code hl_slot" href="class_image_editor_g_u_i.html#a372deea66bedcd77d2b7c69dd6e7ae34">GetLastDir</a>();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_image_editor_g_u_i.html#ac88e196169998c20ddf171733dfc5fda">SetLastDir</a>(<span class="keyword">const</span> QString&amp; path);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    <span class="keywordtype">void</span> <a class="code hl_slot" href="class_image_editor_g_u_i.html#ac8c68a1cf592e428b21e7fec5fccd8cc">DisplayFile</a>(<span class="keyword">const</span> QString &amp;FilePath);</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>};</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#endif </span><span class="comment">// IMAGE_EDITOR_GUI_H</span></div>
 <div class="ttc" id="a_meta_data_handler_8h_html"><div class="ttname"><a href="_meta_data_handler_8h.html">MetaDataHandler.h</a></div></div>
 <div class="ttc" id="a_tag_text_edit_8h_html"><div class="ttname"><a href="_tag_text_edit_8h.html">TagTextEdit.h</a></div><div class="ttdoc">Defines the TagTextEdit class, a custom QTextEdit that emits signals when Tab or Shift+Tab are presse...</div></div>
-<div class="ttc" id="aclass_image_editor_g_u_i_html"><div class="ttname"><a href="class_image_editor_g_u_i.html">ImageEditorGUI</a></div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:20</div></div>
-<div class="ttc" id="aclass_image_editor_g_u_i_html_a590d7935e6c9feb6222daab50a049c8b"><div class="ttname"><a href="class_image_editor_g_u_i.html#a590d7935e6c9feb6222daab50a049c8b">ImageEditorGUI::resizeEvent</a></div><div class="ttdeci">void resizeEvent(QResizeEvent *event)</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:371</div></div>
-<div class="ttc" id="aclass_image_editor_g_u_i_html_ad4c8f6832f0cd5aa6a0b3ddcfa44889b"><div class="ttname"><a href="class_image_editor_g_u_i.html#ad4c8f6832f0cd5aa6a0b3ddcfa44889b">ImageEditorGUI::ImageEditorGUI</a></div><div class="ttdeci">ImageEditorGUI()</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:43</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html"><div class="ttname"><a href="class_image_editor_g_u_i.html">ImageEditorGUI</a></div><div class="ttdoc">This class provides a GUI for editing files.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:29</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a024490b48241a822bdb98f029a35d13e"><div class="ttname"><a href="class_image_editor_g_u_i.html#a024490b48241a822bdb98f029a35d13e">ImageEditorGUI::UpdateWindowTitle</a></div><div class="ttdeci">void UpdateWindowTitle()</div><div class="ttdoc">Updates the window title.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:115</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a0ddb9a6d90ec93bc562dfff6d423de7d"><div class="ttname"><a href="class_image_editor_g_u_i.html#a0ddb9a6d90ec93bc562dfff6d423de7d">ImageEditorGUI::InitUi</a></div><div class="ttdeci">void InitUi()</div><div class="ttdoc">Initializes the UI.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:49</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a135b12da2af6c427200b40dfc45aae0c"><div class="ttname"><a href="class_image_editor_g_u_i.html#a135b12da2af6c427200b40dfc45aae0c">ImageEditorGUI::saveFile</a></div><div class="ttdeci">void saveFile()</div><div class="ttdoc">Saves the current file.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:250</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a14bc08294cff01538d748a8792b0b5e3"><div class="ttname"><a href="class_image_editor_g_u_i.html#a14bc08294cff01538d748a8792b0b5e3">ImageEditorGUI::LoadFile</a></div><div class="ttdeci">void LoadFile()</div><div class="ttdoc">Loads a file into the GUI.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:180</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a1c244686d7643101b22ab5b15ef377f0"><div class="ttname"><a href="class_image_editor_g_u_i.html#a1c244686d7643101b22ab5b15ef377f0">ImageEditorGUI::SaveButton</a></div><div class="ttdeci">QPushButton * SaveButton</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:59</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a37011f71e3255e506ca7c04fe3f7c5ce"><div class="ttname"><a href="class_image_editor_g_u_i.html#a37011f71e3255e506ca7c04fe3f7c5ce">ImageEditorGUI::AddButton</a></div><div class="ttdeci">QPushButton * AddButton</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:56</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a372deea66bedcd77d2b7c69dd6e7ae34"><div class="ttname"><a href="class_image_editor_g_u_i.html#a372deea66bedcd77d2b7c69dd6e7ae34">ImageEditorGUI::GetLastDir</a></div><div class="ttdeci">QString GetLastDir()</div><div class="ttdoc">Gets the last directory used.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:166</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a39aa96af2498fa25a031afa86aa8eb76"><div class="ttname"><a href="class_image_editor_g_u_i.html#a39aa96af2498fa25a031afa86aa8eb76">ImageEditorGUI::removeTagWidget</a></div><div class="ttdeci">void removeTagWidget()</div><div class="ttdoc">Removes a tag widget from the GUI.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:159</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a3e12e18816ba30c2a5f882da88aef877"><div class="ttname"><a href="class_image_editor_g_u_i.html#a3e12e18816ba30c2a5f882da88aef877">ImageEditorGUI::LoadButton</a></div><div class="ttdeci">QPushButton * LoadButton</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:58</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a4f2581f1a28f6ce259358c90637ba37d"><div class="ttname"><a href="class_image_editor_g_u_i.html#a4f2581f1a28f6ce259358c90637ba37d">ImageEditorGUI::TagWidgets</a></div><div class="ttdeci">QList&lt; QWidget * &gt; TagWidgets</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:51</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a5579b959664dea6bc24decc101e6cc0a"><div class="ttname"><a href="class_image_editor_g_u_i.html#a5579b959664dea6bc24decc101e6cc0a">ImageEditorGUI::videoWidget</a></div><div class="ttdeci">QVideoWidget * videoWidget</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:61</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a590d7935e6c9feb6222daab50a049c8b"><div class="ttname"><a href="class_image_editor_g_u_i.html#a590d7935e6c9feb6222daab50a049c8b">ImageEditorGUI::resizeEvent</a></div><div class="ttdeci">void resizeEvent(QResizeEvent *event)</div><div class="ttdoc">Handles resize events.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:371</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a5a7f03147f232cdeea9d276019ccd034"><div class="ttname"><a href="class_image_editor_g_u_i.html#a5a7f03147f232cdeea9d276019ccd034">ImageEditorGUI::addTag</a></div><div class="ttdeci">void addTag()</div><div class="ttdoc">Adds a tag widget to the GUI.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:125</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a6853e3a6dc0aca51671a57e95b902244"><div class="ttname"><a href="class_image_editor_g_u_i.html#a6853e3a6dc0aca51671a57e95b902244">ImageEditorGUI::FileLabel</a></div><div class="ttdeci">QString * FileLabel</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:50</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a6899fe9a3bf38a8a471910456ca5d429"><div class="ttname"><a href="class_image_editor_g_u_i.html#a6899fe9a3bf38a8a471910456ca5d429">ImageEditorGUI::Movie</a></div><div class="ttdeci">QMovie * Movie</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:52</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a847a5737976721108c27f762c03500ad"><div class="ttname"><a href="class_image_editor_g_u_i.html#a847a5737976721108c27f762c03500ad">ImageEditorGUI::ScrollWidget</a></div><div class="ttdeci">QWidget * ScrollWidget</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:62</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a9224433e5b2a0496b87a3a05106dcb79"><div class="ttname"><a href="class_image_editor_g_u_i.html#a9224433e5b2a0496b87a3a05106dcb79">ImageEditorGUI::ScrollLayout</a></div><div class="ttdeci">QVBoxLayout * ScrollLayout</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:63</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_a9eae6361133905a11aec84dc4097b1b0"><div class="ttname"><a href="class_image_editor_g_u_i.html#a9eae6361133905a11aec84dc4097b1b0">ImageEditorGUI::ImageLabel</a></div><div class="ttdeci">QLabel * ImageLabel</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:54</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_ab2c5122d7912a2e50afb46d3ada8ce16"><div class="ttname"><a href="class_image_editor_g_u_i.html#ab2c5122d7912a2e50afb46d3ada8ce16">ImageEditorGUI::ScrollArea</a></div><div class="ttdeci">QScrollArea * ScrollArea</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:60</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_ac01223355087f43359fcfe62e1d5357f"><div class="ttname"><a href="class_image_editor_g_u_i.html#ac01223355087f43359fcfe62e1d5357f">ImageEditorGUI::addStandardButton</a></div><div class="ttdeci">QPushButton * addStandardButton</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:57</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_ac672718c127179c9c6a541c5deff2b29"><div class="ttname"><a href="class_image_editor_g_u_i.html#ac672718c127179c9c6a541c5deff2b29">ImageEditorGUI::addStandardTag</a></div><div class="ttdeci">void addStandardTag()</div><div class="ttdoc">Adds standard tags to the GUI.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:132</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_ac88e196169998c20ddf171733dfc5fda"><div class="ttname"><a href="class_image_editor_g_u_i.html#ac88e196169998c20ddf171733dfc5fda">ImageEditorGUI::SetLastDir</a></div><div class="ttdeci">void SetLastDir(const QString &amp;path)</div><div class="ttdoc">Sets the last opened directory.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:172</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_ac8c68a1cf592e428b21e7fec5fccd8cc"><div class="ttname"><a href="class_image_editor_g_u_i.html#ac8c68a1cf592e428b21e7fec5fccd8cc">ImageEditorGUI::DisplayFile</a></div><div class="ttdeci">void DisplayFile(const QString &amp;FilePath)</div><div class="ttdoc">Displays a file in the GUI.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:313</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_acd905527c38151be31a672f2ac6ec03e"><div class="ttname"><a href="class_image_editor_g_u_i.html#acd905527c38151be31a672f2ac6ec03e">ImageEditorGUI::SwitchMode</a></div><div class="ttdeci">void SwitchMode()</div><div class="ttdoc">Switches the mode of the GUI.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:105</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_ad4c8f6832f0cd5aa6a0b3ddcfa44889b"><div class="ttname"><a href="class_image_editor_g_u_i.html#ad4c8f6832f0cd5aa6a0b3ddcfa44889b">ImageEditorGUI::ImageEditorGUI</a></div><div class="ttdeci">ImageEditorGUI()</div><div class="ttdoc">Constructor for ImageEditorGUI.</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.cpp:43</div></div>
+<div class="ttc" id="aclass_image_editor_g_u_i_html_af0e3204fd4e8bebb506cb9710bb6d5f0"><div class="ttname"><a href="class_image_editor_g_u_i.html#af0e3204fd4e8bebb506cb9710bb6d5f0">ImageEditorGUI::ModeSwitch</a></div><div class="ttdeci">QPushButton * ModeSwitch</div><div class="ttdef"><b>Definition</b> ImageEditorGUI.h:55</div></div>
+<div class="ttc" id="aclass_q_widget_html"><div class="ttname"><a href="class_q_widget.html">QWidget</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

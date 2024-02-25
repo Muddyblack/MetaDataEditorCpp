@@ -1,0 +1,7 @@
+<map id="QWidget" name="QWidget">
+<area shape="rect" id="Node000001" title=" " alt="" coords="121,5,185,75"/>
+<area shape="rect" id="Node000002" href="$class_image_editor_g_u_i.html" title="This class provides a GUI for editing files." alt="" coords="5,123,148,704"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,90,139,123,133,122,140,89"/>
+<area shape="rect" id="Node000003" href="$class_tag_widget.html" title="A widget for displaying and editing tags." alt="" coords="172,304,288,523"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="165,89,210,304,205,305,160,90"/>
+</map>

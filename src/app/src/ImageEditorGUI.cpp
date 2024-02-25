@@ -136,7 +136,7 @@ void ImageEditorGUI::addStandardTag() {
     // Create TagWidgets with standard values
     TagWidget *tagWidget1 = new TagWidget("START", currentDate.toString("yyyy-MM-dd"));
     QDate endDate = currentDate.addDays(7);
-    TagWidget *tagWidget2 = new TagWidget("ENDDATE", endDate.toString("yyyy-MM-dd"));
+    TagWidget *tagWidget2 = new TagWidget("END", endDate.toString("yyyy-MM-dd"));
     TagWidget *tagWidget3 = new TagWidget("DisplayTime", "10");
 
     connect(tagWidget1, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);

@@ -1,0 +1,5 @@
+<map id="ImageEditorGUI::SwitchMode" name="ImageEditorGUI::SwitchMode">
+<area shape="rect" id="Node000001" title="Switches the mode of the GUI." alt="" coords="5,5,197,32"/>
+<area shape="rect" id="Node000002" href="$_styles_8cpp.html#af792801f7db80364be5a016d633a1c22" title="Loads a stylesheet from a file and applies it to the application." alt="" coords="245,5,327,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,16,229,16,229,21,197,21"/>
+</map>

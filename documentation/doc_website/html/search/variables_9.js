@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nargs_0',['nargs',['../namespaceresources__gen.html#a196fe7c78051d6dfbcd854e01767bc91',1,'resources_gen']]]
+  ['modeswitch_0',['ModeSwitch',['../class_image_editor_g_u_i.html#af0e3204fd4e8bebb506cb9710bb6d5f0',1,'ImageEditorGUI']]],
+  ['movie_1',['Movie',['../class_image_editor_g_u_i.html#a6899fe9a3bf38a8a471910456ca5d429',1,'ImageEditorGUI']]]
 ];
