@@ -129,7 +129,7 @@ DEV Getting Started</h1>
 <div class="line">set(CMAKE_CXX_COMPILER &quot;path/to/QT/Tools/mingw1120_64/bin/c++.exe&quot;)</div>
 <div class="line">set(CMAKE_C_COMPILER &quot;path/to/QT/Tools/mingw1120_64/bin/gcc.exe&quot;)</div>
 </div><!-- fragment --></li>
-<li>If you have <code>make</code>: run <code>make build</code> to build the project.</li>
+<li>If you have <code>make</code>: run <code>make</code> or <code>make build</code> to build the project.</li>
 </ol>
 <p>-&gt; Alternatively: </p><div class="fragment"><div class="line"># Configure</div>
 <div class="line">cmake --no-warn-unused-cli \</div>
@@ -145,17 +145,30 @@ DEV Getting Started</h1>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
 Documentation build with</h1>
 <ul>
-<li><a href="https://jothepro.github.io/doxygen-awesome-css/">Doxygen Awesome CSS</a> - The CSS theme used for documentation<ul>
-<li>Generate with: <code>make gendoc</code> Requires python for updating readme paths</li>
+<li><a href="https://jothepro.github.io/doxygen-awesome-css/">Doxygen Awesome CSS</a> - The CSS theme used for</li>
+<li>Open it using: <code>make opendoc</code></li>
 </ul>
-</li>
+<h2><a class="anchor" id="autotoc_md6"></a>
+Required</h2>
+<ul>
+<li><code>Python</code> for updating the URL's of the readme files</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Optional</h2>
+<ul>
+<li><code>Graphviz</code> for graphs in documentation</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Generating</h2>
+<ul>
+<li>Generate with: <code>make doc</code> Requires python for updating readme paths</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Authors</h1>
 <ul>
 <li><a href="https://github.com/Muddyblack">Muddyblack</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md7"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 License</h1>
 <p>This project is licensed under the MIT License - see the <a href="../../../LICENSE">LICENSE</a> file for details </p>
 </div></div><!-- PageDoc -->

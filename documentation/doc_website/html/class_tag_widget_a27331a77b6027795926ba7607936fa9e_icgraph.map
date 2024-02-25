@@ -1,0 +1,5 @@
+<map id="TagWidget::FocusNext" name="TagWidget::FocusNext">
+<area shape="rect" id="Node000001" title="Focus the next widget using tab." alt="" coords="207,5,361,32"/>
+<area shape="rect" id="Node000002" href="$class_tag_widget.html#a16fcbf974dd6265776d55a9f60deb4c6" title="Construct a new Tag Widget object." alt="" coords="5,5,159,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,21,159,21,159,16,191,16"/>
+</map>

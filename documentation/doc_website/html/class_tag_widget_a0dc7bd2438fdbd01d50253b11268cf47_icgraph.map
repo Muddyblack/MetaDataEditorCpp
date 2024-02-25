@@ -1,0 +1,7 @@
+<map id="TagWidget::removeRequested" name="TagWidget::removeRequested">
+<area shape="rect" id="Node000001" title="Signal that is emitted when the widget is requested to be removed." alt="" coords="414,5,608,32"/>
+<area shape="rect" id="Node000002" href="$class_tag_widget.html#a9da08f5e5c402c0eb8808176a2f1203c" title="Remove this widget." alt="" coords="207,5,366,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="398,21,367,21,367,16,398,16"/>
+<area shape="rect" id="Node000003" href="$class_tag_widget.html#a16fcbf974dd6265776d55a9f60deb4c6" title="Construct a new Tag Widget object." alt="" coords="5,5,159,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="191,21,159,21,159,16,191,16"/>
+</map>

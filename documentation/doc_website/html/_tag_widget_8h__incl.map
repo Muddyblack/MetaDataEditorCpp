@@ -1,0 +1,11 @@
+<map id="C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src/app/include/TagWidget.h" name="C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src/app/include/TagWidget.h">
+<area shape="rect" id="Node000001" title="Defines the TagWidget class, a widget for displaying and editing tags." alt="" coords="48,5,254,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,112,78,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="117,66,71,104,67,100,114,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,112,201,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,64,154,96,148,96,148,64"/>
+<area shape="rect" id="Node000004" href="$_tag_text_edit_8h.html" title="Defines the TagTextEdit class, a custom QTextEdit that emits signals when Tab or Shift+Tab are presse..." alt="" coords="224,112,326,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,62,246,100,243,105,190,67"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="235,187,315,213"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="278,139,278,171,272,171,272,139"/>
+</map>

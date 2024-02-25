@@ -2,7 +2,7 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](./README.md)
 [![es](https://img.shields.io/badge/lang-de-black.svg)](./README.de.md)
 
-## Erste Schritte
+## End-Nutzer erste Schritte
 
 Um das Projekt lokal einzurichten, folgen Sie diesen Schritten:
 
@@ -26,7 +26,7 @@ set(CMAKE_PREFIX_PATH "pfad/zu/QT/6.6.2/mingw_64")
 set(CMAKE_CXX_COMPILER "pfad/zu/QT/Tools/mingw1120_64/bin/c++.exe")
 set(CMAKE_C_COMPILER "pfad/zu/QT/Tools/mingw1120_64/bin/gcc.exe")
 ```
-5. Wenn sie ``make`` besitzen: `make build` aus um das Projekt zu bauen.
+5. Wenn sie ``make`` besitzen: ``make`` oder `make build` aus um das Projekt zu bauen.
 
    -> Alternativ: 
 ```sh
@@ -46,7 +46,16 @@ set(CMAKE_C_COMPILER "pfad/zu/QT/Tools/mingw1120_64/bin/gcc.exe")
 ## Doku erstellt mit
 
 * [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - Das CSS-Thema, das für die Dokumentation verwendet wurde
--> Erstellen mit: `make gendoc`
+* Öffnen Sie es mit: ``make opendoc``
+
+### Erforderlich
+* `Python` um die Readme-Pfade upzudaten
+
+### Optional
+* ``Graphviz`` für Diagramme in der Dokumentation
+
+### Generierung
+* Erstellen mit: ``make doc`` Benötigt Python zum Aktualisieren der Readme-Pfade
 
 ## Autoren
 

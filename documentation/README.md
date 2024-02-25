@@ -26,7 +26,7 @@ set(CMAKE_PREFIX_PATH "path/to/QT/6.6.2/mingw_64")
 set(CMAKE_CXX_COMPILER "path/to/QT/Tools/mingw1120_64/bin/c++.exe")
 set(CMAKE_C_COMPILER "path/to/QT/Tools/mingw1120_64/bin/gcc.exe")
 ```
-5. If you have ``make``: run ``make build`` to build the project.
+5. If you have ``make``: run ``make`` or ``make build`` to build the project.
 
 -> Alternatively: 
 ```sh
@@ -45,8 +45,18 @@ set(CMAKE_C_COMPILER "path/to/QT/Tools/mingw1120_64/bin/gcc.exe")
 
 ## Documentation build with
 
-* [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - The CSS theme used for documentation 
-    * Generate with: ``make gendoc`` Requires python for updating readme paths
+* [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - The CSS theme used for 
+* Open it using: ``make opendoc``
+
+### Required
+* ``Python`` for updating the URL's of the readme files 
+
+### Optional 
+* ``Graphviz`` for graphs in documentation 
+
+### Generating
+* Generate with: ``make doc`` Requires python for updating readme paths
+
 
 ## Authors
 

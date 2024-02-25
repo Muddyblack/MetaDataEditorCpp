@@ -21,7 +21,7 @@ build:
 
 	@$(BIN_DIR)/MetaDataEditor
 
-gendoc:
+doc:
 	@cd documentation && python update_readme.py
 	@cd documentation && doxygen Doxyfile
 	@make opendoc
