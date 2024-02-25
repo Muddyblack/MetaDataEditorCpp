@@ -9,13 +9,6 @@
 #include <QFile>
 #include <QImage>
 
-#include <iostream>
-#include <map>
-#include <string>
-
-#include <iostream>
-#include <fstream>
-#include <cstdint>
 #include <map>
 #include <string>
 
