@@ -1,5 +1,5 @@
 <map id="C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src/app/include/TagTextEdit.h" name="C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src/app/include/TagTextEdit.h">
-<area shape="rect" id="Node000001" title="Defines the TagTextEdit class, a custom QTextEdit that emits signals when Tab or Shift+Tab are presse..." alt="" coords="5,5,211,64"/>
+<area shape="rect" id="Node000001" title="Defines the TagTextEdit class for handling key press events." alt="" coords="5,5,211,64"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="68,112,148,139"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,64,111,96,105,96,105,64"/>
 </map>

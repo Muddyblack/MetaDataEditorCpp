@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Implements the TagWidget class for handling tag editing.">
 <polygon fill="#999999" stroke="#666666" points="305.12,-212 151.12,-212 151.12,-168 305.12,-168 305.12,-212"/>
 <text text-anchor="start" x="159.12" y="-198.5" font-family="Helvetica,sans-Serif" font-size="10.00">C:/Users/Muddyblack</text>
 <text text-anchor="start" x="159.12" y="-186.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Downloads/MetaDataEditorCpp</text>
@@ -121,7 +121,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="_tag_text_edit_8h.html" target="_top" xlink:title="Defines the TagTextEdit class, a custom QTextEdit that emits signals when Tab or Shift+Tab are presse...">
+<g id="a_Node000005"><a xlink:href="_tag_text_edit_8h.html" target="_top" xlink:title="Defines the TagTextEdit class for handling key press events.">
 <polygon fill="white" stroke="#666666" points="148.12,-76 72.12,-76 72.12,-56 148.12,-56 148.12,-76"/>
 <text text-anchor="middle" x="110.12" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">TagTextEdit.h</text>
 </a>

@@ -1,9 +1,9 @@
-<map id="C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src/app/include/MetaDataHandler.h" name="C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src/app/include/MetaDataHandler.h">
-<area shape="rect" id="Node000001" title="Handles reading and writing metadata." alt="" coords="5,5,234,64"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="6,112,62,139"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,66,59,102,55,99,90,62"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="87,112,152,139"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,64,122,96,117,96,117,64"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="176,112,242,139"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="150,62,187,99,183,103,146,66"/>
+<map id="C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src/metadata/include/MetaDataHandler.h" name="C:/Users/Muddyblack/Downloads/MetaDataEditorCpp/src/metadata/include/MetaDataHandler.h">
+<area shape="rect" id="Node000001" title="Handles reading and writing metadata." alt="" coords="5,5,267,64"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="23,112,79,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,66,75,102,72,99,107,62"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="103,112,169,139"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="139,64,139,96,133,96,133,64"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="192,112,259,139"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,62,204,99,200,103,163,66"/>
 </map>

@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="_image_editor_g_u_i_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="_image_editor_g_u_i_8h.html" target="_top" xlink:title="Defines the ImageEditorGUI class for editing files.">
 <polygon fill="white" stroke="#666666" points="566.5,-132 474,-132 474,-112 566.5,-112 566.5,-132"/>
 <text text-anchor="middle" x="520.25" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImageEditorGUI.h</text>
 </a>
@@ -40,7 +40,7 @@
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="_styles_8h.html" target="_top" xlink:title="Defines a function for loading and applying a stylesheet to a QApplication.">
+<g id="a_Node000017"><a xlink:href="_styles_8h.html" target="_top" xlink:title="Defines the function for loading and applying a stylesheet to a QApplication.">
 <polygon fill="white" stroke="#666666" points="1041.25,-132 989.25,-132 989.25,-112 1041.25,-112 1041.25,-132"/>
 <text text-anchor="middle" x="1015.25" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">Styles.h</text>
 </a>
@@ -364,7 +364,7 @@
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="_tag_text_edit_8h.html" target="_top" xlink:title="Defines the TagTextEdit class, a custom QTextEdit that emits signals when Tab or Shift+Tab are presse...">
+<g id="a_Node000014"><a xlink:href="_tag_text_edit_8h.html" target="_top" xlink:title="Defines the TagTextEdit class for handling key press events.">
 <polygon fill="white" stroke="#666666" points="416.25,-76 340.25,-76 340.25,-56 416.25,-56 416.25,-76"/>
 <text text-anchor="middle" x="378.25" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">TagTextEdit.h</text>
 </a>

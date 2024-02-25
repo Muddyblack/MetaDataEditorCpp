@@ -11,7 +11,7 @@
 <!-- Node0 -->
 <g id="Node000000" class="node">
 <title>Node0</title>
-<g id="a_Node000000"><a xlink:href="class_meta_data_handler.html" target="_top" xlink:title=" ">
+<g id="a_Node000000"><a xlink:href="class_meta_data_handler.html" target="_top" xlink:title="Handles reading and writing metadata from/to files.">
 <polygon fill="white" stroke="#666666" points="91,-20 0,-20 0,0 91,0 91,-20"/>
 <text text-anchor="middle" x="45.5" y="-6.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler</text>
 </a>

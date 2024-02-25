@@ -22,7 +22,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="_image_editor_g_u_i_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="_image_editor_g_u_i_8cpp.html" target="_top" xlink:title="Implements the ImageEditorGUI class for editing files.">
 <polygon fill="white" stroke="#666666" points="157.75,-44 0,-44 0,0 157.75,0 157.75,-44"/>
 <text text-anchor="start" x="8" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">C:/Users/Muddyblack</text>
 <text text-anchor="start" x="8" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Downloads/MetaDataEditorCpp</text>
@@ -42,7 +42,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="_tag_widget_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="_tag_widget_8cpp.html" target="_top" xlink:title="Implements the TagWidget class for handling tag editing.">
 <polygon fill="white" stroke="#666666" points="329.88,-44 175.88,-44 175.88,0 329.88,0 329.88,-44"/>
 <text text-anchor="start" x="183.88" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">C:/Users/Muddyblack</text>
 <text text-anchor="start" x="183.88" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Downloads/MetaDataEditorCpp</text>

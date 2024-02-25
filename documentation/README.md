@@ -15,7 +15,16 @@ What you need to install and how to install it.
 
 Step-by-step guide showing you how to set up a development environment.
 
-## DEV Getting Started
+## For DEV
+
+### Recommendation
+* Use [CLion](https://www.jetbrains.com/de-de/clion/)
+
+#### For VSCODE DEVS
+1. [Cmake-twxs](https://marketplace.visualstudio.com/items?itemName=twxs.cmake)
+2. [C/C++_Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+3. [CMake_Tools_Fork](https://marketplace.visualstudio.com/items?itemName=maxmitti.cmake-tools-fork)
+4. [Makefile_Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools)
 
 1. Install ``QT 6.6.2``: https://www.qt.io/blog/qt-6.6.2-released
 2. Clone the repository.

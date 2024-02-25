@@ -42,7 +42,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="_app_constants_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="_app_constants_8cpp.html" target="_top" xlink:title="Implements the constants used throughout the application.">
 <polygon fill="white" stroke="#666666" points="326,-44 172,-44 172,0 326,0 326,-44"/>
 <text text-anchor="start" x="180" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">C:/Users/Muddyblack</text>
 <text text-anchor="start" x="180" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Downloads/MetaDataEditorCpp</text>
@@ -62,7 +62,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="_image_editor_g_u_i_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="_image_editor_g_u_i_8cpp.html" target="_top" xlink:title="Implements the ImageEditorGUI class for editing files.">
 <polygon fill="white" stroke="#666666" points="501.88,-44 344.12,-44 344.12,0 501.88,0 501.88,-44"/>
 <text text-anchor="start" x="352.12" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">C:/Users/Muddyblack</text>
 <text text-anchor="start" x="352.12" y="-18.5" font-family="Helvetica,sans-Serif" font-size="10.00">/Downloads/MetaDataEditorCpp</text>
