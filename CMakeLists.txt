@@ -19,24 +19,34 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Multimedia MultimediaWidge
 
 
 set(PROJECT_SOURCES
+        # App
         src/app/main.cpp
         src/app/src/ImageEditorGUI.cpp
         src/app/src/Styles.cpp
         src/app/src/TagWidget.cpp
         src/app/src/TagTexEdit.cpp
-        src/app/src/MetaDataHandler.cpp
         src/app/src/AppConstants.cpp
-        src/helper/logging/Logger.cpp
+
+        # Logging
+        src/logging/Logger.cpp
+
+        # Metadata
+        src/metadata/src/MetaDataHandler.cpp
 )
 
 set(PROJECT_HEADERS
+        # App
         src/app/include/ImageEditorGUI.h
         src/app/include/Styles.h
         src/app/include/TagWidget.h
         src/app/include/TagTextEdit.h
-        src/app/include/MetaDataHandler.h
         src/app/include/AppConstants.h
-        src/helper/logging/Logger.h
+
+        # Logging
+        src/logging/Logger.h
+
+        # Metadata
+        src/metadata/include/MetaDataHandler.h
 )
 
 set(PROJECT_RESOURCES
@@ -73,9 +83,9 @@ else()
     endif()
 endif()
 
-target_include_directories(MetaDataEditor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_include_directories(MetaDataEditor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/app/include)
-target_include_directories(MetaDataEditor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/helper/logging)
+target_include_directories(MetaDataEditor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/logging)
+target_include_directories(MetaDataEditor PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src/metadata/include)
 
 
 target_link_libraries(MetaDataEditor PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Multimedia Qt${QT_VERSION_MAJOR}::MultimediaWidgets)  

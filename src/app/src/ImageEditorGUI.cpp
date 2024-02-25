@@ -31,6 +31,7 @@
 #include <Styles.h>
 #include <TagTextEdit.h>
 #include <TagWidget.h>
+#include <Logger.h>
 
 
 QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg )"; //*.bmp *.gif *.tif *.tiff *.blend
@@ -214,19 +215,17 @@ void ImageEditorGUI::LoadFile() {
                 } catch (const std::exception &e) {
                     qWarning() << "Exception in SetLastDir: " << e.what();
                 }
-                qDebug() << "WHAT THA HELLLLL";
+                qDebug() << "Last dir set";
 
                 if (FileLabel == nullptr) {
                     qDebug() << "FileLabel is nullptr";
                     FileLabel = new QString();
                 }
-                qDebug() << "WHAT THA HELLLLL";
                 try {
                     *FileLabel = ImagePath;
                 } catch (const std::exception &e) {
                     qWarning() << "Exception when assigning ImagePath to FileLabel: " << e.what();
                 }
-                //qDebug() << "FileLabel: " << *FileLabel;
 
                 for (auto &tagWidget : TagWidgets) {
                     ScrollLayout->removeWidget(tagWidget);

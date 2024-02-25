@@ -16,6 +16,7 @@
 #include <string>
 
 #include <MetaDataHandler.h>
+#include <Logger.h>
 
 
 MetaDataHandler::MetaDataHandler() {
@@ -74,63 +75,42 @@ QMap<QString, QString> MetaDataHandler::readMetadata(const QString &filePath) {
 }
 
 void MetaDataHandler::writePNGHeader(const std::string& filename, const std::map<std::string, std::string>& properties) {
-    std::ofstream file(filename, std::ios::binary);
+    std::fstream file(filename, std::ios::binary | std::ios::in | std::ios::out);
+
     if (!file.is_open()) {
         std::cerr << "Error: Unable to open file " << filename << " for writing" << std::endl;
         return;
     }
 
-    // PNG signature
-    file.put(0x89);
-    file.put('P');
-    file.put('N');
-    file.put('G');
-    file.put(0x0D);
-    file.put(0x0A);
-    file.put(0x1A);
-    file.put(0x0A);
+    // Move the file pointer to the position where the PNG header is stored
+    file.seekp(0);
 
-    // IHDR chunk
-    uint32_t width = std::stoi(properties.at("Width"));
-    uint32_t height = std::stoi(properties.at("Height"));
-    uint8_t bitDepth = std::stoi(properties.at("Bit Depth"));
-    uint8_t colorType = std::stoi(properties.at("Color Type"));
-    uint8_t compressionMethod = std::stoi(properties.at("Compression Method"));
-    uint8_t filterMethod = std::stoi(properties.at("Filter Method"));
-    uint8_t interlaceMethod = std::stoi(properties.at("Interlace Method"));
+    PNGHeader header;
+    file.read(reinterpret_cast<char*>(&header), sizeof(header));
 
-    uint32_t chunkLength = 13;
-    file.put(chunkLength >> 24);
-    file.put((chunkLength >> 16) & 0xFF);
-    file.put((chunkLength >> 8) & 0xFF);
-    file.put(chunkLength & 0xFF);
-    file.put('I');
-    file.put('H');
-    file.put('D');
-    file.put('R');
-    file.put(bitDepth);
-    file.put(colorType);
-    file.put(compressionMethod); // Compression method
-    file.put(filterMethod); // Filter method
-    file.put(interlaceMethod); // Interlace method (0 for no interlace, 1 for Adam7 interlace)
-    file.put(0); // CRC (ignored)
+    if (!file) {
+        std::cerr << "Error: Unable to read PNG header from file " << filename << std::endl;
+        return;
+    }
 
-    // Write width and height
-    file.put(width >> 24);
-    file.put((width >> 16) & 0xFF);
-    file.put((width >> 8) & 0xFF);
-    file.put(width & 0xFF);
-    file.put(height >> 24);
-    file.put((height >> 16) & 0xFF);
-    file.put((height >> 8) & 0xFF);
-    file.put(height & 0xFF);
+    // Modify the header with new metadata
+    for (const auto& pair : properties) {
+        if (pair.first == "Width") {
+            header.width = std::stoi(pair.second);
+        } else if (pair.first == "Height") {
+            header.height = std::stoi(pair.second);
+        } else if (pair.first == "Bit Depth") {
+            header.bitDepth = std::stoi(pair.second);
+        } 
+        // Add similar lines for other metadata properties
+    }
 
-    // TODO Calculate and write CRC for IHDR chunk
+    // Move the file pointer back to the beginning to overwrite the header
+    file.seekp(0);
+    file.write(reinterpret_cast<char*>(&header), sizeof(header));
 
     file.close();
-    std::cout << "PNG file with header written successfully: " << filename << std::endl;
 }
-
 
 void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata) {
     qDebug() << "Writing metadata to file: " << filePath;
