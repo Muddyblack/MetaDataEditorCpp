@@ -1,7 +1,0 @@
-<map id="TagTextEdit::TabPressed" name="TagTextEdit::TabPressed">
-<area shape="rect" id="Node000001" title="Signal that is emitted when the Tab key is pressed." alt="" coords="239,31,406,57"/>
-<area shape="rect" id="Node000002" href="$class_tag_text_edit.html#aa34b43f00d8668351671450bf088726e" title="Override the default key press event to emit signals when Tab or Shift+Tab are pressed." alt="" coords="5,5,191,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,36,191,32,192,27,224,30"/>
-<area shape="rect" id="Node000003" href="$class_tag_widget.html#a16fcbf974dd6265776d55a9f60deb4c6" title="Construct a new Tag Widget object." alt="" coords="21,56,175,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,58,175,63,175,58,223,52"/>
-</map>

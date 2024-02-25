@@ -1,9 +1,0 @@
-<map id="ImageEditorGUI::saveFile" name="ImageEditorGUI::saveFile">
-<area shape="rect" id="Node000001" title="Saves the current file." alt="" coords="5,31,173,57"/>
-<area shape="rect" id="Node000002" href="$class_tag_widget.html#afe6c02bb8e709b6568cf05ea344b3ba8" title="Get the current tag name and value." alt="" coords="251,5,401,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="173,32,236,26,236,31,173,38"/>
-<area shape="rect" id="Node000003" href="$class_meta_data_handler.html#ab83e9b0d8069c1019e5a21b8dafaa2bf" title="Writes metadata to a file." alt="" coords="221,56,431,83"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="173,50,205,54,205,59,173,56"/>
-<area shape="rect" id="Node000004" href="$class_p_n_g_meta.html#a761b0f4eb987ac8a4f1486065ab4ce32" title="Writes a PNG header to a file." alt="" coords="479,56,661,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="431,67,463,67,463,72,431,72"/>
-</map>

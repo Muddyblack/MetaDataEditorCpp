@@ -1,9 +1,0 @@
-<map id="ImageEditorGUI::UpdateWindowTitle" name="ImageEditorGUI::UpdateWindowTitle">
-<area shape="rect" id="Node000001" title="Updates the window title." alt="" coords="679,5,887,48"/>
-<area shape="rect" id="Node000002" href="$class_image_editor_g_u_i.html#a14bc08294cff01538d748a8792b0b5e3" title="Loads a file into the GUI." alt="" coords="462,13,631,40"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="664,29,632,29,632,24,664,24"/>
-<area shape="rect" id="Node000003" href="$class_image_editor_g_u_i.html#a0ddb9a6d90ec93bc562dfff6d423de7d" title="Initializes the UI." alt="" coords="265,13,414,40"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,29,414,29,414,24,446,24"/>
-<area shape="rect" id="Node000004" href="$class_image_editor_g_u_i.html#ad4c8f6832f0cd5aa6a0b3ddcfa44889b" title="Constructor for ImageEditorGUI." alt="" coords="5,13,217,40"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="249,29,217,29,217,24,249,24"/>
-</map>

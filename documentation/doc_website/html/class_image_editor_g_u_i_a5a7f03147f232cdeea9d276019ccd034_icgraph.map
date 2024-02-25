@@ -1,7 +1,0 @@
-<map id="ImageEditorGUI::addTag" name="ImageEditorGUI::addTag">
-<area shape="rect" id="Node000001" title="Adds a tag widget to the GUI." alt="" coords="462,5,624,32"/>
-<area shape="rect" id="Node000002" href="$class_image_editor_g_u_i.html#a0ddb9a6d90ec93bc562dfff6d423de7d" title="Initializes the UI." alt="" coords="265,5,414,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="447,21,415,21,415,16,447,16"/>
-<area shape="rect" id="Node000003" href="$class_image_editor_g_u_i.html#ad4c8f6832f0cd5aa6a0b3ddcfa44889b" title="Constructor for ImageEditorGUI." alt="" coords="5,5,217,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="249,21,217,21,217,16,249,16"/>
-</map>

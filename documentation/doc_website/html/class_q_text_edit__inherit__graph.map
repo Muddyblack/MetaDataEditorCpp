@@ -1,5 +1,0 @@
-<map id="QTextEdit" name="QTextEdit">
-<area shape="rect" id="Node000001" title=" " alt="" coords="42,5,113,75"/>
-<area shape="rect" id="Node000002" href="$class_tag_text_edit.html" title="A custom QTextEdit that emits signals when Tab or Shift+Tab are pressed." alt="" coords="5,123,149,256"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,90,80,123,75,123,75,90"/>
-</map>
