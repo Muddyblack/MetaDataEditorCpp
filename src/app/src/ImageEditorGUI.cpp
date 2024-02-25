@@ -353,18 +353,15 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
                 if (QFile::exists(resourceImagePath)) {
                     QPixmap pixmap(resourceImagePath);
                     pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
+                    ImageLabel->setStyleSheet("QLabel { color : red; }");
                     ImageLabel->setPixmap(pixmap);
+                    QLabel *textLabel = new QLabel("This file cannot be displayed at the moment.", this);
+                    textLabel->setStyleSheet("QLabel { color : red; }");
+                    ScrollLayout->addWidget(textLabel);
                 } else {
-                    qDebug() << "Resource Image Path: " << resourceImagePath;
-                    if (QFile::exists(resourceImagePath)) {
-                        QPixmap resourcePixmap(resourceImagePath);
-                        resourcePixmap = resourcePixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
-                        ImageLabel->setPixmap(resourcePixmap);
-                    } else {
-                        // If no image is found in the resource folder, display "Cant Display anything for this file type."
-                        ImageLabel->setStyleSheet("QLabel { color : red; }");
-                        ImageLabel->setText("This file type is currently not supported.");
-                    }
+                    // If no image is found in the resource folder, display "Cant Display anything for this file type."
+                    ImageLabel->setStyleSheet("QLabel { color : red; }");
+                    ImageLabel->setText("This file type is currently not supported.");
                 }
             }
         }
