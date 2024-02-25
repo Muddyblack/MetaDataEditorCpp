@@ -1,3 +1,6 @@
+## @package resources_gen
+#  This script contains the QrcGenerator class which is used to generate Qt resource files.
+
 import os
 import argparse
 from typing import List, Optional

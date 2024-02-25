@@ -1,3 +1,7 @@
+## @package run_ress_gen
+#  This script contains the ResourceGenerator class
+#  which is used to generate the QT resources file for a project.
+
 import os
 import subprocess
 from typing import List, Optional

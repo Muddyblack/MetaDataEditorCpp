@@ -1,12 +1,3 @@
-/**
- * @class ImageEditorGUI
- * @brief This class provides a GUI for editing files.
- * 
- * The GUI includes a QLabel for the image, QPushButton for various actions, 
- * QScrollArea for scrolling, QVideoWidget for displaying videos, and QVBoxLayout for layout.
- * It also includes methods for initializing the UI, updating the window title, 
- * extracting thumbnails, and removing tag widgets.
- */
 #ifndef IMAGE_EDITOR_GUI_H
 #define IMAGE_EDITOR_GUI_H
 
@@ -25,6 +16,15 @@
 
 #include <QTemporaryFile>
 
+/**
+ * @class ImageEditorGUI
+ * @brief This class provides a GUI for editing files.
+ * 
+ * The GUI includes a QLabel for the image, QPushButton for various actions, 
+ * QScrollArea for scrolling, QVideoWidget for displaying videos, and QVBoxLayout for layout.
+ * It also includes methods for initializing the UI, updating the window title, 
+ * extracting thumbnails, and removing tag widgets.
+ */
 class ImageEditorGUI : public QWidget
 {
     Q_OBJECT
