@@ -1,7 +1,7 @@
 var searchData=
 [
   ['readmetadata_0',['readMetadata',['../class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a',1,'MetaDataHandler']]],
-  ['readpngheader_1',['readPNGHeader',['../class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8',1,'MetaDataHandler']]],
+  ['readpngheader_1',['readPNGHeader',['../class_p_n_g_meta.html#af0d38c265feda017cc4811de8e2b54b2',1,'PNGMeta']]],
   ['removerequested_2',['removeRequested',['../class_tag_widget.html#a0dc7bd2438fdbd01d50253b11268cf47',1,'TagWidget']]],
   ['removeself_3',['RemoveSelf',['../class_tag_widget.html#a9da08f5e5c402c0eb8808176a2f1203c',1,'TagWidget']]],
   ['removetagwidget_4',['removeTagWidget',['../class_image_editor_g_u_i.html#a39aa96af2498fa25a031afa86aa8eb76',1,'ImageEditorGUI']]],

@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 716;
+var viewWidth = 683;
 var viewHeight = 394;
 var sectionId = 'dynsection-9';
 </script>
@@ -320,9 +320,9 @@ var sectionId = 'dynsection-9';
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8" target="_top" xlink:title="Reads the PNG header from a PNG file.">
-<polygon fill="white" stroke="#666666" points="706.75,-222 539.25,-222 539.25,-202 706.75,-202 706.75,-222"/>
-<text text-anchor="middle" x="623" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::readPNGHeader</text>
+<g id="a_Node000010"><a xlink:href="class_p_n_g_meta.html#af0d38c265feda017cc4811de8e2b54b2" target="_top" xlink:title="Reads the PNG header from a PNG file.">
+<polygon fill="white" stroke="#666666" points="674.5,-222 539.25,-222 539.25,-202 674.5,-202 674.5,-222"/>
+<text text-anchor="middle" x="606.88" y="-208.5" font-family="Helvetica,sans-Serif" font-size="10.00">PNGMeta::readPNGHeader</text>
 </a>
 </g>
 </g>
@@ -330,8 +330,8 @@ var sectionId = 'dynsection-9';
 <g id="edge11_Node000009_Node000010" class="edge">
 <title>Node9&#45;&gt;Node10</title>
 <g id="a_edge11_Node000009_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M502.07,-212C510.48,-212 519.1,-212 527.69,-212"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="527.41,-215.5 537.41,-212 527.41,-208.5 527.41,-215.5"/>
+<path fill="none" stroke="#63b8ff" d="M502.02,-212C510.48,-212 519.11,-212 527.59,-212"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="527.51,-215.5 537.51,-212 527.51,-208.5 527.51,-215.5"/>
 </a>
 </g>
 </g>
@@ -374,9 +374,9 @@ var sectionId = 'dynsection-9';
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_meta_data_handler.html#a3e50a5677b75156c986b84f55e1bcdbc" target="_top" xlink:title="Writes a PNG header to a file.">
-<polygon fill="white" stroke="#666666" points="707.5,-58 538.5,-58 538.5,-38 707.5,-38 707.5,-58"/>
-<text text-anchor="middle" x="623" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler::writePNGHeader</text>
+<g id="a_Node000016"><a xlink:href="class_p_n_g_meta.html#a761b0f4eb987ac8a4f1486065ab4ce32" target="_top" xlink:title="Writes a PNG header to a file.">
+<polygon fill="white" stroke="#666666" points="675.25,-58 538.5,-58 538.5,-38 675.25,-38 675.25,-58"/>
+<text text-anchor="middle" x="606.88" y="-44.5" font-family="Helvetica,sans-Serif" font-size="10.00">PNGMeta::writePNGHeader</text>
 </a>
 </g>
 </g>
@@ -384,8 +384,8 @@ var sectionId = 'dynsection-9';
 <g id="edge19_Node000015_Node000016" class="edge">
 <title>Node15&#45;&gt;Node16</title>
 <g id="a_edge19_Node000015_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M502.92,-48C510.82,-48 518.9,-48 526.95,-48"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="526.78,-51.5 536.77,-48 526.77,-44.5 526.78,-51.5"/>
+<path fill="none" stroke="#63b8ff" d="M502.81,-48C510.72,-48 518.77,-48 526.7,-48"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="526.69,-51.5 536.69,-48 526.69,-44.5 526.69,-51.5"/>
 </a>
 </g>
 </g>

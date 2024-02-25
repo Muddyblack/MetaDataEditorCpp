@@ -11,5 +11,5 @@ var searchData=
   ['tagwidget_2eh_8',['TagWidget.h',['../_tag_widget_8h.html',1,'']]],
   ['tagwidgets_9',['TagWidgets',['../class_image_editor_g_u_i.html#a4f2581f1a28f6ce259358c90637ba37d',1,'ImageEditorGUI']]],
   ['textfieldheight_10',['TextFieldHeight',['../class_tag_widget.html#ab6a50b117d3ffe3d92ab083c37f9d430',1,'TagWidget']]],
-  ['type_11',['type',['../struct_meta_data_handler_1_1_p_n_g_chunk.html#aeae2d4adb219419c631d0275893b89c3',1,'MetaDataHandler::PNGChunk']]]
+  ['type_11',['type',['../struct_p_n_g_meta_1_1_p_n_g_chunk.html#a90cd2e985d5f649f7f93409a65297acd',1,'PNGMeta::PNGChunk']]]
 ];

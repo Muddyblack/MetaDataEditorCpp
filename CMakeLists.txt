@@ -22,6 +22,7 @@ set(PROJECT_SOURCES
         # App
         src/app/main.cpp
         src/app/src/ImageEditorGUI.cpp
+        src/app/src/MetaDataHandler.cpp
         src/app/src/Styles.cpp
         src/app/src/TagWidget.cpp
         src/app/src/TagTexEdit.cpp
@@ -31,12 +32,13 @@ set(PROJECT_SOURCES
         src/logging/Logger.cpp
 
         # Metadata
-        src/metadata/src/MetaDataHandler.cpp
+        src/metadata/src/PNGMeta.cpp
 )
 
 set(PROJECT_HEADERS
         # App
         src/app/include/ImageEditorGUI.h
+        src/app/include/MetaDataHandler.h
         src/app/include/Styles.h
         src/app/include/TagWidget.h
         src/app/include/TagTextEdit.h
@@ -46,7 +48,7 @@ set(PROJECT_HEADERS
         src/logging/Logger.h
 
         # Metadata
-        src/metadata/include/MetaDataHandler.h
+        src/metadata/include/PNGMeta.h
 )
 
 set(PROJECT_RESOURCES

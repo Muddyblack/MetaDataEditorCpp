@@ -36,7 +36,7 @@
 <area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="712,137,744,173,740,177,708,141"/>
 <area shape="rect" id="Node000010" title=" " alt="" coords="840,187,913,213"/>
 <area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="731,137,832,178,830,183,729,142"/>
-<area shape="rect" id="Node000011" href="$_meta_data_handler_8h.html" title="Handles reading and writing metadata." alt="" coords="937,187,1069,213"/>
+<area shape="rect" id="Node000011" href="$_meta_data_handler_8h.html" title="Handles reading and writing metadata for application." alt="" coords="937,187,1069,213"/>
 <area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="753,137,936,180,935,185,752,142"/>
 <area shape="rect" id="Node000014" href="$_tag_text_edit_8h.html" title="Defines the TagTextEdit class for handling key press events." alt="" coords="459,187,560,213"/>
 <area shape="poly" id="edge14_Node000002_Node000014" title=" " alt="" coords="667,142,558,183,556,178,665,137"/>

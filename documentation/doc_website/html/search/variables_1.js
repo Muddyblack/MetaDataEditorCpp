@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bitdepth_0',['bitDepth',['../struct_meta_data_handler_1_1_p_n_g_header.html#a3d7b806cf90348c032f8b7e967336d47',1,'MetaDataHandler::PNGHeader']]]
+  ['bitdepth_0',['bitDepth',['../struct_p_n_g_meta_1_1_p_n_g_header.html#a170413fdc7adbf788d547ffb2c326571',1,'PNGMeta::PNGHeader']]]
 ];

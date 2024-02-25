@@ -7,5 +7,5 @@ var searchData=
   ['imageeditorgui_2eh_4',['ImageEditorGUI.h',['../_image_editor_g_u_i_8h.html',1,'']]],
   ['imagelabel_5',['ImageLabel',['../class_image_editor_g_u_i.html#a9eae6361133905a11aec84dc4097b1b0',1,'ImageEditorGUI']]],
   ['initui_6',['InitUi',['../class_image_editor_g_u_i.html#a0ddb9a6d90ec93bc562dfff6d423de7d',1,'ImageEditorGUI']]],
-  ['interlacemethod_7',['interlaceMethod',['../struct_meta_data_handler_1_1_p_n_g_header.html#a4d63fb17a44a699f639f03aa1f380eaa',1,'MetaDataHandler::PNGHeader']]]
+  ['interlacemethod_7',['interlaceMethod',['../struct_p_n_g_meta_1_1_p_n_g_header.html#ae3e510a15d21e995e7dbe9e071087fed',1,'PNGMeta::PNGHeader']]]
 ];

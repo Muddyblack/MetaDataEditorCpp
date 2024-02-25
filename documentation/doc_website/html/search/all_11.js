@@ -2,7 +2,7 @@ var searchData=
 [
   ['readme_2emd_0',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
   ['readmetadata_1',['readMetadata',['../class_meta_data_handler.html#a0f0c872ecd4e6b41bfcd746032152d2a',1,'MetaDataHandler']]],
-  ['readpngheader_2',['readPNGHeader',['../class_meta_data_handler.html#a1a20795298bd6966d20cf6f7880cbdd8',1,'MetaDataHandler']]],
+  ['readpngheader_2',['readPNGHeader',['../class_p_n_g_meta.html#af0d38c265feda017cc4811de8e2b54b2',1,'PNGMeta']]],
   ['removebutton_3',['RemoveButton',['../class_tag_widget.html#addb1a1c0a4edd15b7cf6edc0f5cf3e27',1,'TagWidget']]],
   ['removerequested_4',['removeRequested',['../class_tag_widget.html#a0dc7bd2438fdbd01d50253b11268cf47',1,'TagWidget']]],
   ['removeself_5',['RemoveSelf',['../class_tag_widget.html#a9da08f5e5c402c0eb8808176a2f1203c',1,'TagWidget']]],

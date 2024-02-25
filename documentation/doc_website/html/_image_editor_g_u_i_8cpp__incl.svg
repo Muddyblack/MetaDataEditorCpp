@@ -410,7 +410,7 @@ var sectionId = 'dynsection-0';
 <!-- Node27 -->
 <g id="Node000027" class="node">
 <title>Node27</title>
-<g id="a_Node000027"><a xlink:href="_meta_data_handler_8h.html" target="_top" xlink:title="Handles reading and writing metadata.">
+<g id="a_Node000027"><a xlink:href="_meta_data_handler_8h.html" target="_top" xlink:title="Handles reading and writing metadata for application.">
 <polygon fill="white" stroke="#666666" points="756.38,-76 657.12,-76 657.12,-56 756.38,-56 756.38,-76"/>
 <text text-anchor="middle" x="706.75" y="-62.5" font-family="Helvetica,sans-Serif" font-size="10.00">MetaDataHandler.h</text>
 </a>

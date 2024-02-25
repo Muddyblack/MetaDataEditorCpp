@@ -9,6 +9,8 @@ var annotated_dup =
     [ "ImageEditorGUI", "class_image_editor_g_u_i.html", "class_image_editor_g_u_i" ],
     [ "Logger", "class_logger.html", "class_logger" ],
     [ "MetaDataHandler", "class_meta_data_handler.html", "class_meta_data_handler" ],
+    [ "PNGMeta", "class_p_n_g_meta.html", "class_p_n_g_meta" ],
+    [ "PNGMeta_H", "class_p_n_g_meta___h.html", null ],
     [ "QTextEdit", "class_q_text_edit.html", null ],
     [ "QWidget", "class_q_widget.html", null ],
     [ "TagTextEdit", "class_tag_text_edit.html", "class_tag_text_edit" ],

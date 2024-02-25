@@ -1,4 +1,4 @@
 var dir_093e9a725ca77504e4a9028da6600b88 =
 [
-    [ "MetaDataHandler.h", "_meta_data_handler_8h.html", "_meta_data_handler_8h" ]
+    [ "PNGMeta.h", "_p_n_g_meta_8h.html", "_p_n_g_meta_8h" ]
 ];
