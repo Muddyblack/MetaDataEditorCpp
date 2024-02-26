@@ -1,22 +1,27 @@
+/**
+ * @file main.cpp
+ * @brief Entry point for the MetaData Editor application.
+ * @author Muddyblack
+ * @date 20.02.2024
+ */
 #include <ImageEditorGUI.h>
 #include <Styles.h>
 #include <QApplication>
 #include <QIcon>
 #include <QRect>
-
-
+#include <filesystem>
+#include <AppConstants.h>
 #include <iostream>
-
-QString ICON_PATH = ":/app.ico";
-QString DARKMODE_STYLE_PATH = ":/styles/darkmode_style.qss";
-QString LIGHTMODE_STYLE_PATH = ":/styles/lightmode_style.qss";
+#include <string>
+#include <Logger.h>
 
 int main(int argc, char *argv[])
 {
+    logInfo() << "MetaData Editor starting...";
     QApplication app(argc, argv);
-    app.setWindowIcon(QIcon(ICON_PATH));
+    app.setWindowIcon(QIcon(AppConstants::ICON_PATH));
 
-    loadStyles(app, DARKMODE_STYLE_PATH);
+    loadStyles(app, AppConstants::DARKMODE_STYLE_PATH);
 
     ImageEditorGUI editor;
     editor.setWindowTitle("MetaData Editor");

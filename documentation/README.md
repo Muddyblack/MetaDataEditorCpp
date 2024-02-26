@@ -15,7 +15,16 @@ What you need to install and how to install it.
 
 Step-by-step guide showing you how to set up a development environment.
 
-## DEV Getting Started
+## For DEV
+
+### Recommendation
+* Use [CLion](https://www.jetbrains.com/de-de/clion/)
+
+#### For VSCODE DEVS
+1. [Cmake-twxs](https://marketplace.visualstudio.com/items?itemName=twxs.cmake)
+2. [C/C++_Microsoft](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+3. [CMake_Tools_Fork](https://marketplace.visualstudio.com/items?itemName=maxmitti.cmake-tools-fork)
+4. [Makefile_Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.makefile-tools)
 
 1. Install ``QT 6.6.2``: https://www.qt.io/blog/qt-6.6.2-released
 2. Clone the repository.
@@ -26,14 +35,37 @@ set(CMAKE_PREFIX_PATH "path/to/QT/6.6.2/mingw_64")
 set(CMAKE_CXX_COMPILER "path/to/QT/Tools/mingw1120_64/bin/c++.exe")
 set(CMAKE_C_COMPILER "path/to/QT/Tools/mingw1120_64/bin/gcc.exe")
 ```
-5. If you have ``make``: run ``make start`` to build the project.
+5. If you have ``make``: run ``make`` or ``make build`` to build the project.
 
--> Alternatively: ``mkdir build && cd build && cmake .. && cmake .``
+-> Alternatively: 
+```sh
+    # Configure
+    cmake --no-warn-unused-cli \
+            -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
+            -DCMAKE_BUILD_TYPE:STRING=Release \
+            -DCMAKE_C_COMPILER:FILEPATH=gcc \ #set path to gcc or use env variable
+            -DCMAKE_CXX_COMPILER:FILEPATH=g++ \ #set path to g++ or use env variable
+            -S$(SRC_DIR) \ #replace SRC_DIR with path of project
+            -B$(BIN_DIR) \ # replace BIN_DIR  path to build folder
+            -G "MinGW Makefiles"
+    # Build
+    cmake --build $(BIN_DIR) --config Release --target all -j 6 -- # Replace BIN_DIR like you did above
+```
 
-## Build With
+## Documentation build with
 
-* [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - The CSS theme used for documentation 
-    * Generate with: ``make gendoc`` Requires python for updating readme paths
+* [Doxygen Awesome CSS](https://jothepro.github.io/doxygen-awesome-css/) - The CSS theme used for 
+* Open it using: ``make opendoc``
+
+### Required
+* ``Python`` for updating the URL's of the readme files 
+
+### Optional 
+* ``Graphviz`` for graphs in documentation 
+
+### Generating
+* Generate with: ``make doc`` Requires python for updating readme paths
+
 
 ## Authors
 

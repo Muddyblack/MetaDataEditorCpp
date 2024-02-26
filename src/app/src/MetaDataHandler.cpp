@@ -1,44 +1,44 @@
-#include <MetaDataHandler.h>
+/**
+ * @file MetaDataHandler.cpp
+ * @brief Implements the MetaDataHandler class.
+ * @author Muddyblack
+ * @date 21.02.2024
+ */
 #include <QImageReader>
 #include <QImageWriter>
-#include <iostream>
 #include <QFile>
 #include <QImage>
+
+#include <map>
+#include <string>
+
+#include <MetaDataHandler.h>
+#include <PNGMeta.h>
 
 MetaDataHandler::MetaDataHandler() {
     // Constructor
 }
 
 QMap<QString, QString> MetaDataHandler::readMetadata(const QString &filePath) {
-    QMap<QString, QString> metadata;
+    qDebug() << "Reading metadata from file: " << filePath;
+    std::map<std::string, std::string> metadata = PNGMeta::readPNGHeader(filePath.toStdString());
 
-    QImageReader reader(filePath);
-    foreach (QString key, reader.textKeys()) {
-        metadata.insert(key, reader.text(key));
+    QMap<QString, QString> qMetadata;
+    for (const auto &pair : metadata) {
+        qMetadata.insert(QString::fromStdString(pair.first), QString::fromStdString(pair.second));
     }
 
-    return metadata;
+    return qMetadata;
 }
 
-void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata, const QImage &image) {
-    std::cout << "Writing metadata to file: " << filePath.toStdString() << std::endl;
-
-    QFile file(filePath);
-    if (!file.exists()) {
-        file.open(QIODevice::WriteOnly);
-        file.close();
-    }
-
-    QImageWriter writer(filePath);
-    writer.setText("Software", "MetaDataEditor");
+void MetaDataHandler::writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata) {
+    qDebug() << "Writing metadata to file: " << filePath;
+    std::map<std::string, std::string> properties;
     QMapIterator<QString, QString> i(metadata);
     while (i.hasNext()) {
         i.next();
-        writer.setText(i.key(), i.value());
+        properties.insert(std::make_pair(i.key().toStdString(), i.value().toStdString()));
     }
-
-    if (!writer.write(image)) {
-        std::cerr << "Error writing metadata to file" << std::endl;
-        // Handle error
-    }
+    qDebug() << properties.size() << " metadata properties to write", properties;
+    PNGMeta::writePNGHeader(filePath.toStdString(), properties);
 }

@@ -1,3 +1,9 @@
+/**
+ * @file MetaDataHandler.h
+ * @brief Handles reading and writing metadata for application.
+ * @author Muddyblack
+ * @date 21.02.2024
+ */
 #ifndef MetaDataHandler_H
 #define MetaDataHandler_H
 
@@ -5,17 +11,30 @@
 #include <QString>
 #include <QImage>
 
+/**
+ * @class MetaDataHandler
+ * @brief Handles reading and writing metadata from/to files.
+ */
 class MetaDataHandler {
 public:
+    /**
+     * @brief Constructs a new MetaDataHandler object.
+     */
     MetaDataHandler();
 
-    // Reads metadata from the image file at the given path
-    // Returns a map where the keys are the metadata keys and the values are the metadata values
+    /**
+     * @brief Reads metadata from a file.
+     * @param filePath The path of the file to read from.
+     * @return A map of metadata keys to values.
+     */
     QMap<QString, QString> readMetadata(const QString &filePath);
 
-    // Writes metadata to the image file at the given path
-    // The metadata to write is given as a map where the keys are the metadata keys and the values are the metadata values
-void writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata, const QImage &image);
+    /**
+     * @brief Writes metadata to a file.
+     * @param filePath The path of the file to write to.
+     * @param metadata The metadata to write.
+     */
+    void writeMetadata(const QString &filePath, const QMap<QString, QString> &metadata);
 };
 
 #endif // MetaDataHandler_H

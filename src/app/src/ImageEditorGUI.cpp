@@ -1,42 +1,43 @@
-#include <QIcon>
-#include <QFileInfo>
-#include <QHBoxLayout>
-#include <QDate>
+/**
+ * @file ImageEditorGUI.cpp
+ * @brief Implements the ImageEditorGUI class for editing files.
+ * @author Muddyblack
+ * @date 20.02.2024
+ */
 
-#include <QSettings>
-#include <QFileDialog>
-#include <QStringList>
-#include <QMap>
+// QT includes
+#include <QAudioOutput>
+#include <QDate>
 #include <QDebug>
-#include <QFileInfo>
+#include <QFileDialog>
+#include <QHBoxLayout>
+#include <QIcon>
+#include <QImage>
+#include <QLoggingCategory>
+#include <QMap>
+#include <QMediaPlayer>
+#include <QMessageBox>
 #include <QMovie>
 #include <QPixmap>
-#include <QMessageBox>
-#include <iostream>
-
-#include <QMediaPlayer>
+#include <QSettings>
+#include <QStandardPaths>
+#include <QStringList>
 #include <QVideoWidget>
-#include <QAudioOutput>
 
-#include <QLoggingCategory>
-
-Q_LOGGING_CATEGORY(imageEditor, "image.editor")
-
-#include <Styles.h>
+// Local includes
+#include <AppConstants.h>
 #include <ImageEditorGUI.h>
+#include <MetaDataHandler.h>
+#include <Styles.h>
 #include <TagTextEdit.h>
 #include <TagWidget.h>
-#include <MetaDataHandler.h>
-
-extern QString ICON_PATH;
-extern QString DARKMODE_STYLE_PATH;
-extern QString LIGHTMODE_STYLE_PATH;
+#include <Logger.h>
 
 
-QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg *.bmp *.gif *.tif *.tiff *.blend)";
-QString VIDEO_FORMATS = "Videos (*.mp4 *.avi *.mov *.wmv *.flv *.mkv *webm)";
-QString AUDIO_FORMATS = "Audio (*.mp3 *.wav *.flac *.ogg *.aac *.m4a)";
-QString DOCUMENT_FORMATS = "Documents (*.pdf *.doc *.docx *.odt *.txt *.rtf *.md)";
+QString IMAGE_FORMATS = "Images (*.png *.jpg *.jpeg )"; //*.bmp *.gif *.tif *.tiff *.blend
+QString VIDEO_FORMATS = "Videos (*.mp4 )"; //*.avi *.mov *.wmv *.flv *.mkv *webm
+QString AUDIO_FORMATS = "Audio (*.mp3)"; // *.wav *.flac *.ogg *.aac *.m4a
+QString DOCUMENT_FORMATS = "Documents (*.doc *.docx *.odt *.txt *.rtf *.md)"; //*.pdf
 
 QString ALL_FORMATS = QString("%1;;%2;;%3;;%4").arg(
     "All (*)",
@@ -51,7 +52,7 @@ QString APP_NAME = "MetaDataEditor";
 
 ImageEditorGUI::ImageEditorGUI()
 {
-    setWindowIcon(QIcon(ICON_PATH));
+    setWindowIcon(QIcon(AppConstants::ICON_PATH));
     InitUi();
 }
 
@@ -65,7 +66,7 @@ void ImageEditorGUI::InitUi() {
         videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         videoWidget->hide();
 
-
+        
         // Create Buttons
         ModeSwitch = new QPushButton("Switch to Light Mode", this);
         connect(ModeSwitch, &QPushButton::clicked, this, &ImageEditorGUI::SwitchMode);
@@ -113,17 +114,17 @@ void ImageEditorGUI::InitUi() {
 
 void ImageEditorGUI::SwitchMode() {
     if (ModeSwitch->text() == "Switch to Dark Mode") {
-        loadStyles(*qApp, DARKMODE_STYLE_PATH);
+        loadStyles(*qApp, AppConstants::DARKMODE_STYLE_PATH);
         ModeSwitch->setText("Switch to Light Mode");
     } else {
-        loadStyles(*qApp, LIGHTMODE_STYLE_PATH);
+        loadStyles(*qApp, AppConstants::LIGHTMODE_STYLE_PATH);
         ModeSwitch->setText("Switch to Dark Mode");
     }
 }
 
 void ImageEditorGUI::UpdateWindowTitle() {
-    if (imageLabel != nullptr) {
-        QFileInfo fileInfo(*imageLabel);
+    if (FileLabel != nullptr) {
+        QFileInfo fileInfo(*FileLabel);
         QString filename = fileInfo.fileName();
         setWindowTitle(QString("MetaData Editor (%1)").arg(filename));
     } else {
@@ -145,7 +146,7 @@ void ImageEditorGUI::addStandardTag() {
     // Create TagWidgets with standard values
     TagWidget *tagWidget1 = new TagWidget("START", currentDate.toString("yyyy-MM-dd"));
     QDate endDate = currentDate.addDays(7);
-    TagWidget *tagWidget2 = new TagWidget("ENDDATE", endDate.toString("yyyy-MM-dd"));
+    TagWidget *tagWidget2 = new TagWidget("END", endDate.toString("yyyy-MM-dd"));
     TagWidget *tagWidget3 = new TagWidget("DisplayTime", "10");
 
     connect(tagWidget1, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
@@ -171,6 +172,7 @@ void ImageEditorGUI::removeTagWidget() {
         TagWidgets.removeOne(tagWidget);
     }
 }
+
 QString ImageEditorGUI::GetLastDir() {
     // Get the last used directory from QSettings
     QSettings settings("Company", "AppName");
@@ -179,8 +181,10 @@ QString ImageEditorGUI::GetLastDir() {
 
 void ImageEditorGUI::SetLastDir(const QString &path) {
     // Set the last used directory in QSettings
+    qDebug() << "Setting last dir: " << path;
     QSettings settings("Company", "AppName");
     settings.setValue("LastDir", QFileInfo(path).path());
+    qDebug() << "Succeded setting last dir for this file: " << path;
 }
 
 void ImageEditorGUI::LoadFile() {
@@ -199,14 +203,29 @@ void ImageEditorGUI::LoadFile() {
             if (!selectedFiles.isEmpty()) {
                 QString ImagePath = selectedFiles[0];
                 ImageLabel->clear();
+      
                 DisplayFile(ImagePath);
+                qDebug() << "SHowing now temp file";
+
 
                 // Save the directory to QSettings
-                SetLastDir(ImagePath);
-                if (imageLabel == nullptr) {
-                    imageLabel = new QString();
+                qDebug() << "Setting last dir";
+                try {
+                    SetLastDir(ImagePath);
+                } catch (const std::exception &e) {
+                    qWarning() << "Exception in SetLastDir: " << e.what();
                 }
-                *imageLabel = ImagePath;
+                qDebug() << "Last dir set";
+
+                if (FileLabel == nullptr) {
+                    qDebug() << "FileLabel is nullptr";
+                    FileLabel = new QString();
+                }
+                try {
+                    *FileLabel = ImagePath;
+                } catch (const std::exception &e) {
+                    qWarning() << "Exception when assigning ImagePath to FileLabel: " << e.what();
+                }
 
                 for (auto &tagWidget : TagWidgets) {
                     ScrollLayout->removeWidget(tagWidget);
@@ -214,8 +233,11 @@ void ImageEditorGUI::LoadFile() {
                 }
                 TagWidgets.clear();
 
-                UpdateWindowTitle();
+                qDebug() << "Updating window title";
 
+                UpdateWindowTitle();
+                qDebug() << "Updated window title";
+                
                 // adding tags
                 MetaDataHandler metadataHandler;
                 QMap<QString, QString> metaDatas = metadataHandler.readMetadata(ImagePath);
@@ -233,21 +255,20 @@ void ImageEditorGUI::LoadFile() {
     }
 }
 
-
 void ImageEditorGUI::saveFile() {
     while (true) {
         try {
-            if (imageLabel == nullptr || imageLabel->isEmpty()) {
+            if (FileLabel == nullptr || FileLabel->isEmpty()) {
                 break;
             }
 
-            QString fileExtension = QFileInfo(*imageLabel).suffix().toLower();
+            QString fileExtension = QFileInfo(*FileLabel).suffix().toLower();
 
             QFileDialog fileDialog(this);
             fileDialog.setAcceptMode(QFileDialog::AcceptSave);
             fileDialog.setNameFilter(ALL_FORMATS);
             fileDialog.setDefaultSuffix(fileExtension);
-            fileDialog.setDirectory(*imageLabel);
+            fileDialog.setDirectory(*FileLabel);
 
             if (!fileDialog.exec()) {
                 break;
@@ -264,7 +285,7 @@ void ImageEditorGUI::saveFile() {
 
             QMap<QString, QString> metadata;
             for (auto &widget : TagWidgets) {
-                std::cout << "widget: " << widget << std::endl;
+                qDebug() << "widget: " << widget;
                 TagWidget *tagWidget = qobject_cast<TagWidget*>(widget);
                 if (tagWidget) {
                     QString tagName, tagValue;
@@ -272,29 +293,35 @@ void ImageEditorGUI::saveFile() {
                     metadata[tagName] = tagValue;
                 }
             }
-            QImage originalImage(*imageLabel);
             MetaDataHandler metadataHandler;
-            metadataHandler.writeMetadata(savePath, metadata, originalImage);
+            qDebug() << "Writing metadata currently in new dev status " << savePath;
+            metadataHandler.writeMetadata(savePath, metadata);
             break;
             
         } catch (const std::exception &error) {
             QMessageBox msgBox;
             msgBox.setIcon(QMessageBox::Critical);
             msgBox.setText("Error");
-            msgBox.setInformativeText(QString("An error occurred: %1. Do you want to retry?").arg(error.what()));
+            QString errorMessage = QString("An error occurred: %1. Do you want to retry?").arg(error.what());
+            msgBox.setInformativeText(errorMessage);
             msgBox.setWindowTitle("Error");
             msgBox.setStandardButtons(QMessageBox::Retry | QMessageBox::Cancel);
             int ret = msgBox.exec();
+
+            // Output the error message to the console
+            qDebug() << errorMessage;
             if (ret == QMessageBox::Cancel) {
                 break;
             }
         }
     }
 }
+
 void ImageEditorGUI::DisplayFile(const QString &FilePath) {
     QFileInfo fileInfo(FilePath);
     QString fileExtension = fileInfo.suffix().toLower();
     ImageLabel->clear();
+    videoWidget->hide();
     try
     {
 
@@ -326,23 +353,47 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
                 if (QFile::exists(resourceImagePath)) {
                     QPixmap pixmap(resourceImagePath);
                     pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
+                    ImageLabel->setStyleSheet("QLabel { color : red; }");
                     ImageLabel->setPixmap(pixmap);
+                    QLabel *textLabel = new QLabel("This file cannot be displayed at the moment.", this);
+                    textLabel->setStyleSheet("QLabel { color : red; }");
+                    ScrollLayout->addWidget(textLabel);
                 } else {
-                    qDebug() << "Resource Image Path: " << resourceImagePath;
-                    if (QFile::exists(resourceImagePath)) {
-                        QPixmap resourcePixmap(resourceImagePath);
-                        resourcePixmap = resourcePixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
-                        ImageLabel->setPixmap(resourcePixmap);
-                    } else {
-                        // If no image is found in the resource folder, display "Cant Display anything for this file type."
-                        ImageLabel->setText("Currently can't display anything for this file type.");
-                    }
+                    // If no image is found in the resource folder, display "Cant Display anything for this file type."
+                    ImageLabel->setStyleSheet("QLabel { color : red; }");
+                    ImageLabel->setText("This file type is currently not supported.");
                 }
             }
         }
     }
     catch(const std::exception& e)
     {
-        std::cout << "error: " << e.what() << '\n';
+        qCritical() << "error: " << e.what();
     }
+}
+
+void ImageEditorGUI::resizeEvent(QResizeEvent *event) {
+    static QSize lastSize;  // Stores the size of the window the last time the image was resized
+
+    // Only resize the image if the size of the window has changed significantly
+    if (abs(lastSize.width() - width()) > 10 || abs(lastSize.height() - height()) > 10) {
+        lastSize = size();
+
+        if (FileLabel != nullptr && !FileLabel->isEmpty()) {
+            QImageReader reader(*FileLabel);
+            if (reader.canRead()) {
+                if (FileLabel->toLower().endsWith(".gif")) {
+                    Movie->setScaledSize(ScrollArea->size());
+                } else {
+                    QPixmap pixmap(*FileLabel);
+                    if (!pixmap.isNull()) {
+                        pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
+                        ImageLabel->setPixmap(pixmap);
+                    }
+                }
+            }
+        }
+    }
+
+    QWidget::resizeEvent(event);
 }

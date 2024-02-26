@@ -1,7 +1,28 @@
-start:
-	@cmake -E make_directory build && cd build && cmake .. && cmake --build . --config Release && MetaDataEditor
+# Compiler executables
+CC := gcc
+CXX := g++
 
-gendoc:
+# Directories
+SRC_DIR := $(CURDIR)
+BIN_DIR := $(SRC_DIR)/build
+DOXYGEN_INDEX_FILE := $(SRC_DIR)/documentation/DOXYGEN/html/index.html
+
+# Build targets and commands
+build:
+	@cmake --no-warn-unused-cli \
+	       -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=TRUE \
+	       -DCMAKE_BUILD_TYPE:STRING=Release \
+	       -DCMAKE_C_COMPILER:FILEPATH=$(CC) \
+	       -DCMAKE_CXX_COMPILER:FILEPATH=$(CXX) \
+	       -S$(SRC_DIR) \
+	       -B$(BIN_DIR) \
+	       -G "MinGW Makefiles"
+
+	@cmake --build $(BIN_DIR) --config Release --target all -j 6 --
+
+	@$(BIN_DIR)/MetaDataEditor
+
+doc:
 	@cd documentation && python update_readme.py
 	@cd documentation && doxygen Doxyfile
 	@make opendoc
@@ -11,13 +32,13 @@ ressgen:
 
 opendoc:
 ifeq ($(OS),Windows_NT)
-	@cd documentation && ".\doc_website\html\index.html"
+	@cd documentation && start "" "$(DOXYGEN_INDEX_FILE)"
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		@cd documentation && xdg-open ./doc_website/html/index.html
+		@xdg-open $(DOXYGEN_INDEX_FILE)
 	endif
 	ifeq ($(UNAME_S),Darwin)
-		@cd documentation && open ./doc_website/html/index.html
+		@open $(DOXYGEN_INDEX_FILE)
 	endif
 endif
