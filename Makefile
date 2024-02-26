@@ -5,6 +5,7 @@ CXX := g++
 # Directories
 SRC_DIR := $(CURDIR)
 BIN_DIR := $(SRC_DIR)/build
+DOXYGEN_INDEX_FILE := $(SRC_DIR)/documentation/DOXYGEN/html/index.html
 
 # Build targets and commands
 build:
@@ -31,13 +32,13 @@ ressgen:
 
 opendoc:
 ifeq ($(OS),Windows_NT)
-	@cd documentation && ".\doc_website\html\index.html"
+	@cd documentation && start "" "$(DOXYGEN_INDEX_FILE)"
 else
 	UNAME_S := $(shell uname -s)
 	ifeq ($(UNAME_S),Linux)
-		@cd documentation && xdg-open ./doc_website/html/index.html
+		@xdg-open $(DOXYGEN_INDEX_FILE)
 	endif
 	ifeq ($(UNAME_S),Darwin)
-		@cd documentation && open ./doc_website/html/index.html
+		@open $(DOXYGEN_INDEX_FILE)
 	endif
 endif

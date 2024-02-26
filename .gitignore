@@ -1,3 +1,6 @@
+# Ignore doxygen generated files
+DOXYGEN/
+
 # Ignore all build folders
 /build/
 /Debug/
