@@ -62,12 +62,13 @@ void ImageEditorGUI::InitUi() {
         ImageLabel->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
         ImageLabel->hide();
 
-        videoWidget = new QVideoWidget(this);
-        videoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-        videoWidget->hide();
+    // Create a video widget
+        VideoWidget = new QVideoWidget(this);
+        VideoWidget->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+        VideoWidget->hide();
 
         
-        // Create Buttons
+    // Create Buttons
         ModeSwitch = new QPushButton("Switch to Light Mode", this);
         connect(ModeSwitch, &QPushButton::clicked, this, &ImageEditorGUI::SwitchMode);
         AddButton = new QPushButton("Add Tag", this);
@@ -79,7 +80,7 @@ void ImageEditorGUI::InitUi() {
         SaveButton = new QPushButton("Save File", this);
         connect(SaveButton, &QPushButton::clicked, this, &ImageEditorGUI::saveFile);
 
-        // Add Buttons to the bottom of the layout
+    // Add Buttons to the bottom of the layout
         QHBoxLayout *ButtonLayout = new QHBoxLayout();
         ButtonLayout->addWidget(ModeSwitch);
         ButtonLayout->addWidget(AddButton);
@@ -88,26 +89,26 @@ void ImageEditorGUI::InitUi() {
         ButtonLayout->addWidget(SaveButton);
         ButtonLayout->setSpacing(15);
 
-        // Create a ScrollArea
+    // Create a ScrollArea
         ScrollArea = new QScrollArea(this);
         ScrollArea->setWidgetResizable(true);
         ScrollArea->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-        // Create a widget for the ScrollArea
+    // Create a widget for the ScrollArea
         ScrollWidget = new QWidget();
         ScrollArea->setWidget(ScrollWidget);
 
-        // Create a layout for the ScrollArea widget
+    // Create a layout for the ScrollArea widget
         ScrollLayout = new QVBoxLayout(ScrollWidget);
-        ScrollLayout->addWidget(videoWidget);
+        ScrollLayout->addWidget(VideoWidget);
         ScrollLayout->addWidget(ImageLabel);
 
-        // Add all to Mainlayout
+    // Add all to Mainlayout
         QVBoxLayout *layout = new QVBoxLayout();
         layout->addLayout(ButtonLayout);
         layout->addWidget(ScrollArea);
 
-        // Start GUI
+    // Start GUI
         setLayout(layout);
 }
 
@@ -321,7 +322,8 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
     QFileInfo fileInfo(FilePath);
     QString fileExtension = fileInfo.suffix().toLower();
     ImageLabel->clear();
-    videoWidget->hide();
+    VideoWidget->hide();
+
     try
     {
 
@@ -331,9 +333,9 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
             QAudioOutput *audioOutput = new QAudioOutput;
             
             ImageLabel->hide();
-            videoWidget->show();
+            VideoWidget->show();
 
-            player->setVideoOutput(videoWidget);
+            player->setVideoOutput(VideoWidget);
             player->setAudioOutput(audioOutput);
             player->setSource(QUrl(FilePath));
 
@@ -355,9 +357,6 @@ void ImageEditorGUI::DisplayFile(const QString &FilePath) {
                     pixmap = pixmap.scaled(ScrollArea->size(), Qt::KeepAspectRatio);
                     ImageLabel->setStyleSheet("QLabel { color : red; }");
                     ImageLabel->setPixmap(pixmap);
-                    QLabel *textLabel = new QLabel("This file cannot be displayed at the moment.", this);
-                    textLabel->setStyleSheet("QLabel { color : red; }");
-                    ScrollLayout->addWidget(textLabel);
                 } else {
                     // If no image is found in the resource folder, display "Cant Display anything for this file type."
                     ImageLabel->setStyleSheet("QLabel { color : red; }");

@@ -64,7 +64,7 @@ private:
     QPushButton *LoadButton;
     QPushButton *SaveButton;
     QScrollArea *ScrollArea;
-    QVideoWidget *videoWidget;
+    QVideoWidget *VideoWidget;
     QWidget *ScrollWidget;
     QVBoxLayout *ScrollLayout;
 
