@@ -42,7 +42,7 @@ std::map<std::string, std::string> PNGMeta::readPNGTextChunks(const std::string&
     std::ifstream file(filename, std::ios::binary);
     
     if (!file.is_open()) {
-        std::cerr << "Error: Unable to open file " << filename << std::endl;
+        logCritical() << "Error: Unable to open file " << filename;
         return textChunks;
     }
 
@@ -77,12 +77,12 @@ std::map<std::string, std::string> PNGMeta::readPNGHeader(const std::string& fil
     std::ifstream file(filename, std::ios::binary);
     
     if (!file.is_open()) {
-        std::cerr << "Error: Unable to open file " << filename << std::endl;
+        logCritical() << "Error: Unable to open file " << filename;
         return metadata;
     }
 
     if (!file) {
-        std::cerr << "Error: Unable to read PNG header from file " << filename << std::endl;
+        logWarning() << "Error: Unable to read PNG header from file " << filename;
         return metadata;
     }
 
@@ -94,7 +94,7 @@ std::map<std::string, std::string> PNGMeta::readPNGHeader(const std::string& fil
     if (header.signature[0] != 0x89 || header.signature[1] != 'P' || header.signature[2] != 'N' ||
         header.signature[3] != 'G' || header.signature[4] != 0x0D || header.signature[5] != 0x0A ||
         header.signature[6] != 0x1A || header.signature[7] != 0x0A) {
-        std::cerr << "Error: File " << filename << " is not a valid PNG file" << std::endl;
+        logWarning() << "Error: File " << filename << " is not a valid PNG file";
         return metadata;
     }
     // Skip IHDR chunk length and type
@@ -128,6 +128,7 @@ std::map<std::string, std::string> PNGMeta::readPNGHeader(const std::string& fil
 }
 
 
+//TODO: Add support for reading and writing other chunks
 // WRITING METADATA
 static const uint32_t crc32_table[256] = { /* Lookup table values */ };
 
@@ -145,7 +146,7 @@ void PNGMeta::writePNGTextChunks(const std::string& filename, const std::map<std
     std::fstream file(filename, std::ios::binary | std::ios::in | std::ios::out);
 
     if (!file.is_open()) {
-        std::cerr << "Error: Unable to open file " << filename << " for writing" << std::endl;
+        logCritical() << "Error: Unable to open file " << filename << " for writing";
         return;
     }
 
@@ -181,7 +182,7 @@ void PNGMeta::writePNGHeader(const std::string& filename, const std::map<std::st
     std::fstream file(filename, std::ios::binary | std::ios::in | std::ios::out);
 
     if (!file.is_open()) {
-        std::cerr << "Error: Unable to open file " << filename << " for writing" << std::endl;
+        logCritical() << "Error: Unable to open file " << filename << " for writing";
         return;
     }
 

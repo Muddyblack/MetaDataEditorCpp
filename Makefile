@@ -22,6 +22,9 @@ build:
 
 	@$(BIN_DIR)/MetaDataEditor
 
+open:
+	@$(BIN_DIR)/MetaDataEditor
+
 doc:
 	@cd documentation && python update_readme.py
 	@cd documentation && doxygen Doxyfile
