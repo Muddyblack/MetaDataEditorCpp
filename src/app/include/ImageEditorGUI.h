@@ -52,6 +52,26 @@ protected:
      */
     void resizeEvent(QResizeEvent *event);
 
+    /**
+     * @brief Handles drag enter events.
+     * 
+     * This method is called when a drag operation enters the widget. 
+     * If the drag operation contains URLs (which file paths are), it accepts the operation.
+     * @param event The drag enter event.
+     */
+    void dragEnterEvent(QDragEnterEvent *event) override;
+
+    /**
+     * @brief Handles drop events.
+     * 
+     * This method is called when the drag operation is dropped onto the widget. 
+     * It gets the first URL from the operation and loads the corresponding file.
+     * @param event The drop event.
+     */
+    void dropEvent(QDropEvent *event) override;
+
+
+
 private:
     QString *FileLabel;
     QList<QWidget*> TagWidgets;
@@ -121,7 +141,7 @@ private slots:
      * Opens a file-explorer-dialog for the user to select a file.
      * Then loads the selected file into the GUI.
      */
-    void LoadFile();
+    void LoadFile(const QString &filePath = QString());
 
     /**
      * @brief Saves the current file.

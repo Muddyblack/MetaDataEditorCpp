@@ -21,7 +21,7 @@ MetaDataHandler::MetaDataHandler() {
 
 QMap<QString, QString> MetaDataHandler::readMetadata(const QString &filePath) {
     qDebug() << "Reading metadata from file: " << filePath;
-    std::map<std::string, std::string> metadata = PNGMeta::readPNGHeader(filePath.toStdString());
+    std::map<std::string, std::string> metadata = PNGMeta::readPNGMetaData(filePath.toStdString());
 
     QMap<QString, QString> qMetadata;
     for (const auto &pair : metadata) {

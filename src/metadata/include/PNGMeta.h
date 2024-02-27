@@ -39,6 +39,15 @@ public:
         uint32_t crc;
     };
 
+    static uint32_t calculate_crc32(const uint8_t *data, size_t length);
+
+    /**
+     * @brief Reads the metadata from a PNG file.
+     * @param filename The name of the file to read from.
+     * @return A map of metadata keys to values.
+     */
+    static std::map<std::string, std::string> readPNGMetaData(const std::string& filename);
+
     /**
      * @brief Reads the PNG header from a PNG file.
      * @param filename The name of the file to read from.
@@ -52,6 +61,23 @@ public:
      * @param properties The metadata to write.
      */
     static void writePNGHeader(const std::string& filename, const std::map<std::string, std::string>& properties);
+    
+
+
+
+    /**
+     * @brief Reads text chunks from a PNG file.
+     * @param filename The name of the file to read from.
+     * @return A map of text chunk keywords to values.
+     */
+    static std::map<std::string, std::string> readPNGTextChunks(const std::string& filename);
+
+    /**
+     * @brief Writes text chunks to a PNG file.
+     * @param filename The name of the file to write to.
+     * @param textChunks A map of text chunk keywords to values.
+     */
+    static void writePNGTextChunks(const std::string& filename, const std::map<std::string, std::string>& textChunks);
     
 };
 

@@ -24,6 +24,11 @@
 #include <QStringList>
 #include <QVideoWidget>
 
+//DRAGNDROP
+#include <QMimeData>
+#include <QDragEnterEvent>
+#include <QDropEvent>
+
 // Local includes
 #include <AppConstants.h>
 #include <ImageEditorGUI.h>
@@ -54,6 +59,26 @@ ImageEditorGUI::ImageEditorGUI()
 {
     setWindowIcon(QIcon(AppConstants::ICON_PATH));
     InitUi();
+    setAcceptDrops(true);
+}
+
+void ImageEditorGUI::dragEnterEvent(QDragEnterEvent *event) {
+    // check if the data from the event is a file
+
+    if (event->mimeData()->hasUrls()) {
+        event->acceptProposedAction();
+    }
+}
+
+void ImageEditorGUI::dropEvent(QDropEvent *event) {
+    // get the file path from the event and load the file
+    QList<QUrl> urls = event->mimeData()->urls();
+    if (!urls.isEmpty()) {
+        QString filePath = urls.first().toLocalFile();
+        if (!filePath.isEmpty()) {
+            LoadFile(filePath);
+        }
+    }
 }
 
 void ImageEditorGUI::InitUi() {
@@ -76,7 +101,7 @@ void ImageEditorGUI::InitUi() {
         addStandardButton = new QPushButton("Add Standard", this);
         connect(addStandardButton, &QPushButton::clicked, this, &ImageEditorGUI::addStandardTag);
         LoadButton = new QPushButton("Load File", this);
-        connect(LoadButton, &QPushButton::clicked, this, &ImageEditorGUI::LoadFile);
+        connect(LoadButton, &QPushButton::clicked, this, [this]() { LoadFile(); });
         SaveButton = new QPushButton("Save File", this);
         connect(SaveButton, &QPushButton::clicked, this, &ImageEditorGUI::saveFile);
 
@@ -124,13 +149,17 @@ void ImageEditorGUI::SwitchMode() {
 }
 
 void ImageEditorGUI::UpdateWindowTitle() {
+    qDebug() << "Updating window title";
+
     if (FileLabel != nullptr) {
         QFileInfo fileInfo(*FileLabel);
         QString filename = fileInfo.fileName();
         setWindowTitle(QString("MetaData Editor (%1)").arg(filename));
     } else {
-        setWindowTitle("MetaData Editor");
+        setWindowTitle(APP_NAME);
     }
+    qDebug() << "Updated window title";
+
 }
 
 void ImageEditorGUI::addTag() {
@@ -188,67 +217,58 @@ void ImageEditorGUI::SetLastDir(const QString &path) {
     qDebug() << "Succeded setting last dir for this file: " << path;
 }
 
-void ImageEditorGUI::LoadFile() {
+void ImageEditorGUI::LoadFile(const QString &filePath) {
+    qDebug() << "Loading file" << filePath;
     try {
-        QFileDialog fileDialog(this);
-        fileDialog.setFileMode(QFileDialog::ExistingFile);
-        fileDialog.setNameFilter(ALL_FORMATS);
+        QString ImagePath;
+        if (!filePath.isEmpty()) {
+            ImagePath = filePath;
+        } else {
+            QFileDialog fileDialog(this);
+            fileDialog.setFileMode(QFileDialog::ExistingFile);
+            fileDialog.setNameFilter(ALL_FORMATS);
 
-        // Load the last directory from QSettings
-        QString lastDir = GetLastDir();
-        fileDialog.setDirectory(lastDir);
+            // Load the last directory from QSettings
+            QString lastDir = GetLastDir();
+            fileDialog.setDirectory(lastDir);
 
-        if (fileDialog.exec()) {
-            QStringList selectedFiles = fileDialog.selectedFiles();
-            qDebug() << "Selected files: " << selectedFiles;
-            if (!selectedFiles.isEmpty()) {
-                QString ImagePath = selectedFiles[0];
-                ImageLabel->clear();
-      
-                DisplayFile(ImagePath);
-                qDebug() << "SHowing now temp file";
-
-
-                // Save the directory to QSettings
-                qDebug() << "Setting last dir";
-                try {
-                    SetLastDir(ImagePath);
-                } catch (const std::exception &e) {
-                    qWarning() << "Exception in SetLastDir: " << e.what();
+            if (fileDialog.exec()) {
+                QStringList selectedFiles = fileDialog.selectedFiles();
+                if (!selectedFiles.isEmpty()) {
+                    ImagePath = selectedFiles[0];
                 }
-                qDebug() << "Last dir set";
+            }
+        }
+        if (!ImagePath.isEmpty()) {
+            ImageLabel->clear();
+            VideoWidget->hide();
+            DisplayFile(ImagePath);
 
-                if (FileLabel == nullptr) {
-                    qDebug() << "FileLabel is nullptr";
-                    FileLabel = new QString();
-                }
-                try {
-                    *FileLabel = ImagePath;
-                } catch (const std::exception &e) {
-                    qWarning() << "Exception when assigning ImagePath to FileLabel: " << e.what();
-                }
+            // Save the directory to QSettings
+            SetLastDir(ImagePath);
 
-                for (auto &tagWidget : TagWidgets) {
-                    ScrollLayout->removeWidget(tagWidget);
-                    delete tagWidget;
-                }
-                TagWidgets.clear();
+            if (FileLabel == nullptr) {
+                FileLabel = new QString();
+            }
+            *FileLabel = ImagePath;
 
-                qDebug() << "Updating window title";
+            for (auto &tagWidget : TagWidgets) {
+                ScrollLayout->removeWidget(tagWidget);
+                delete tagWidget;
+            }
+            TagWidgets.clear();
 
-                UpdateWindowTitle();
-                qDebug() << "Updated window title";
-                
-                // adding tags
-                MetaDataHandler metadataHandler;
-                QMap<QString, QString> metaDatas = metadataHandler.readMetadata(ImagePath);
-                for (auto it = metaDatas.begin(); it != metaDatas.end(); ++it) {
-                    TagWidget *tagWidget = new TagWidget(it.key(), it.value());
-                    connect(tagWidget, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
-                    TagWidgets.append(tagWidget);
+            UpdateWindowTitle();
+            
+            // adding tags
+            MetaDataHandler metadataHandler;
+            QMap<QString, QString> metaDatas = metadataHandler.readMetadata(ImagePath);
+            for (auto it = metaDatas.begin(); it != metaDatas.end(); ++it) {
+                TagWidget *tagWidget = new TagWidget(it.key(), it.value());
+                connect(tagWidget, &TagWidget::removeRequested, this, &ImageEditorGUI::removeTagWidget);
+                TagWidgets.append(tagWidget);
 
-                    ScrollLayout->addWidget(tagWidget);
-                }
+                ScrollLayout->addWidget(tagWidget);
             }
         }
     } catch (const std::exception &error) {
